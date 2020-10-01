@@ -12,7 +12,7 @@ namespace SCORM11
         public void Configuration(IAppBuilder app)
         {
             ConfigureAuth(app);
-            //CreateAdminUser();
+            CreateAdminUser();
         }
 
         //To-Do

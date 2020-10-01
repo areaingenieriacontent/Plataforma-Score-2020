@@ -57,7 +57,8 @@ namespace SCORM1.Models.Lms
         public int CompanyId { get; set; }
         public virtual Company Company { get; set; }
 
-        public int QSMActive { get; set; }
+        public int QSMActive { get; set; }//tiene QSM?
+        public FORO hasProtectedFailure { get; set; }//tiene falla protegida?
         public virtual ICollection<Improvement> Improvement { get; set; }
         public virtual ICollection<BetterPractice> BetterPractice { get; set; }
         public virtual ICollection<TopicsCourse> TopicsCourse { get; set; }

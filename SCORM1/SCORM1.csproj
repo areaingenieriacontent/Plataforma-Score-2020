@@ -311,6 +311,10 @@
     <Compile Include="Migrations\202009181740061_initial_migration.Designer.cs">
       <DependentUpon>202009181740061_initial_migration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202009302008508_flashTest.cs" />
+    <Compile Include="Migrations\202009302008508_flashTest.Designer.cs">
+      <DependentUpon>202009302008508_flashTest.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BasicAuthenticationAttribute.cs" />
     <Compile Include="Models\Lms\AdvanceLoseUser.cs" />
@@ -398,6 +402,14 @@
     <Compile Include="Models\ratings\Job.cs" />
     <Compile Include="Models\ratings\ResourceForum.cs" />
     <Compile Include="Models\ratings\ResourceJobs.cs" />
+    <Compile Include="Models\RigidCourse\Category.cs" />
+    <Compile Include="Models\RigidCourse\CategoryQuestionBank.cs" />
+    <Compile Include="Models\RigidCourse\FlashQuestion.cs" />
+    <Compile Include="Models\RigidCourse\FlashQuestionAnswer.cs" />
+    <Compile Include="Models\RigidCourse\FlashTest.cs" />
+    <Compile Include="Models\RigidCourse\ProtectedFailureResults.cs" />
+    <Compile Include="Models\RigidCourse\ProtectedFailureTest.cs" />
+    <Compile Include="Models\RigidCourse\UserModuleAdvance.cs" />
     <Compile Include="Models\Scorm\Area.cs" />
     <Compile Include="Models\Scorm\City.cs" />
     <Compile Include="Models\Scorm\Company.cs" />
@@ -425,6 +437,7 @@
     <Compile Include="Models\ViewModel\LogsComunidad.cs" />
     <Compile Include="Models\ViewModel\ManageViewModels.cs" />
     <Compile Include="Models\ViewModel\MimeTypes.cs" />
+    <Compile Include="Models\RigidCourse\ProtectedFailureMultiChoice.cs" />
     <Compile Include="Models\ViewModel\RatingAdminViewModel.cs" />
     <Compile Include="Models\ViewModel\ServiceWebModel.cs" />
     <Compile Include="Models\ViewModel\StandarModels.cs" />
@@ -2231,6 +2244,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202009181740061_initial_migration.resx">
       <DependentUpon>202009181740061_initial_migration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009302008508_flashTest.resx">
+      <DependentUpon>202009302008508_flashTest.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

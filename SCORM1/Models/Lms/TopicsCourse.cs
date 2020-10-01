@@ -44,6 +44,14 @@ namespace SCORM1.Models.Lms
         [Display(Name = "Visible")]
         public FORO ToCo_Visible { get; set; }
 
+        [Display(Name ="Primer Tema")]
+        public FORO First_Topic { get; set; }
+
+        [Display(Name = "Tema Prerequisito")]
+        public int ConditionedTopic { get; set; }
+
+        [Display(Name = "Primer Tema")]
+        public bool Topic_Available { get; set; }
 
 
         [ForeignKey("Module")]

@@ -2602,10 +2602,11 @@ C:\Users\nanit\Source\Repos\Plataforma-Score-2020\SCORM1\bin\es\Microsoft.Owin.S
 C:\Users\nanit\Source\Repos\Plataforma-Score-2020\SCORM1\bin\es\Microsoft.Owin.Security.Google.resources.dll
 C:\Users\nanit\Source\Repos\Plataforma-Score-2020\SCORM1\bin\es\Microsoft.Owin.Security.Twitter.resources.dll
 C:\Users\nanit\Source\Repos\Plataforma-Score-2020\SCORM1\bin\es\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
-C:\Users\nanit\Source\Repos\Plataforma-Score-2020\SCORM1\obj\Debug\SCORM1.csprojAssemblyReference.cache
 C:\Users\nanit\Source\Repos\Plataforma-Score-2020\SCORM1\obj\Debug\SCORM1.csproj.CoreCompileInputs.cache
 C:\Users\nanit\Source\Repos\Plataforma-Score-2020\SCORM1\obj\Debug\SCORM1.csproj.CopyComplete
 C:\Users\nanit\Source\Repos\Plataforma-Score-2020\SCORM1\obj\Debug\SCORM1.dll
 C:\Users\nanit\Source\Repos\Plataforma-Score-2020\SCORM1\obj\Debug\SCORM1.pdb
 C:\Users\nanit\Source\Repos\Plataforma-Score-2020\SCORM1\obj\Debug\SCORM1.Migrations.initial_migration.resources
 C:\Users\nanit\Source\Repos\Plataforma-Score-2020\SCORM1\obj\Debug\SCORM1.csproj.GenerateResource.cache
+C:\Users\nanit\Source\Repos\Plataforma-Score-2020\SCORM1\obj\Debug\SCORM1.csprojAssemblyReference.cache
+C:\Users\nanit\Source\Repos\Plataforma-Score-2020\SCORM1\obj\Debug\SCORM1.Migrations.flashTest.resources

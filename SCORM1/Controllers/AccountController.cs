@@ -75,7 +75,10 @@ namespace SCORM1.Controllers
             }
             else
             {
+                //To-Do removed
+                /*
                 Logo = ApplicationDbContext.StylesLogos.Find(2).UrlLogo;
+                */
             }
             return Logo;
         }

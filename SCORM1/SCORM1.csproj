@@ -307,14 +307,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202009181740061_initial_migration.cs" />
-    <Compile Include="Migrations\202009181740061_initial_migration.Designer.cs">
-      <DependentUpon>202009181740061_initial_migration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202009302008508_flashTest.cs" />
-    <Compile Include="Migrations\202009302008508_flashTest.Designer.cs">
-      <DependentUpon>202009302008508_flashTest.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BasicAuthenticationAttribute.cs" />
     <Compile Include="Models\Lms\AdvanceLoseUser.cs" />
@@ -452,6 +444,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Files\Upload\1920x1080_HD_Wallpaper_147_Zixpk.jpg" />
+    <Content Include="App_Files\Upload\20200302171006-banner1.jpg" />
+    <Content Include="App_Files\Upload\20200804223559-UltimoBanner.jpg" />
+    <Content Include="App_Files\Upload\20200813172628-banner-3.jpg" />
+    <Content Include="App_Files\Upload\20200813173245-banner-2.jpg" />
     <Content Include="App_Files\Upload\433100-1.jpg" />
     <Content Include="Content\background-no-plan.jpg" />
     <Content Include="Content\background-no-result.jpg" />
@@ -466,8 +462,36 @@
     <Content Include="Content\dropzone.css" />
     <Content Include="Content\flexslider.css" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\Images\aa.png" />
+    <Content Include="Content\Images\android2.png" />
+    <Content Include="Content\Images\aprendizaje-extendido.png" />
+    <Content Include="Content\Images\avances.png" />
+    <Content Include="Content\Images\background-no-data.png" />
+    <Content Include="Content\Images\background-no-plan.jpg" />
+    <Content Include="Content\Images\background-no-result.jpg" />
+    <Content Include="Content\Images\background-no-test.jpg" />
+    <Content Include="Content\Images\bannerlogoindex.png" />
+    <Content Include="Content\Images\base de datos_ra.png" />
+    <Content Include="Content\Images\base-de-datos-ra.png" />
+    <Content Include="Content\Images\base-de-datos.png" />
+    <Content Include="Content\Images\bataria-de-juegos.png" />
+    <Content Include="Content\Images\bataria_de_juegos.png" />
+    <Content Include="Content\Images\bateria-de-juegos.png" />
+    <Content Include="Content\Images\bn1.jpg" />
+    <Content Include="Content\Images\bn2.jpg" />
+    <Content Include="Content\Images\bn3.jpg" />
+    <Content Include="Content\Images\bn4.jpg" />
+    <Content Include="Content\Images\calendario.png" />
+    <Content Include="Content\Images\cap1.png" />
+    <Content Include="Content\Images\compartir-conocimiento.png" />
+    <Content Include="Content\Images\compartir-conocimientos.png" />
+    <Content Include="Content\Images\contenido-malla.png" />
+    <Content Include="Content\Images\DECISIONESDEVIDA.mp4" />
     <Content Include="Content\Images\fondomesadeservicio.jpg" />
     <Content Include="Content\Images\fondo_mesa.jpg" />
+    <Content Include="Content\Images\gestion_categorias.png" />
+    <Content Include="Content\Images\gestion_puntos_individuales.png" />
+    <Content Include="Content\Images\gestion_puntos_masivos.png" />
     <Content Include="Content\Images\HtmlPage1.html" />
     <Content Include="Content\Images\1.jpg" />
     <Content Include="Content\Images\2.jpg" />
@@ -504,25 +528,43 @@
     <Content Include="Content\Images\Ganaste-100.jpg" />
     <Content Include="Content\Images\guia de nav-01.png" />
     <Content Include="Content\Images\icon%281%29.png" />
+    <Content Include="Content\Images\icon%282%29.png" />
+    <Content Include="Content\Images\icon%283%29.png" />
     <Content Include="Content\Images\icon.png" />
+    <Content Include="Content\Images\iconpesta.png" />
     <Content Include="Content\Images\image6.jpg" />
     <Content Include="Content\Images\Imagencorreo1.PNG" />
     <Content Include="Content\Images\ISO450001.png" />
+    <Content Include="Content\Images\laboratorio-empresarial.png" />
+    <Content Include="Content\Images\laboratorio_empresarial.png" />
+    <Content Include="Content\Images\learning-by-doing.png" />
+    <Content Include="Content\Images\libro-calificaciones.png" />
     <Content Include="Content\Images\logoBlanco.png" />
     <Content Include="Content\Images\LOGOSA.png" />
     <Content Include="Content\Images\logosan-1.png" />
     <Content Include="Content\Images\logosan.png" />
     <Content Include="Content\Images\logosan2.png" />
+    <Content Include="Content\Images\magazine-de-noticias.png" />
+    <Content Include="Content\Images\magazine_de_noticias.png" />
     <Content Include="Content\Images\Mal-100.jpg" />
+    <Content Include="Content\Images\manual.png" />
+    <Content Include="Content\Images\medicion-desarrollo-comportamientos.png" />
+    <Content Include="Content\Images\medicion_desarrollo_competencias.png" />
+    <Content Include="Content\Images\mensa %282%29.png" />
+    <Content Include="Content\Images\mensa %284%29.png" />
     <Content Include="Content\Images\mensajeria.jpg" />
+    <Content Include="Content\Images\mensajeria.png" />
     <Content Include="Content\Images\mesa-de-servicio3.jpg" />
     <Content Include="Content\Images\mesa-de-servicio.jpg" />
     <Content Include="Content\Images\mesa-de-servicio2.jpg" />
+    <Content Include="Content\Images\nombre-usuario.png" />
+    <Content Include="Content\Images\office.png" />
     <Content Include="Content\Images\Pasaste.png" />
     <Content Include="Content\Images\password.png" />
     <Content Include="Content\Images\passwordBlanco.png" />
     <Content Include="Content\Images\pbl.png" />
     <Content Include="Content\Images\pdf.png" />
+    <Content Include="Content\Images\pendientes.png" />
     <Content Include="Content\Images\Perdiste-100.jpg" />
     <Content Include="Content\Images\perdiste.png" />
     <Content Include="Content\Images\Casi-llegas-mitad-w.png" />
@@ -657,28 +699,46 @@
     <Content Include="Content\Images\PRESIDENTE-01.png" />
     <Content Include="Content\Images\PROGRAMA ECO.png" />
     <Content Include="Content\Images\progreso_curso.png" />
+    <Content Include="Content\Images\pruebat.PNG" />
     <Content Include="Content\Images\puntos-formacion.png" />
     <Content Include="Content\Images\puntos-informacion.png" />
+    <Content Include="Content\Images\puntos-premios.png" />
     <Content Include="Content\Images\puntos.png" />
     <Content Include="Content\Images\puntos_usuario.png" />
+    <Content Include="Content\Images\rain.mp4" />
+    <Content Include="Content\Images\Recurso5.png" />
+    <Content Include="Content\Images\Recurso6.png" />
+    <Content Include="Content\Images\Recurso7.png" />
     <Content Include="Content\Images\repor.png" />
     <Content Include="Content\Images\reportes.png" />
     <Content Include="Content\Images\reportess.png" />
+    <Content Include="Content\Images\ruta_ambiente.png" />
+    <Content Include="Content\Images\ruta_secuencial.png" />
     <Content Include="Content\Images\SCORE3.png" />
+    <Content Include="Content\Images\settings.png" />
+    <Content Include="Content\Images\sistema-de-evaluacion.png" />
     <Content Include="Content\Images\sistema-de-puntos2.jpg" />
     <Content Include="Content\Images\sistema-de-puntos3.jpg" />
     <Content Include="Content\Images\sistema-medicion.png" />
     <Content Include="Content\Images\sistemapuntos.jpg" />
+    <Content Include="Content\Images\sistemapuntos.png" />
     <Content Include="Content\Images\slide.jpg" />
+    <Content Include="Content\Images\SOBRE.png" />
     <Content Include="Content\Images\softkills.png" />
     <Content Include="Content\Images\spritemap%402x.png" />
     <Content Include="Content\Images\spritemap.png" />
+    <Content Include="Content\Images\tablero-interactivo.png" />
+    <Content Include="Content\Images\tecnologia-de-punta.png" />
     <Content Include="Content\Images\tecnologia.png" />
     <Content Include="Content\Images\temas_cursos.png" />
     <Content Include="Content\Images\tema_usuario.png" />
     <Content Include="Content\Images\terminaste-v.png" />
     <Content Include="Content\Images\terminaste-w.png" />
     <Content Include="Content\Images\title.jpg" />
+    <Content Include="Content\Images\titulo-1.jpg" />
+    <Content Include="Content\Images\titulo-2.jpg" />
+    <Content Include="Content\Images\titulo-3.jpg" />
+    <Content Include="Content\Images\ts.png" />
     <Content Include="Content\Images\user.png" />
     <Content Include="Content\Images\userBlanco.png" />
     <Content Include="Content\Images\usuario-no-cursos-v.jpg" />
@@ -699,7 +759,11 @@
     <Content Include="Content\Images\ya-casi-v.png" />
     <Content Include="Content\Images\ya-casi-w.png" />
     <Content Include="Content\Images\zona-bibliotecas.png" />
+    <Content Include="Content\Images\zona-de-innovacion.png" />
+    <Content Include="Content\Images\zona-de-videoteca.png" />
     <Content Include="Content\Images\zona-videoteca.png" />
+    <Content Include="Content\Images\zona_de_innovacion.png" />
+    <Content Include="Content\Images\zona_de_videoteca.png" />
     <Content Include="Content\No-categorias-w.png" />
     <Content Include="Content\PagedList.css" />
     <Content Include="Content\Site.css" />
@@ -2240,14 +2304,6 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\202009181740061_initial_migration.resx">
-      <DependentUpon>202009181740061_initial_migration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202009302008508_flashTest.resx">
-      <DependentUpon>202009302008508_flashTest.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

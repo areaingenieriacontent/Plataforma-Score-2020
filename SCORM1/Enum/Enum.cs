@@ -91,7 +91,8 @@ namespace SCORM1.Enum
     public enum TYPE
     {
         Conocimiento,
-        Evaluativo
+        Evaluativo,
+        Rigido
     }
     public enum ROLES
     {

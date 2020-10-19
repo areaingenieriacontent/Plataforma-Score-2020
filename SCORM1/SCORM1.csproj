@@ -307,6 +307,18 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202010181941339_initialMigration.cs" />
+    <Compile Include="Migrations\202010181941339_initialMigration.Designer.cs">
+      <DependentUpon>202010181941339_initialMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202010182121276_userProtectedFailureAnswer.cs" />
+    <Compile Include="Migrations\202010182121276_userProtectedFailureAnswer.Designer.cs">
+      <DependentUpon>202010182121276_userProtectedFailureAnswer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202010190240096_ProtectedFailureMod.cs" />
+    <Compile Include="Migrations\202010190240096_ProtectedFailureMod.Designer.cs">
+      <DependentUpon>202010190240096_ProtectedFailureMod.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BasicAuthenticationAttribute.cs" />
     <Compile Include="Models\Lms\AdvanceLoseUser.cs" />
@@ -399,6 +411,7 @@
     <Compile Include="Models\RigidCourse\FlashQuestion.cs" />
     <Compile Include="Models\RigidCourse\FlashQuestionAnswer.cs" />
     <Compile Include="Models\RigidCourse\FlashTest.cs" />
+    <Compile Include="Models\RigidCourse\ProtectedFailureMultiChoiceAnswer.cs" />
     <Compile Include="Models\RigidCourse\ProtectedFailureResults.cs" />
     <Compile Include="Models\RigidCourse\ProtectedFailureTest.cs" />
     <Compile Include="Models\RigidCourse\UserModuleAdvance.cs" />
@@ -2277,6 +2290,8 @@
     <Content Include="Views\User\ViewEvaluaciones.cshtml" />
     <Content Include="Views\Contacto\Create.cshtml" />
     <Content Include="Views\User\ListModuleVirtualAdmin.cshtml" />
+    <Content Include="Views\AdminTraining\AddQuestionsToProtectedFailureTest.cshtml" />
+    <Content Include="Views\AdminTraining\CreateProtectedFailureTest.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -2304,6 +2319,17 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202010181941339_initialMigration.resx">
+      <DependentUpon>202010181941339_initialMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010182121276_userProtectedFailureAnswer.resx">
+      <DependentUpon>202010182121276_userProtectedFailureAnswer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010190240096_ProtectedFailureMod.resx">
+      <DependentUpon>202010190240096_ProtectedFailureMod.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

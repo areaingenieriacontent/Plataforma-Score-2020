@@ -50,83 +50,89 @@
                     @using (Html.BeginForm("UpdateModule", "AdminTraining", FormMethod.Post, new { @class = "form-horizontal", role = "form", enctype = "multipart/form-data" }))
                     {
                         @Html.AntiForgeryToken()
-                        <div class="row">
-                            <br />
-                            <div class="col-md-6">
-                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                                @Html.HiddenFor(model => model.Modu_Id)
-                                @Html.LabelFor(model => model.Modu_Name, htmlAttributes: new { @class = "control-label col-md-3" })
-                                @Html.EditorFor(model => model.Modu_Name, new { htmlAttributes = new { @class = "form-control", @placeholder = "Nombre del Tema" } })
-                                @Html.ValidationMessageFor(model => model.Modu_Name, "", new { @class = "text-danger" })
-                            </div>
-                            <div class="col-md-6">
-                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                                @Html.LabelFor(model => model.Modu_Points, htmlAttributes: new { @class = "control-label col-md-4" })
-                                @Html.EditorFor(model => model.Modu_Points, new { htmlAttributes = new { @class = "form-control", @placeholder = "Intentos Permitidos", @style = "width:70%" } })
-                                @Html.ValidationMessageFor(model => model.Modu_Points, "", new { @class = "text-danger" })
-                            </div>
-                            <div class="col-md-6">
-                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                                @Html.LabelFor(model => model.Modu_Description, htmlAttributes: new { @class = "control-label col-md-3" })
-                                @Html.TextAreaFor(model => model.Modu_Description, 7, 0, new { @class = "form-control" })
-                                @Html.ValidationMessageFor(model => model.Modu_Description, "", new { @class = "text-danger" })
-                            </div>
+                    <div class="row">
+                        <br />
+                        <div class="col-md-6">
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            @Html.HiddenFor(model => model.Modu_Id)
+                            @Html.LabelFor(model => model.Modu_Name, htmlAttributes: new { @class = "control-label col-md-3" })
+                            @Html.EditorFor(model => model.Modu_Name, new { htmlAttributes = new { @class = "form-control", @placeholder = "Nombre del Tema" } })
+                            @Html.ValidationMessageFor(model => model.Modu_Name, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="col-md-6">
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            @Html.LabelFor(model => model.Modu_Points, htmlAttributes: new { @class = "control-label col-md-4" })
+                            @Html.EditorFor(model => model.Modu_Points, new { htmlAttributes = new { @class = "form-control", @placeholder = "Intentos Permitidos", @style = "width:70%" } })
+                            @Html.ValidationMessageFor(model => model.Modu_Points, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="col-md-6">
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            @Html.LabelFor(model => model.Modu_Description, htmlAttributes: new { @class = "control-label col-md-3" })
+                            @Html.TextAreaFor(model => model.Modu_Description, 7, 0, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.Modu_Description, "", new { @class = "text-danger" })
+                        </div>
 
-                            <div class="col-md-6">
-                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                                @Html.LabelFor(model => model.Modu_Statemodule, htmlAttributes: new { @class = "control-label col-md-4" })
-                                @Html.EnumDropDownListFor(model => model.Modu_Statemodule, new { @class = "form-control", @style = "width:70%" })
-                                @Html.ValidationMessageFor(model => model.Modu_Statemodule, "", new { @class = "text-danger" })
-                            </div>
-                            <div class="col-md-6">
-                                @Html.LabelFor(model => model.Modu_Validity, htmlAttributes: new { @class = "control-label col-md-4" })
-                                @Html.EditorFor(model => model.Modu_Validity, new { htmlAttributes = new { @class = "form-control", @style = "width:70%" } })
-                                @Html.ValidationMessageFor(model => model.Modu_Validity, "", new { @class = "text-danger" })
-                            </div>
-                            <div class="col-md-6">
-                                @Html.LabelFor(model => model.Modu_Period, htmlAttributes: new { @class = "control-label col-md-4" })
-                                @Html.EnumDropDownListFor(model => model.Modu_Period, new { @class = "form-control" })
-                                @Html.ValidationMessageFor(model => model.Modu_Period, "", new { @class = "text-danger" })
-                            </div>
-                            <div class="col-md-6">
-                                @Html.LabelFor(model => model.Modu_TypeOfModule, htmlAttributes: new { @class = "control-label col-md-4" })
-                                @Html.EnumDropDownListFor(model => model.Modu_TypeOfModule, new { @class = "form-control", @style = "width:70%" })
-                                @Html.ValidationMessageFor(model => model.Modu_TypeOfModule, "", new { @class = "text-danger" })
-                            </div>
+                        <div class="col-md-6">
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            @Html.LabelFor(model => model.Modu_Statemodule, htmlAttributes: new { @class = "control-label col-md-4" })
+                            @Html.EnumDropDownListFor(model => model.Modu_Statemodule, new { @class = "form-control", @style = "width:70%" })
+                            @Html.ValidationMessageFor(model => model.Modu_Statemodule, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="col-md-6">
+                            @Html.LabelFor(model => model.Modu_Validity, htmlAttributes: new { @class = "control-label col-md-4" })
+                            @Html.EditorFor(model => model.Modu_Validity, new { htmlAttributes = new { @class = "form-control", @style = "width:70%" } })
+                            @Html.ValidationMessageFor(model => model.Modu_Validity, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="col-md-6">
+                            @Html.LabelFor(model => model.Modu_Period, htmlAttributes: new { @class = "control-label col-md-4" })
+                            @Html.EnumDropDownListFor(model => model.Modu_Period, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.Modu_Period, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="col-md-6">
+                            @Html.LabelFor(model => model.Modu_TypeOfModule, htmlAttributes: new { @class = "control-label col-md-4" })
+                            @Html.EnumDropDownListFor(model => model.Modu_TypeOfModule, new { @class = "form-control", @style = "width:70%" })
+                            @Html.ValidationMessageFor(model => model.Modu_TypeOfModule, "", new { @class = "text-danger" })
+                        </div>
 
-                            <div class="col-md-6">
-                                @Html.LabelFor(model => model.Modu_Improvement, htmlAttributes: new { @class = "control-label col-md-3" })
-                                @Html.EnumDropDownListFor(model => model.Modu_Improvement, new { @class = "form-control" })
-                                @Html.ValidationMessageFor(model => model.Modu_Improvement, "", new { @class = "text-danger" })
-                            </div>
-                            <div class="col-md-6">
-                                @Html.LabelFor(model => model.Modu_BetterPractice, htmlAttributes: new { @class = "control-label col-md-4" })
-                                @Html.EnumDropDownListFor(model => model.Modu_BetterPractice, new { @class = "form-control", @style = "width:70%" })
-                                @Html.ValidationMessageFor(model => model.Modu_BetterPractice, "", new { @class = "text-danger" })
-                            </div>
-                            <div class="col-md-6">
-                                @Html.LabelFor(model => model.QSMActive, htmlAttributes: new { @class = "control-label col-md-6" })
-                                @Html.EnumDropDownListFor(model => model.QSMActive, new { @class = "form-control col-md-6", @style = "width:70%" })
-                                @Html.ValidationMessageFor(model => model.QSMActive, "", new { @class = "text-danger" })
-                            </div>
-                            <div class="col-md-6">
-                                @Html.LabelFor(model => model.Modu_Test, htmlAttributes: new { @class = "control-label col-md-3" })
-                                @Html.EnumDropDownListFor(model => model.Modu_Test, new { @class = "form-control", @style = "width:70%" })
-                                @Html.ValidationMessageFor(model => model.Modu_Test, "", new { @class = "text-danger" })
-                                <br />
-                            </div>
-                            <div class="col-md-6">
-                                @Html.Label("Portada", htmlAttributes: new { @class = "control-label col-md-4" })
-                                <input type="file" id="CoverpageModule" name="upload" />
-                            </div>
+                        <div class="col-md-6">
+                            @Html.LabelFor(model => model.Modu_Improvement, htmlAttributes: new { @class = "control-label col-md-3" })
+                            @Html.EnumDropDownListFor(model => model.Modu_Improvement, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.Modu_Improvement, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="col-md-6">
+                            @Html.LabelFor(model => model.Modu_BetterPractice, htmlAttributes: new { @class = "control-label col-md-4" })
+                            @Html.EnumDropDownListFor(model => model.Modu_BetterPractice, new { @class = "form-control", @style = "width:70%" })
+                            @Html.ValidationMessageFor(model => model.Modu_BetterPractice, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="col-md-6">
+                            @Html.LabelFor(model => model.QSMActive, htmlAttributes: new { @class = "control-label col-md-6" })
+                            @Html.EnumDropDownListFor(model => model.QSMActive, new { @class = "form-control col-md-6", @style = "width:70%" })
+                            @Html.ValidationMessageFor(model => model.QSMActive, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="col-md-6">
+                            @Html.LabelFor(model => model.Modu_Test, htmlAttributes: new { @class = "control-label col-md-3" })
+                            @Html.EnumDropDownListFor(model => model.Modu_Test, new { @class = "form-control", @style = "width:70%" })
+                            @Html.ValidationMessageFor(model => model.Modu_Test, "", new { @class = "text-danger" })
                             <br />
-                            <div class="form-group">
-                                <div class="col-md-offset-2 col-md-8">
-                                    <br /><br />
-                                    <center><button class="btn btn-primary" name="singin" type="submit">Modificar Curso</button></center>
-                                </div>
+                        </div>
+                        <div class="col-md-6">
+                            @Html.LabelFor(model => model.HasProtectedFailure, htmlAttributes: new { @class = "control-label col-md-6" })
+                            @Html.EnumDropDownListFor(model => model.HasProtectedFailure, new { @class = "form-control col-md-6", @style = "width:70%" })
+                            @Html.ValidationMessageFor(model => model.HasProtectedFailure, "", new { @class = "text-danger" })
+                            <br />
+                        </div>
+                        <div class="col-md-6">
+                            @Html.Label("Portada", htmlAttributes: new { @class = "control-label col-md-4" })
+                            <input type="file" id="CoverpageModule" name="upload" />
+                        </div>
+                        <br />
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-8">
+                                <br /><br />
+                                <center><button class="btn btn-primary" name="singin" type="submit">Modificar Curso</button></center>
                             </div>
                         </div>
+                    </div>
                     }
                 </div>
                 <div class="modal-footer">
@@ -147,89 +153,95 @@
                     @using (Html.BeginForm("AddModule", "AdminTraining", FormMethod.Post, new { @class = "form-horizontal", role = "form", enctype = "multipart/form-data" }))
                     {
                         @Html.AntiForgeryToken()
-                        <div class="row">
-                            <br />
-                            <div class="col-md-6">
-                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                                @Html.HiddenFor(model => model.Modu_Id)
-                                @Html.LabelFor(model => model.Modu_Name, htmlAttributes: new { @class = "control-label col-md-3" })
-                                @Html.EditorFor(model => model.Modu_Name, new { htmlAttributes = new { @class = "form-control", @placeholder = "Nombre del Tema" } })
-                                @Html.ValidationMessageFor(model => model.Modu_Name, "", new { @class = "text-danger" })
-                            </div>
-                            <div class="col-md-6">
-                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                                @Html.LabelFor(model => model.Modu_Points, htmlAttributes: new { @class = "control-label col-md-4" })
-                                @Html.EditorFor(model => model.Modu_Points, new { htmlAttributes = new { @class = "form-control", @placeholder = "Intentos Permitidos", @style = "width:70%" } })
-                                @Html.ValidationMessageFor(model => model.Modu_Points, "", new { @class = "text-danger" })
-                            </div>
-                            <div class="col-md-6">
-                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                                @Html.LabelFor(model => model.Modu_Description, htmlAttributes: new { @class = "control-label col-md-3" })
-                                @Html.TextAreaFor(model => model.Modu_Description, 7, 0, new { @class = "form-control" })
-                                @Html.ValidationMessageFor(model => model.Modu_Description, "", new { @class = "text-danger" })
-                            </div>
+                    <div class="row">
+                        <br />
+                        <div class="col-md-6">
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            @Html.HiddenFor(model => model.Modu_Id)
+                            @Html.LabelFor(model => model.Modu_Name, htmlAttributes: new { @class = "control-label col-md-3" })
+                            @Html.EditorFor(model => model.Modu_Name, new { htmlAttributes = new { @class = "form-control", @placeholder = "Nombre del Tema" } })
+                            @Html.ValidationMessageFor(model => model.Modu_Name, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="col-md-6">
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            @Html.LabelFor(model => model.Modu_Points, htmlAttributes: new { @class = "control-label col-md-4" })
+                            @Html.EditorFor(model => model.Modu_Points, new { htmlAttributes = new { @class = "form-control", @placeholder = "Intentos Permitidos", @style = "width:70%" } })
+                            @Html.ValidationMessageFor(model => model.Modu_Points, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="col-md-6">
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            @Html.LabelFor(model => model.Modu_Description, htmlAttributes: new { @class = "control-label col-md-3" })
+                            @Html.TextAreaFor(model => model.Modu_Description, 7, 0, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.Modu_Description, "", new { @class = "text-danger" })
+                        </div>
 
-                            <div class="col-md-6">
-                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                                @Html.LabelFor(model => model.Modu_Statemodule, htmlAttributes: new { @class = "control-label col-md-4" })
-                                @Html.EnumDropDownListFor(model => model.Modu_Statemodule, new { @class = "form-control", @style = "width:70%" })
-                                @Html.ValidationMessageFor(model => model.Modu_Statemodule, "", new { @class = "text-danger" })
-                            </div>
-                            <div class="col-md-6">
-                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                                @Html.LabelFor(model => model.Modu_InitDate, htmlAttributes: new { @class = "control-label col-md-4" })
-                                @Html.EditorFor(model => model.Modu_InitDate, new { @class = "col-sm-1", @style = "width:2%" })
-                                @Html.ValidationMessageFor(model => model.Modu_InitDate, "", new { @class = "text-danger" })
-                            </div>
+                        <div class="col-md-6">
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            @Html.LabelFor(model => model.Modu_Statemodule, htmlAttributes: new { @class = "control-label col-md-4" })
+                            @Html.EnumDropDownListFor(model => model.Modu_Statemodule, new { @class = "form-control", @style = "width:70%" })
+                            @Html.ValidationMessageFor(model => model.Modu_Statemodule, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="col-md-6">
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            @Html.LabelFor(model => model.Modu_InitDate, htmlAttributes: new { @class = "control-label col-md-4" })
+                            @Html.EditorFor(model => model.Modu_InitDate, new { @class = "col-sm-1", @style = "width:2%" })
+                            @Html.ValidationMessageFor(model => model.Modu_InitDate, "", new { @class = "text-danger" })
+                        </div>
 
-                            <div class="col-md-6">
-                                @Html.LabelFor(model => model.Modu_Period, htmlAttributes: new { @class = "control-label col-md-3" })
-                                @Html.EnumDropDownListFor(model => model.Modu_Period, new { @class = "form-control" })
-                                @Html.ValidationMessageFor(model => model.Modu_Period, "", new { @class = "text-danger" })
-                            </div>
-                            <div class="col-md-6">
-                                @Html.LabelFor(model => model.Modu_TypeOfModule, htmlAttributes: new { @class = "control-label col-md-4" })
-                                @Html.EnumDropDownListFor(model => model.Modu_TypeOfModule, new { @class = "form-control", @style = "width:70%" })
-                                @Html.ValidationMessageFor(model => model.Modu_TypeOfModule, "", new { @class = "text-danger" })
-                            </div>
-                            @*<div class="col-md-6">
-                                    @Html.LabelFor(model => model.Modu_Forum, htmlAttributes: new { @class = "control-label col-md-3" })
-                                    @Html.EnumDropDownListFor(model => model.Modu_Forum, new { @class = "form-control" })
-                                    @Html.ValidationMessageFor(model => model.Modu_Forum, "", new { @class = "text-danger" })
-                                </div>*@
-                            <div class="col-md-6">
-                                @Html.LabelFor(model => model.Modu_Improvement, htmlAttributes: new { @class = "control-label col-md-3" })
-                                @Html.EnumDropDownListFor(model => model.Modu_Improvement, new { @class = "form-control" })
-                                @Html.ValidationMessageFor(model => model.Modu_Improvement, "", new { @class = "text-danger" })
-                            </div>
-                            <div class="col-md-6">
-                                @Html.LabelFor(model => model.Modu_BetterPractice, htmlAttributes: new { @class = "control-label col-md-4" })
-                                @Html.EnumDropDownListFor(model => model.Modu_BetterPractice, new { @class = "form-control", @style = "width:70%" })
-                                @Html.ValidationMessageFor(model => model.Modu_BetterPractice, "", new { @class = "text-danger" })
-                            </div>
-                            <div class="col-md-6">
-                                @Html.LabelFor(model => model.QSMActive, htmlAttributes: new { @class = "control-label col-md-6" })
-                                @Html.EnumDropDownListFor(model => model.QSMActive, new { @class = "form-control col-md-6", @style = "width:70%" })
-                                @Html.ValidationMessageFor(model => model.QSMActive, "", new { @class = "text-danger" })
-                            </div>
-                            <div class="col-md-6">
-                                @Html.LabelFor(model => model.Modu_Test, htmlAttributes: new { @class = "control-label col-md-6" })
-                                @Html.EnumDropDownListFor(model => model.Modu_Test, new { @class = "form-control col-md-6", @style = "width:70%" })
-                                @Html.ValidationMessageFor(model => model.Modu_Test, "", new { @class = "text-danger" })
-                                <br />
-                            </div>
-                            <div class="col-md-12">
-                                @Html.Label("Portada", htmlAttributes: new { @class = "control-label col-md-4" })
-                                <input type="file" id="CoverpageModule" name="upload" />
-                            </div>
+                        <div class="col-md-6">
+                            @Html.LabelFor(model => model.Modu_Period, htmlAttributes: new { @class = "control-label col-md-3" })
+                            @Html.EnumDropDownListFor(model => model.Modu_Period, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.Modu_Period, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="col-md-6">
+                            @Html.LabelFor(model => model.Modu_TypeOfModule, htmlAttributes: new { @class = "control-label col-md-4" })
+                            @Html.EnumDropDownListFor(model => model.Modu_TypeOfModule, new { @class = "form-control", @style = "width:70%" })
+                            @Html.ValidationMessageFor(model => model.Modu_TypeOfModule, "", new { @class = "text-danger" })
+                        </div>
+                        @*<div class="col-md-6">
+            @Html.LabelFor(model => model.Modu_Forum, htmlAttributes: new { @class = "control-label col-md-3" })
+            @Html.EnumDropDownListFor(model => model.Modu_Forum, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Modu_Forum, "", new { @class = "text-danger" })
+        </div>*@
+                        <div class="col-md-6">
+                            @Html.LabelFor(model => model.Modu_Improvement, htmlAttributes: new { @class = "control-label col-md-3" })
+                            @Html.EnumDropDownListFor(model => model.Modu_Improvement, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.Modu_Improvement, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="col-md-6">
+                            @Html.LabelFor(model => model.Modu_BetterPractice, htmlAttributes: new { @class = "control-label col-md-4" })
+                            @Html.EnumDropDownListFor(model => model.Modu_BetterPractice, new { @class = "form-control", @style = "width:70%" })
+                            @Html.ValidationMessageFor(model => model.Modu_BetterPractice, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="col-md-6">
+                            @Html.LabelFor(model => model.QSMActive, htmlAttributes: new { @class = "control-label col-md-6" })
+                            @Html.EnumDropDownListFor(model => model.QSMActive, new { @class = "form-control col-md-6", @style = "width:70%" })
+                            @Html.ValidationMessageFor(model => model.QSMActive, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="col-md-6">
+                            @Html.LabelFor(model => model.Modu_Test, htmlAttributes: new { @class = "control-label col-md-6" })
+                            @Html.EnumDropDownListFor(model => model.Modu_Test, new { @class = "form-control col-md-6", @style = "width:70%" })
+                            @Html.ValidationMessageFor(model => model.Modu_Test, "", new { @class = "text-danger" })
                             <br />
-                            <div class="form-group">
-                                <div class="col-md-offset-2 col-md-8">
-                                    <br /><br />
-                                    <center><button class="btn btn-primary" name="singin" type="submit">Crear Curso</button></center>
-                                </div>
+                        </div>
+                        <div class="col-md-6">
+                            @Html.LabelFor(model => model.HasProtectedFailure, htmlAttributes: new { @class = "control-label col-md-6" })
+                            @Html.EnumDropDownListFor(model => model.HasProtectedFailure, new { @class = "form-control col-md-6", @style = "width:70%" })
+                            @Html.ValidationMessageFor(model => model.HasProtectedFailure, "", new { @class = "text-danger" })
+                            <br />
+                        </div>
+                        <div class="col-md-12">
+                            @Html.Label("Portada", htmlAttributes: new { @class = "control-label col-md-4" })
+                            <input type="file" id="CoverpageModule" name="upload" />
+                        </div>
+                        <br />
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-8">
+                                <br /><br />
+                                <center><button class="btn btn-primary" name="singin" type="submit">Crear Curso</button></center>
                             </div>
                         </div>
+                    </div>
                     }
                 </div>
                 <div class="modal-footer">

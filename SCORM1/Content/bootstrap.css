@@ -6415,7 +6415,7 @@ a.badge:focus {
     width: 40%;
     /* margin: 30px 15px 29px 786.8px;*/
     text-align: center;
-    background-color: rgba(0, 0, 0,0.4) !important;
+    background-color: rgba(0, 0, 0,0.8) !important;
     -webkit-box-shadow: -5px 4px 21px 0px rgba(0,0,0,0.48);
     -moz-box-shadow: -5px 4px 21px 0px rgba(0,0,0,0.48);
     box-shadow: -5px 4px 21px 0px rgba(0,0,0,0.48);
@@ -6451,9 +6451,7 @@ a.badge:focus {
 
 .container .jumbotron1,
 .container-fluid .jumbotron1 {
-    padding-right: 15px;
-    border: 1px solid #cc023b;
-    border-radius: 40px;
+height:100%
 }
 
 .jumbotron .container {
@@ -6476,7 +6474,7 @@ a.badge:focus {
     }
 
     .container .jumbotron1 {
-        margin: 80px;
+        margin: 0px;
     }
 
     .container .jumbotron,

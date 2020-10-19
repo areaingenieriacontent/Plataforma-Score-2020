@@ -1870,7 +1870,7 @@ namespace SCORM1.Controllers
             {
                 modu_id = id
             };
-            return View(apf);
+            return View();
         }
 
         //Creates the Protected failure test with the view given attributes

@@ -1,0 +1,75 @@
+﻿@using SCORM1.Models.Lms;
+@using SCORM1.Models.ViewModel;
+@model CursoRigidoViewModel
+
+
+
+@if (TempData["Add"] != null)
+{
+    <div class="alert alert-danger fade in">
+        <a href="#" class="close" data-dismiss="alert">&times;</a>
+        @TempData["Add"]
+    </div>
+}
+else
+{
+    if (TempData["Info"] != null)
+    {
+        @section Scripts {
+            <script type="text/JavaScript">
+                $(document).ready(function () {
+                    $("#Inform").modal();
+                });
+            </script>
+        }}
+}
+@Scripts.Render("~/bundles/jqueryval")
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+
+<form>
+    @foreach (var item in Model.flashQuestions)
+    {
+
+        <div class="col-md-12">
+            @Html.DisplayFor(modelItem => item.Enunciado)
+        </div>
+        <div class="col-md-12">
+
+            @foreach (var item2 in Model.ListFlashQuestionAnswer)
+            {
+                if (item.FlashQuestionId == item2.FlashQuestionId)
+                {
+                    @Html.DisplayFor(modelItem => item2.Content)<br />
+                }
+            }
+        </div>
+        <hr style="border:1px solid #ff0000;" />
+    }
+    @foreach (var item in Model.flashQuestions)
+    {
+        <div class="comentario">
+            <br />
+            <p><strong>Pregunta: @Model.Enunciado</strong></p>
+            <br />
+            @foreach (var item2 in Model.ListFlashQuestionAnswer)
+            {
+                if (item.FlashQuestionId == item2.FlashQuestionId)
+                {
+                    <br />
+                    <p>
+                        <strong>Respuesta: @item2.Content</strong>
+                    </p>
+                    <br />
+
+                }
+            }
+        </div>
+    }
+    <button>Enviar</button>
+</form>

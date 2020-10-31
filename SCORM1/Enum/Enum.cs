@@ -30,7 +30,8 @@ namespace SCORM1.Enum
     public enum CURSO
     {
         Virtual,
-        Evaluativo
+        Evaluativo,
+        Rigido
 
     }
 

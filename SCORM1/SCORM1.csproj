@@ -291,6 +291,7 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MassiveEnrollmentController.cs" />
     <Compile Include="Controllers\PlansController.cs" />
+    <Compile Include="Controllers\ProtectedFailureController.cs" />
     <Compile Include="Controllers\RatingsController.cs" />
     <Compile Include="Controllers\ResultsController.cs" />
     <Compile Include="Controllers\SendOfEmailsController.cs" />
@@ -306,18 +307,6 @@
     <Compile Include="Enum\Enum.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202010181941339_initialMigration.cs" />
-    <Compile Include="Migrations\202010181941339_initialMigration.Designer.cs">
-      <DependentUpon>202010181941339_initialMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202010182121276_userProtectedFailureAnswer.cs" />
-    <Compile Include="Migrations\202010182121276_userProtectedFailureAnswer.Designer.cs">
-      <DependentUpon>202010182121276_userProtectedFailureAnswer.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202010190240096_ProtectedFailureMod.cs" />
-    <Compile Include="Migrations\202010190240096_ProtectedFailureMod.Designer.cs">
-      <DependentUpon>202010190240096_ProtectedFailureMod.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BasicAuthenticationAttribute.cs" />
@@ -2308,6 +2297,7 @@
     <Folder Include="Scripts\Tinymce1\plugins\toc\" />
     <Folder Include="uploads\images\" />
     <Folder Include="Views\File\" />
+    <Folder Include="Views\ProtectedFailure\" />
     <Folder Include="Views\ReportController\" />
     <Folder Include="Views\SendOfEmails\" />
     <Folder Include="Views\WebService\" />
@@ -2319,17 +2309,6 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\202010181941339_initialMigration.resx">
-      <DependentUpon>202010181941339_initialMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202010182121276_userProtectedFailureAnswer.resx">
-      <DependentUpon>202010182121276_userProtectedFailureAnswer.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202010190240096_ProtectedFailureMod.resx">
-      <DependentUpon>202010190240096_ProtectedFailureMod.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

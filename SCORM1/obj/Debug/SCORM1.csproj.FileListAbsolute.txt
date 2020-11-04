@@ -2912,7 +2912,3 @@ C:\Users\nanit\Source\Repos\areaingenieriacontent\Plataforma-Score-2020\SCORM1\o
 C:\Users\nanit\Source\Repos\areaingenieriacontent\Plataforma-Score-2020\SCORM1\obj\Debug\SCORM1.csproj.CopyComplete
 C:\Users\nanit\Source\Repos\areaingenieriacontent\Plataforma-Score-2020\SCORM1\obj\Debug\SCORM1.dll
 C:\Users\nanit\Source\Repos\areaingenieriacontent\Plataforma-Score-2020\SCORM1\obj\Debug\SCORM1.pdb
-C:\Users\nanit\Source\Repos\areaingenieriacontent\Plataforma-Score-2020\SCORM1\obj\Debug\SCORM1.Migrations.initialMigration.resources
-C:\Users\nanit\Source\Repos\areaingenieriacontent\Plataforma-Score-2020\SCORM1\obj\Debug\SCORM1.csproj.GenerateResource.cache
-C:\Users\nanit\Source\Repos\areaingenieriacontent\Plataforma-Score-2020\SCORM1\obj\Debug\SCORM1.Migrations.userProtectedFailureAnswer.resources
-C:\Users\nanit\Source\Repos\areaingenieriacontent\Plataforma-Score-2020\SCORM1\obj\Debug\SCORM1.Migrations.ProtectedFailureMod.resources

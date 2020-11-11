@@ -7,13 +7,13 @@ namespace SCORM1.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class FlashTestMigration : IMigrationMetadata
+    public sealed partial class initmigration : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(FlashTestMigration));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(initmigration));
         
         string IMigrationMetadata.Id
         {
-            get { return "202011041520598_FlashTestMigration"; }
+            get { return "202011111318499_initmigration"; }
         }
         
         string IMigrationMetadata.Source

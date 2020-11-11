@@ -3063,5 +3063,5 @@ C:\Users\julia\Source\Repos\areaingenieriacontent\Plataforma-Score-2020\SCORM1\o
 C:\Users\julia\Source\Repos\areaingenieriacontent\Plataforma-Score-2020\SCORM1\obj\Debug\SCORM1.csproj.CopyComplete
 C:\Users\julia\Source\Repos\areaingenieriacontent\Plataforma-Score-2020\SCORM1\obj\Debug\SCORM1.dll
 C:\Users\julia\Source\Repos\areaingenieriacontent\Plataforma-Score-2020\SCORM1\obj\Debug\SCORM1.pdb
-C:\Users\nanit\Source\Repos\areaingenieriacontent\Plataforma-Score-2020\SCORM1\obj\Debug\SCORM1.Migrations.FlashTestMigration.resources
+C:\Users\nanit\Source\Repos\areaingenieriacontent\Plataforma-Score-2020\SCORM1\obj\Debug\SCORM1.Migrations.initmigration.resources
 C:\Users\nanit\Source\Repos\areaingenieriacontent\Plataforma-Score-2020\SCORM1\obj\Debug\SCORM1.csproj.GenerateResource.cache

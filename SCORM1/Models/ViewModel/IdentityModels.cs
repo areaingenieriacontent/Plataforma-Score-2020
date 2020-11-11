@@ -21,6 +21,7 @@ using SCORM1.Models.Games;
 using System;
 using SCORM1.Models.MainGame;
 using SCORM1.Models.ratings;
+using SCORM1.Models.RigidCourse;
 
 namespace SCORM1.Models
 {
@@ -186,10 +187,7 @@ namespace SCORM1.Models
         public virtual DbSet<AnswerOptionMultiple> AnswerOptionMultiples { get; set; }
         public virtual DbSet<AnswerOptionMultipleStudent> AnswerOptionMultipleStudent { get; set; }
 
-
-
         //Creating table Of Logs
-
         public virtual DbSet<CodeLogs> CodeLogs { get; set; }
         public virtual DbSet<TableChange> TableChanges { get; set; }
         public virtual DbSet<IdChange> IdChanges { get; set; }
@@ -197,6 +195,7 @@ namespace SCORM1.Models
         public virtual DbSet<Attempts> Attempts { get; set; }
         public virtual DbSet<ResourceTopics> ResourceTopicss { get; set; }
         public virtual DbSet<NewAttempts> NewAttempts { get; set; }
+
         //Creating table Of Newspaper
         public virtual DbSet<Edition> Editions { get; set; }
         public virtual DbSet<Article> Articles { get; set; }
@@ -207,15 +206,18 @@ namespace SCORM1.Models
 
         //Creating table Of Personalizations
         public virtual DbSet<Changeinterface> Changeinterfaces { get; set; }
+
         //Creating table Of Service Block
         public virtual DbSet<TypeServiceBlock> TypeServiceBlocks { get; set; }
         public virtual DbSet<BlockService> BlockServices { get; set; }
+
         //Creating table Of LockGame
         public virtual DbSet<TypeBaneo> TypeBaneos { get; set; }
         public virtual DbSet<Game> Games { get; set; }
         public virtual DbSet<LockGame> LockGame { get; set; }
         public virtual DbSet<PointsObtainedForUser> PointsObtainedForUser { get; set; }
         public virtual DbSet<ImageUpload> ImageUpload { get; set; }
+
         //Creating table of Main Game
         public virtual DbSet<MG_AnswerMultipleChoice> MG_AnswerMultipleChoice { get; set; }
         public virtual DbSet<MG_AnswerOrder> MG_AnswerOrder { get; set; }
@@ -228,6 +230,7 @@ namespace SCORM1.Models
         public virtual DbSet<MG_Template> MG_Template { get; set; }
         public virtual DbSet<MG_AnswerUser> MG_AnswerUser { get; set; }
         public virtual DbSet<MG_BlockGameUser> MG_BlockGameUser { get; set; }
+
         //Creating table Of Ratings
         public virtual DbSet<Job> Job { get; set; }
         public virtual DbSet<ResourceJobs> ResourceJobs { get; set; }
@@ -235,6 +238,19 @@ namespace SCORM1.Models
         public virtual DbSet<AnswersForum> AnswersForum { get; set; }
         public virtual DbSet<BookRatings> BookRatings { get; set; }
         public virtual DbSet<QuienSabeMasPuntaje> QuienSabeMasPuntajes { get; set; }
+
+        //Rigid Course 
+        public virtual DbSet<Category> Categories { get; set; }
+        public virtual DbSet<ProtectedFailureTest> ProtectedFailureTests { get; set; }
+        public virtual DbSet<CategoryQuestionBank> CategoryQuestionsBanks { get; set; }
+        public virtual DbSet<ProtectedFailureMultiChoice> ProtectedFailureMultiChoices { get; set; }
+        public virtual DbSet<ProtectedFailureResults> ProtectedFailureResults { get; set; }
+        public virtual DbSet<FlashTest> FlashTest { get; set; }
+        public virtual DbSet<FlashQuestion> FlashQuestion { get; set; }
+        public virtual DbSet<FlashQuestionAnswer> FlashQuestionAnswer { get; set; }
+        public virtual DbSet<UserModuleAdvance> UserModuleAdvances { get; set; }
+        public virtual DbSet<ProtectedFailureMultiChoiceAnswer> ProtectedFailureMultiChoiceAnswers { get; set; }
+
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();

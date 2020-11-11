@@ -30,7 +30,8 @@ namespace SCORM1.Enum
     public enum CURSO
     {
         Virtual,
-        Evaluativo
+        Evaluativo,
+        Rigido
 
     }
 
@@ -91,7 +92,8 @@ namespace SCORM1.Enum
     public enum TYPE
     {
         Conocimiento,
-        Evaluativo
+        Evaluativo,
+        Rigido
     }
     public enum ROLES
     {

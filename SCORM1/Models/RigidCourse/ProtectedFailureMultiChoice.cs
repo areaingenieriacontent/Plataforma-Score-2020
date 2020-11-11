@@ -11,8 +11,14 @@ namespace SCORM1.Models.RigidCourse
     {
         [Key]
         public int QuestionId { get; set; }
+
         [ForeignKey("CategoryQuestionBank")]
-        public int CategoryBankQuestionId { get; set; }
+        [Column(Order = 0)]
+        public int Category_Id { get; set; }
+
+        [ForeignKey("CategoryQuestionBank")]
+        [Column(Order = 1)]
+        public int Modu_Id { get; set; }
         public string Name { get; set; }
         public string Content { get; set; }
 

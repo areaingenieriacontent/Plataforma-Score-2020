@@ -286,6 +286,7 @@
     <Compile Include="Controllers\ContactoController.cs" />
     <Compile Include="Controllers\ContentAdminController.cs" />
     <Compile Include="Controllers\FileController.cs" />
+    <Compile Include="Controllers\FlashTestsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LogsComunidadController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -306,6 +307,10 @@
     <Compile Include="Enum\Enum.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011111318499_initmigration.cs" />
+    <Compile Include="Migrations\202011111318499_initmigration.Designer.cs">
+      <DependentUpon>202011111318499_initmigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BasicAuthenticationAttribute.cs" />
@@ -399,6 +404,7 @@
     <Compile Include="Models\RigidCourse\FlashQuestion.cs" />
     <Compile Include="Models\RigidCourse\FlashQuestionAnswer.cs" />
     <Compile Include="Models\RigidCourse\FlashTest.cs" />
+    <Compile Include="Models\RigidCourse\ProtectedFailureMultiChoiceAnswer.cs" />
     <Compile Include="Models\RigidCourse\ProtectedFailureResults.cs" />
     <Compile Include="Models\RigidCourse\ProtectedFailureTest.cs" />
     <Compile Include="Models\RigidCourse\UserModuleAdvance.cs" />
@@ -423,6 +429,7 @@
     <Compile Include="Models\ViewModel\AdminViewModel.cs" />
     <Compile Include="Models\ViewModel\ContactoModel.cs" />
     <Compile Include="Models\ViewModel\CorreoModel.cs" />
+    <Compile Include="Models\ViewModel\CursoRigidoViewModel.cs" />
     <Compile Include="Models\ViewModel\HomeViewModels.cs" />
     <Compile Include="Models\ViewModel\ICONPRIZE.cs" />
     <Compile Include="Models\ViewModel\IdentityModels.cs" />
@@ -2277,6 +2284,19 @@
     <Content Include="Views\User\ViewEvaluaciones.cshtml" />
     <Content Include="Views\Contacto\Create.cshtml" />
     <Content Include="Views\User\ListModuleVirtualAdmin.cshtml" />
+    <Content Include="Views\AdminTraining\AddQuestionsToProtectedFailureTest.cshtml" />
+    <Content Include="Views\AdminTraining\CreateProtectedFailureTest.cshtml" />
+    <Content Include="Views\FlashTests\Create.cshtml" />
+    <Content Include="Views\FlashTests\Index.cshtml" />
+    <Content Include="Views\FlashTests\IndexQuestion.cshtml" />
+    <Content Include="Views\FlashTests\CreateFlashQuestion.cshtml" />
+    <Content Include="Views\FlashTests\DeleteFlashQuestion.cshtml" />
+    <Content Include="Views\FlashTests\EditFlashQuestion.cshtml" />
+    <Content Include="Views\FlashTests\CreateFlashQuestionAnswer.cshtml" />
+    <Content Include="Views\FlashTests\DeleteFlashQuestionAnswer.cshtml" />
+    <Content Include="Views\FlashTests\EditFlashQuestionAnswer.cshtml" />
+    <Content Include="Views\FlashTests\IndexFlashQuestionAnswer.cshtml" />
+    <Content Include="Views\FlashTests\TestUser.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -2304,6 +2324,11 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202011111318499_initmigration.resx">
+      <DependentUpon>202011111318499_initmigration.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -13,6 +13,7 @@ using System.Web.Mvc;
 using SCORM1.Models.SCORM1;
 using PagedList;
 using SCORM1.Models.ratings;
+using SCORM1.Models.RigidCourse;
 
 namespace SCORM1.Models.ViewModel
 {
@@ -124,7 +125,33 @@ namespace SCORM1.Models.ViewModel
         public FORO Modu_Test { get; set; }
         [Display(Name = "Quien Sabe Mas")]
         public FORO QSMActive { get; set; }
+        [Display(Name = "Falla Protegida")]
+        public FORO HasProtectedFailure { get; set; }
     }
+
+    #region Protected Failure Viewmodels
+
+    //For creating a protected failure test
+    public class AdminProtectedFailure: BaseViewModel
+    {
+        public int modu_id { get; set; }
+        public ProtectedFailureTest protectedFailureTest { get; set; }
+        public List<Category> categoryList { get; set; }
+        public List<bool> bankToCreateList { get; set; }
+        public List<int> questionQuantityList { get; set; }
+        public List<float> approvedPercentageList { get; set; }
+    }
+
+    //for creating protected failuire questions and answers
+    public class ProtectedFailureConfiguration: BaseViewModel
+    {
+        public List<CategoryQuestionBank> listOfQuestionBanks { get; set; }
+        public List<ProtectedFailureMultiChoice> questionsList { get; set; }
+        public List<ProtectedFailureMultiChoiceAnswer> answersList { get; set; }
+    }
+
+    //To-Do for reading user protected failure results
+    #endregion
 
     public class AdminTrainingCategoryModuleViewModel : BaseViewModel
     {

@@ -287,6 +287,7 @@
     <Compile Include="Controllers\ContentAdminController.cs" />
     <Compile Include="Controllers\FileController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LanguageController.cs" />
     <Compile Include="Controllers\LogsComunidadController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MassiveEnrollmentController.cs" />
@@ -440,6 +441,21 @@
     <Compile Include="Models\ViewModel\ViewDataUploadFileResults.cs" />
     <Compile Include="Models\ViewModel\ViewGameViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\ResourcesLenguage\Resource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\ResourcesLenguage\Resource.en-US.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource.en-US.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\ResourcesLenguage\Resource.pt-BR.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource.pt-BR.resx</DependentUpon>
+    </Compile>
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -2277,6 +2293,7 @@
     <Content Include="Views\User\ViewEvaluaciones.cshtml" />
     <Content Include="Views\Contacto\Create.cshtml" />
     <Content Include="Views\User\ListModuleVirtualAdmin.cshtml" />
+    <Content Include="Views\Shared\_LanguagePartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -2293,6 +2310,7 @@
     <Folder Include="Scripts\Tinymce1\plugins\toc\" />
     <Folder Include="uploads\images\" />
     <Folder Include="Views\File\" />
+    <Folder Include="Views\Language\" />
     <Folder Include="Views\ReportController\" />
     <Folder Include="Views\SendOfEmails\" />
     <Folder Include="Views\WebService\" />
@@ -2304,6 +2322,20 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\ResourcesLenguage\Resource.en-US.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource.en-US.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\ResourcesLenguage\Resource.pt-BR.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource.pt-BR.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\ResourcesLenguage\Resource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

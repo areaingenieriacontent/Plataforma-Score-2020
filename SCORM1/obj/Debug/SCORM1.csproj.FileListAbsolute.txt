@@ -2761,3 +2761,11 @@ C:\Users\pcmtg\Source\Repos\Plataforma-Score-2020\SCORM1\obj\Debug\SCORM1.csproj
 C:\Users\pcmtg\Source\Repos\Plataforma-Score-2020\SCORM1\obj\Debug\SCORM1.dll
 C:\Users\pcmtg\Source\Repos\Plataforma-Score-2020\SCORM1\obj\Debug\SCORM1.pdb
 C:\Users\pcmtg\Source\Repos\Plataforma-Score-2020\SCORM1\obj\Debug\SCORM1.csprojAssemblyReference.cache
+C:\Users\pcmtg\source\repos\Plataforma-Score-2020\SCORM1\bin\en-US\SCORM1.resources.dll
+C:\Users\pcmtg\source\repos\Plataforma-Score-2020\SCORM1\bin\pt-BR\SCORM1.resources.dll
+C:\Users\pcmtg\source\repos\Plataforma-Score-2020\SCORM1\obj\Debug\SCORM1.Resources.ResourcesLenguage.Resource.resources
+C:\Users\pcmtg\source\repos\Plataforma-Score-2020\SCORM1\obj\Debug\SCORM1.Resources.ResourcesLenguage.Resource.en-US.resources
+C:\Users\pcmtg\source\repos\Plataforma-Score-2020\SCORM1\obj\Debug\SCORM1.Resources.ResourcesLenguage.Resource.pt-BR.resources
+C:\Users\pcmtg\source\repos\Plataforma-Score-2020\SCORM1\obj\Debug\SCORM1.csproj.GenerateResource.cache
+C:\Users\pcmtg\source\repos\Plataforma-Score-2020\SCORM1\obj\Debug\en-US\SCORM1.resources.dll
+C:\Users\pcmtg\source\repos\Plataforma-Score-2020\SCORM1\obj\Debug\pt-BR\SCORM1.resources.dll

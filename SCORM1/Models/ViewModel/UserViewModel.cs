@@ -10,6 +10,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using SCORM1.Models.RigidCourse;
 
 namespace SCORM1.Models.ViewModel
 {
@@ -367,6 +368,10 @@ namespace SCORM1.Models.ViewModel
         [Display(Name = "Fecha de Finalización")]
         [DataType(DataType.Date)]
         public DateTime? Impr_FinishDate { get; set; }
+
+        //Rigid Course
+        public List<UserModuleAdvance> userFlashTestResults { get; set; }
+        public List<FlashTest> flashTests { get; set; }
 
     }
     public class UserExchangeViewModel : BaseViewModel

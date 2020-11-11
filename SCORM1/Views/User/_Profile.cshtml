@@ -133,15 +133,15 @@
                 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
                     <!-- Inicio Los Indicadores De La Imagen    -->
                     @*<ul class="carousel-indicators" style="margin-left:-12%;">
-                            <li data-target="#carousel-example-generic" data-slide-to="0" class="a1ctive" style="border: 1px solid #e92c4d;background-color: #B0002D;"></li>
-                            <br />
-                            <li data-target="#carousel-example-generic" data-slide-to="1" class="" style="border: 1px solid #B0002D;background-color: #B0002D;"></li>
-                            <br />
-                            <li data-target="#carousel-example-generic" data-slide-to="2" class="" style="border: 1px solid #B0002D;background-color: #B0002D;"></li>
-                            <br />
-                            <li data-target="#carousel-example-generic" data-slide-to="3" class="" style="border: 1px solid #B0002D;background-color: #B0002D;"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="0" class="a1ctive" style="border: 1px solid #e92c4d;background-color: #B0002D;"></li>
+                    <br />
+                    <li data-target="#carousel-example-generic" data-slide-to="1" class="" style="border: 1px solid #B0002D;background-color: #B0002D;"></li>
+                    <br />
+                    <li data-target="#carousel-example-generic" data-slide-to="2" class="" style="border: 1px solid #B0002D;background-color: #B0002D;"></li>
+                    <br />
+                    <li data-target="#carousel-example-generic" data-slide-to="3" class="" style="border: 1px solid #B0002D;background-color: #B0002D;"></li>
 
-                        </ul>*@
+                </ul>*@
                     <div class="carousel-inner" style="width:100% !important; height:100%; margin-left:1%;margin-top:3%;">
                         <div class="item active">
                             <a href="@Model.Banners[0].Bann_Link" target="_blank">@Html.Raw(Model.Banners[0].Bann_Image)</a>
@@ -179,18 +179,18 @@
                 <a href="~/contacto/create" target="_blank"><img src="~/Content/Images/mesa-de-servicio3.jpg" style="width:100%;"></a><br>
 
             </div>
-            <div class="col-md-3 col-xs-6">
-                <!-- Imagen 2 Sistema De Puntos     -->
-                 <a href="@Url.Action("Exchange", "User")">
-                
-                <img src="~/Content/Images/sistema-de-puntos3.jpg" style="width:100%;"><br>
-                <!--habilitar sistema de puntos mas adelante-->
-                </a>
+            @*
+        <div class="col-md-3 col-xs-6">
+            <!-- Imagen 2 Sistema De Puntos     -->
+             <a href="@Url.Action("Exchange", "User")">
 
-            </div>
+            <img src="~/Content/Images/sistema-de-puntos3.jpg" style="width:100%;"><br>
+            <!--habilitar sistema de puntos mas adelante-->
+            </a>
 
+        </div>
+            *@
             <!--/fin sistema de puntos-->
-
         </div>
     </div>
 </div>
@@ -203,10 +203,12 @@
         <!-- TabUser Es El Identificador Que Se Encuentra En El Archivo De Bootstrap Contiene La Posicion De Los Titulos Y Sus Estilos   -->
         <!-- Titulos De Los Botones Del Menu/-->
 
-        <a class="col-md-4 aDiv active"  data-toggle="tab" href="#home">ZONA DE APRENDIZAJE INTERACTIVO</a>
+        <a class="col-md-4 aDiv active" data-toggle="tab" href="#home">ZONA DE APRENDIZAJE INTERACTIVO</a>
+        @*
         @if (Model.ComunidadActiva != 0)
         {<a class="col-md-4 aDiv" data-toggle="tab" href="#menu1" >COMUNIDAD SOCIAL DE CONOCIMIENTO</a>
         }
+        *@
         <a class="col-md-4 aDiv" data-toggle="tab" href="#menu2">TABLERO DE CONTROL</a>
         <!-- Fin De Los Titulos/-->
     </div>
@@ -249,59 +251,50 @@
 
             <!-- Fin Del Menu 1 (ZONA DE AORENDIZAJE INTERACTIVO) -->
             <!-- Contenedor Del Menu 2 (COMUNIDAD SOCIAL DEL CONOCIMIENTO) -->
-            @if (Model.ComunidadActiva == 0)
-            {
-                <div id="menu1" class="tab-pane fade">
-                    <br />
-                    <br />
-                    <!--To-Do agregar imagen comunidad no disponible -->
+            @*
+        @if (Model.ComunidadActiva == 0)
+        {
+            <div id="menu1" class="tab-pane fade">
+                <br />
+                <br />
+                <!--To-Do agregar imagen comunidad no disponible -->
+            </div>
+        }
+        else
+        {
+            <div id="menu1" class="tab-pane fade">
+                <br />
+                <br />
+                <!-- Inicio Del Contenido Del Menu 2 Con sus Imagenes Y Links -->
+                <div class="col-md-3">
+                    <a href="../logscomunidad/clickobl"><img src="~/Content/Images/pbl.png" style="width:150px; height:150px;"><h1>LECCIONES <b>APRENDIDAS</b></h1></a>
                 </div>
-            }
-            else
-            {
-                <div id="menu1" class="tab-pane fade">
-                    <br />
-                    <br />
-                    <!-- Inicio Del Contenido Del Menu 2 Con sus Imagenes Y Links -->
-                    <div class="col-md-3">
-                        <a href="../logscomunidad/clickobl"><img src="~/Content/Images/pbl.png" style="width:150px; height:150px;"><h1>LECCIONES <b>APRENDIDAS</b></h1></a>
-                    </div>
 
-                    <div class="col-md-3">
-                        <a id="clear" href="../logscomunidad/clicksoftkills" style="background-color:#fff"><img src="~/Content/Images/softkills.png" style="width:150px; height:150px;"></a>
-                    </div>
-
-                    <div class="col-md-3">
-                        <a href="../logscomunidad/clickbiblioteca" target="_blank" style="background-color:#fff"><img src="~/Content/Images/zona-bibliotecas.png" style="width:150px; height:150px;"><h1>ZONA DE <b>BIBLIOTECA</b></h1></a>
-                    </div>
-
-                    <div class="col-md-3">
-                        <a href="../logscomunidad/clickvideoteca" target="_blank" style="background-color:#fff"><img src="~/Content/Images/zona-videoteca.png" style="width:150px; height:150px;"><h1>ZONA DE <b>VIDEOTECA</b></h1></a>
-                    </div>
-
-                    <div class="col-md-3">
-                        <a href="../logscomunidad/clickperiodico" target="_blank" style="background-color:#fff"><img src="~/Content/Images/periodico-virtual.png" style="width:150px; height:150px;"><h1>PERIODICO <b>VIRTUAL</b></h1></a>
-                    </div>
-
-                    <div class="col-md-3">
-                        <a href="../logscomunidad/clickjuego" target="_blank" style="background-color:#fff"><img src="~/Content/Images/bateria-juegos.png" style="width:150px; height:150px;"><h1>SERIOUS LEARNING <b>GAMES</b></h1></a>
-                    </div>
-                    <!-- <div class="col-md-3" style="padding-bottom:20px">
-                @*<a href="@Url.Action("ListModuleVirtual", "User")" style="background-color:#fff"><img src="~/Content/Images/foro.png" style="width:150px; height:150px;"><h1>FORO</h1></a>*@
-            </div>-->
-                    <!-- Fin Del Menu 2 (COMUNIDAD SOCIAL DEL CONOCIMIENTO) -->
-                    <!-- Contenedor Del Menu 3 ( TABLERO DE CONTROL ) -->
-
+                <div class="col-md-3">
+                    <a id="clear" href="../logscomunidad/clicksoftkills" style="background-color:#fff"><img src="~/Content/Images/softkills.png" style="width:150px; height:150px;"></a>
                 </div>
-            }
 
+                <div class="col-md-3">
+                    <a href="../logscomunidad/clickbiblioteca" target="_blank" style="background-color:#fff"><img src="~/Content/Images/zona-bibliotecas.png" style="width:150px; height:150px;"><h1>ZONA DE <b>BIBLIOTECA</b></h1></a>
+                </div>
+
+                <div class="col-md-3">
+                    <a href="../logscomunidad/clickvideoteca" target="_blank" style="background-color:#fff"><img src="~/Content/Images/zona-videoteca.png" style="width:150px; height:150px;"><h1>ZONA DE <b>VIDEOTECA</b></h1></a>
+                </div>
+
+                <div class="col-md-3">
+                    <a href="../logscomunidad/clickperiodico" target="_blank" style="background-color:#fff"><img src="~/Content/Images/periodico-virtual.png" style="width:150px; height:150px;"><h1>PERIODICO <b>VIRTUAL</b></h1></a>
+                </div>
+
+                <div class="col-md-3">
+                    <a href="../logscomunidad/clickjuego" target="_blank" style="background-color:#fff"><img src="~/Content/Images/bateria-juegos.png" style="width:150px; height:150px;"><h1>SERIOUS LEARNING <b>GAMES</b></h1></a>
+                </div>
+            </div>
+        }
+            *@
             <div id="menu2" class="tab-pane fade">
                 <br />
                 <br />
-
-                @*<div class="col-md-3">
-                <a href="@Url.Action("VistaPendientes", "User")" style="background-color:#fff"><img src="~/Content/Images/calendario.png" style="width:100px; height:100px;"><h1>MIS <b>PENDIENTES</b></h1></a>
-            </div>*@
                 <div class="col-md-3">
                     <a href="@Url.Action("VistaAvances", "User")" style="background-color:#fff"><img src="~/Content/Images/libro-calificaciones.png" style="width:100px; height:100px;"><h1>MIS <b>AVANCES</b></h1></a>
                 </div>

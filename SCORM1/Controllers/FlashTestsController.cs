@@ -12,6 +12,7 @@ using SCORM1.Models;
 using SCORM1.Models.RigidCourse;
 using SCORM1.Models.ViewModel;
 using SCORM1.Models.Lms;
+using System.Security.Cryptography.X509Certificates;
 
 namespace SCORM1.Controllers
 {
@@ -21,11 +22,13 @@ namespace SCORM1.Controllers
 
         protected ApplicationDbContext ApplicationDbContext { get; set; }
         protected UserManager<ApplicationUser> UserManager { get; set; }
+        protected UserController userController { get; set; }
 
         public FlashTestsController()
         {
             this.ApplicationDbContext = new ApplicationDbContext();
             this.UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(this.ApplicationDbContext));
+            userController = new UserController();
         }
         public ApplicationUser GetActualUserId()
         {
@@ -54,15 +57,15 @@ namespace SCORM1.Controllers
             }
 
             return View(cursoRigidoViewModel);
-        
-        
+
+
         }
 
-      
+
         // GET: FlashTests/Create
         public ActionResult Create(int ToCo_Id)
         {
-            ViewBag.ToCo_Id = new SelectList(db.TopicsCourses.Where(x=> x.ToCo_Id==ToCo_Id), "ToCo_Id", "ToCo_Name");
+            ViewBag.ToCo_Id = new SelectList(db.TopicsCourses.Where(x => x.ToCo_Id == ToCo_Id), "ToCo_Id", "ToCo_Name");
             return View();
         }
 
@@ -167,7 +170,7 @@ namespace SCORM1.Controllers
                 db.Entry(flashQuestion).State = EntityState.Modified;
                 db.SaveChanges();
 
-                return RedirectToAction("IndexQuestion", new { FlashTestId = flashQuestion.FlashTestId,Toco_Id = flashQuestion.FlashTestId });
+                return RedirectToAction("IndexQuestion", new { FlashTestId = flashQuestion.FlashTestId, Toco_Id = flashQuestion.FlashTestId });
             }
             ViewBag.FlashTestId = new SelectList(db.FlashTest, "FlashTestId", "FlashTestName", flashQuestion.FlashTestId);
             return View(flashQuestion);
@@ -287,9 +290,9 @@ namespace SCORM1.Controllers
             {
                 db.Entry(flashQuestionAnswer).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("IndexFlashQuestionAnswer", new { FlashTestId = flashQuestionAnswer.FlashQuestionId } );
+                return RedirectToAction("IndexFlashQuestionAnswer", new { FlashTestId = flashQuestionAnswer.FlashQuestionId });
             }
-        ViewBag.FlashQuestionId = new SelectList(db.FlashTest, "FlashTestId", "FlashTestName", flashQuestionAnswer.FlashQuestionId);
+            ViewBag.FlashQuestionId = new SelectList(db.FlashTest, "FlashTestId", "FlashTestName", flashQuestionAnswer.FlashQuestionId);
             return View(flashQuestionAnswer);
         }
 
@@ -299,7 +302,7 @@ namespace SCORM1.Controllers
             CursoRigidoViewModel cursoRigidoViewModel = new CursoRigidoViewModel();
             cursoRigidoViewModel.Sesion = GetActualUserId().SesionUser;
 
-            if (FlashQuestionAnswerId == null)
+            if (FlashQuestionAnswerId == 0)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
@@ -315,7 +318,6 @@ namespace SCORM1.Controllers
         }
 
         // POST: FlashQuestions/Delete/5
-
         public ActionResult DeleteConfirmedFlashQuestionAnswer(int FlashQuestionAnswerId)
         {
             FlashQuestionAnswer flashQuestion = db.FlashQuestionAnswer.Find(FlashQuestionAnswerId);
@@ -323,19 +325,39 @@ namespace SCORM1.Controllers
             db.SaveChanges();
             return RedirectToAction("IndexFlashQuestionAnswer", new { FlashTestId = flashQuestion.FlashQuestionId });
         }
+
+        [Authorize]
         public ActionResult TestUser(int Toco_Id)
         {
             CursoRigidoViewModel cursoRigidoViewModel = new CursoRigidoViewModel();
             cursoRigidoViewModel.Sesion = GetActualUserId().SesionUser;
+            List<FlashQuestion> flashQuestion = new List<FlashQuestion>();
+            List<FlashQuestionAnswer> flashQuestionAnswer = new List<FlashQuestionAnswer>();
+            FlashTest flashTest = db.FlashTest.Where(x=>x.ToCo_Id==Toco_Id).FirstOrDefault();
+            
+            if (flashTest != null)
+            {
+                flashQuestion = db.FlashQuestion.Where(i => i.FlashTestId == flashTest.FlashTestId).ToList();
+            }
 
-            List<FlashTest> flashTest = db.FlashTest.Where(x=>x.ToCo_Id== Toco_Id).ToList();
-            int IdTest = flashTest.FirstOrDefault().FlashTestId;
-
-            List<FlashQuestion> flashQuestion = db.FlashQuestion.Where(i=>i.FlashTestId==IdTest).ToList();
-
-            List<FlashQuestionAnswer> flashQuestionAnswer = db.FlashQuestionAnswer.ToList();
-
+            foreach(FlashQuestion question in flashQuestion)
+            {
+                List<FlashQuestionAnswer> fqa = ApplicationDbContext.FlashQuestionAnswer.Where(x => x.FlashQuestionId == question.FlashQuestionId).ToList();
+                if (fqa.Count >= 1)
+                {
+                    foreach (FlashQuestionAnswer answerToAdd in fqa)
+                    {
+                        flashQuestionAnswer.Add(answerToAdd);
+                    }
+                }
+            }
+            List<int> userAnswers = new List<int>();
+            for(int cont = 0; cont < flashQuestion.Count; cont++)
+            {
+                userAnswers.Add(0);
+            }
             int module = db.TopicsCourses.Where(x => x.ToCo_Id == Toco_Id).FirstOrDefault().Modu_Id;
+            Module mod = db.Modules.Find(module);
             string IdUser = GetActualUserId().Id;
 
             Enrollment enrollment = db.Enrollments.Where(x => x.Modu_Id== module && x.User_Id==IdUser).FirstOrDefault();
@@ -343,9 +365,13 @@ namespace SCORM1.Controllers
 
             List<UserModuleAdvance> userModuleAdvances = db.UserModuleAdvances.Where(x=>x.ToCo_id==Toco_Id && x.Enro_id== enrollmentId).OrderBy(z => z.ToCo_id).ToList();
 
-
+            cursoRigidoViewModel.flashTest = flashTest;
+            cursoRigidoViewModel.FlashTestId = flashTest.FlashTestId;
+            cursoRigidoViewModel.ToCo_Id = Toco_Id;
+            cursoRigidoViewModel.module = mod;
             cursoRigidoViewModel.flashQuestions = flashQuestion;
             cursoRigidoViewModel.ListFlashQuestionAnswer = flashQuestionAnswer;
+            cursoRigidoViewModel.userAnswers = userAnswers;
 
             if (/*userModuleAdvances.Last().Completed*/1 == 1)
             {
@@ -355,8 +381,70 @@ namespace SCORM1.Controllers
             {
                 return RedirectToAction("IndexFlashQuestionAnswer", "Devuelve");
             }
+        }
 
+        [HttpPost]
+        [Authorize]
+        public ActionResult EvaluateFlashTest(CursoRigidoViewModel crvm1)
+        {
+            CursoRigidoViewModel crvm = crvm1;
+            crvm.Sesion = GetActualUserId().SesionUser;
+            List<int> answersSelected = crvm.userAnswers;
+            List<FlashQuestionAnswer> answers = new List<FlashQuestionAnswer>();
+            List<FlashQuestion> flashQuestion = new List<FlashQuestion>();
+            FlashTest flashTest = crvm.flashTest;
+            if (flashTest != null)
+            {
+                flashQuestion = db.FlashQuestion.Where(i => i.FlashTestId == flashTest.FlashTestId).ToList();
+            }
+            foreach (FlashQuestion question in flashQuestion)
+            {
+                List<FlashQuestionAnswer> fqa = ApplicationDbContext.FlashQuestionAnswer.Where(x => x.FlashQuestionId==question.FlashQuestionId).ToList();
+                if (fqa.Count >= 1)
+                {
+                    foreach (FlashQuestionAnswer answerToAdd in fqa)
+                    {
+                        answers.Add(answerToAdd);
+                    }
+                }
+            }
+            string IdUser = GetActualUserId().Id;
+            Enrollment enrollment = db.Enrollments.Where(x => x.Modu_Id == crvm.module.Modu_Id && x.User_Id == IdUser).FirstOrDefault();
+            int enrollmentId = enrollment.Enro_Id;
+            float percentage = CalculatePercentage(answersSelected, answers);
+            if (percentage >= flashTest.AprovedPercentage)
+            {
+                int tocoId = crvm.flashTest.ToCo_Id;
+                int enroId = enrollmentId;
+                UserModuleAdvance uma = new UserModuleAdvance
+                {
+                    Enro_id = enroId,
+                    ToCo_id = tocoId,
+                    Completed = 1
+                };
+                ApplicationDbContext.UserModuleAdvances.Add(uma);
+                ApplicationDbContext.SaveChanges();
+            }
+            return userController.Grades(crvm.module.Modu_Id);
+        }
 
+        public float CalculatePercentage(List<int> userAnswers, List<FlashQuestionAnswer> answers)
+        {
+            float percentageToReturn = 0;
+            float correctAnswers = 0;
+            float totalQuestions = userAnswers.Count;
+            for(int cont = 0; cont < userAnswers.Count; cont++)
+            {
+                foreach(FlashQuestionAnswer answer in answers)
+                {
+                    if (userAnswers[cont] == answer.FlashQuestionAnswerId&&answer.CorrectAnswer==1)
+                    {
+                        correctAnswers++;
+                    }
+                }
+            }
+            percentageToReturn = (correctAnswers / totalQuestions) * 100;
+            return percentageToReturn;
         }
 
 

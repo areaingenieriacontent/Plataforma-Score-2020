@@ -11,13 +11,12 @@ namespace SCORM1.Models.RigidCourse
     public class ProtectedFailureMultiChoiceAnswer
     {
         [Key]
+        [Column(Order = 0)]
         public string UserId { get; set; }
-        [ForeignKey("ProtectedFailureMultiChoice")]
-        public int QuestionId { get; set; }
-        [AllowHtml]
-        public string AnswerContent { get; set; }
-        public bool isCorrectQuestion { get; set; }
-
-        public virtual ProtectedFailureMultiChoice ProtectedFailureMultiChoice { get; set; }
+        [Key]
+        [Column(Order = 1)]
+        [ForeignKey("ProtectedFailureAnswer")]
+        public int AnswerId { get; set; }
+        public virtual ProtectedFailureAnswer ProtectedFailureAnswer { get; set; }
     }
 }

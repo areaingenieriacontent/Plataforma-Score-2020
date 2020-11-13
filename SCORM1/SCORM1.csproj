@@ -313,6 +313,18 @@
     <Compile Include="Migrations\202011111318499_initmigration.Designer.cs">
       <DependentUpon>202011111318499_initmigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202011111826248_answersModification.cs" />
+    <Compile Include="Migrations\202011111826248_answersModification.Designer.cs">
+      <DependentUpon>202011111826248_answersModification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011111829144_answersModification2.cs" />
+    <Compile Include="Migrations\202011111829144_answersModification2.Designer.cs">
+      <DependentUpon>202011111829144_answersModification2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011122141394_correctAnswersQuantity.cs" />
+    <Compile Include="Migrations\202011122141394_correctAnswersQuantity.Designer.cs">
+      <DependentUpon>202011122141394_correctAnswersQuantity.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BasicAuthenticationAttribute.cs" />
     <Compile Include="Models\Lms\AdvanceLoseUser.cs" />
@@ -405,6 +417,7 @@
     <Compile Include="Models\RigidCourse\FlashQuestion.cs" />
     <Compile Include="Models\RigidCourse\FlashQuestionAnswer.cs" />
     <Compile Include="Models\RigidCourse\FlashTest.cs" />
+    <Compile Include="Models\RigidCourse\ProtectedFailureAnswer.cs" />
     <Compile Include="Models\RigidCourse\ProtectedFailureMultiChoiceAnswer.cs" />
     <Compile Include="Models\RigidCourse\ProtectedFailureResults.cs" />
     <Compile Include="Models\RigidCourse\ProtectedFailureTest.cs" />
@@ -2298,6 +2311,8 @@
     <Content Include="Views\FlashTests\EditFlashQuestionAnswer.cshtml" />
     <Content Include="Views\FlashTests\IndexFlashQuestionAnswer.cshtml" />
     <Content Include="Views\FlashTests\TestUser.cshtml" />
+    <Content Include="Views\ProtectedFailure\TestUser.cshtml" />
+    <Content Include="Views\ProtectedFailure\UserResults.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -2314,7 +2329,6 @@
     <Folder Include="Scripts\Tinymce1\plugins\toc\" />
     <Folder Include="uploads\images\" />
     <Folder Include="Views\File\" />
-    <Folder Include="Views\ProtectedFailure\" />
     <Folder Include="Views\ReportController\" />
     <Folder Include="Views\SendOfEmails\" />
     <Folder Include="Views\WebService\" />
@@ -2330,6 +2344,15 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202011111318499_initmigration.resx">
       <DependentUpon>202011111318499_initmigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011111826248_answersModification.resx">
+      <DependentUpon>202011111826248_answersModification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011111829144_answersModification2.resx">
+      <DependentUpon>202011111829144_answersModification2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011122141394_correctAnswersQuantity.resx">
+      <DependentUpon>202011122141394_correctAnswersQuantity.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -245,6 +245,7 @@ namespace SCORM1.Models
         public virtual DbSet<CategoryQuestionBank> CategoryQuestionsBanks { get; set; }
         public virtual DbSet<ProtectedFailureMultiChoice> ProtectedFailureMultiChoices { get; set; }
         public virtual DbSet<ProtectedFailureResults> ProtectedFailureResults { get; set; }
+        public virtual DbSet<ProtectedFailureAnswer> ProtectedFailureAnswer { get; set; }
         public virtual DbSet<FlashTest> FlashTest { get; set; }
         public virtual DbSet<FlashQuestion> FlashQuestion { get; set; }
         public virtual DbSet<FlashQuestionAnswer> FlashQuestionAnswer { get; set; }

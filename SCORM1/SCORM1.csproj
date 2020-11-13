@@ -309,9 +309,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202011111318499_initmigration.cs" />
-    <Compile Include="Migrations\202011111318499_initmigration.Designer.cs">
-      <DependentUpon>202011111318499_initmigration.cs</DependentUpon>
+    <Compile Include="Migrations\202011111625260_intial.cs" />
+    <Compile Include="Migrations\202011111625260_intial.Designer.cs">
+      <DependentUpon>202011111625260_intial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\202011111826248_answersModification.cs" />
     <Compile Include="Migrations\202011111826248_answersModification.Designer.cs">
@@ -2342,8 +2342,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202011111318499_initmigration.resx">
-      <DependentUpon>202011111318499_initmigration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202011111625260_intial.resx">
+      <DependentUpon>202011111625260_intial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202011111826248_answersModification.resx">
       <DependentUpon>202011111826248_answersModification.cs</DependentUpon>

@@ -2760,7 +2760,6 @@ C:\Users\pcmtg\Source\Repos\Plataforma-Score-2020\SCORM1\obj\Debug\SCORM1.csproj
 C:\Users\pcmtg\Source\Repos\Plataforma-Score-2020\SCORM1\obj\Debug\SCORM1.csproj.CopyComplete
 C:\Users\pcmtg\Source\Repos\Plataforma-Score-2020\SCORM1\obj\Debug\SCORM1.dll
 C:\Users\pcmtg\Source\Repos\Plataforma-Score-2020\SCORM1\obj\Debug\SCORM1.pdb
-C:\Users\pcmtg\Source\Repos\Plataforma-Score-2020\SCORM1\obj\Debug\SCORM1.csprojAssemblyReference.cache
 C:\Users\nanit\Source\Repos\areaingenieriacontent\Plataforma-Score-2020\SCORM1\bin\ApplicationInsights.config
 C:\Users\nanit\Source\Repos\areaingenieriacontent\Plataforma-Score-2020\SCORM1\bin\roslyn\csc.exe
 C:\Users\nanit\Source\Repos\areaingenieriacontent\Plataforma-Score-2020\SCORM1\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
@@ -3065,3 +3064,6 @@ C:\Users\julia\Source\Repos\areaingenieriacontent\Plataforma-Score-2020\SCORM1\o
 C:\Users\julia\Source\Repos\areaingenieriacontent\Plataforma-Score-2020\SCORM1\obj\Debug\SCORM1.pdb
 C:\Users\nanit\Source\Repos\areaingenieriacontent\Plataforma-Score-2020\SCORM1\obj\Debug\SCORM1.Migrations.initmigration.resources
 C:\Users\nanit\Source\Repos\areaingenieriacontent\Plataforma-Score-2020\SCORM1\obj\Debug\SCORM1.csproj.GenerateResource.cache
+C:\Users\pcmtg\source\repos\Plataforma-Score-2020\SCORM1\obj\Debug\SCORM1.Migrations.intial.resources
+C:\Users\pcmtg\source\repos\Plataforma-Score-2020\SCORM1\obj\Debug\SCORM1.csproj.GenerateResource.cache
+C:\Users\pcmtg\source\repos\Plataforma-Score-2020\SCORM1\obj\Debug\SCORM1.csprojAssemblyReference.cache

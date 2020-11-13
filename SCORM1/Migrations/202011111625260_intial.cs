@@ -3,7 +3,7 @@ namespace SCORM1.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class initmigration : DbMigration
+    public partial class intial : DbMigration
     {
         public override void Up()
         {

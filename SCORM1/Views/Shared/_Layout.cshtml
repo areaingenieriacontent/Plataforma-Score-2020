@@ -36,8 +36,8 @@
 
     </div>
 
-
-    @if (Model.Sesion == SESION.No)
+    @*To-Do remove model null chek*@
+    @if (Model!=null&&Model.Sesion == SESION.No)
     {
         <script>
              window.location.href = '@Url.Action("Index", "Home")';

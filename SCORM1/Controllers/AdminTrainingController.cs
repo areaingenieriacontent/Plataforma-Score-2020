@@ -16,6 +16,9 @@ using SCORM1.Models.PageCustomization;
 using PagedList;
 using SCORM1.Models.Logs;
 using SCORM1.Models.ratings;
+using System.Security.Cryptography.X509Certificates;
+using SCORM1.Models.RigidCourse;
+using iTextSharp.text.pdf.events;
 
 namespace SCORM1.Controllers
 {
@@ -256,6 +259,8 @@ namespace SCORM1.Controllers
             }
         }
         [Authorize]
+
+        #region Module management
         public ActionResult Modules()
         {
             var role = GetActualUserId().Role;
@@ -444,7 +449,22 @@ namespace SCORM1.Controllers
                             TempData["add"] = "El curso se ha creado con éxito";
                             string ruta = file;
                             var GetModuleCompany = GetActualUserId().CompanyId;
-                            Module module = new Module { Modu_Name = model.Modu_Name, Modu_Description = model.Modu_Description, Modu_Statemodule = (MODULESTATE)model.Modu_Statemodule, Modu_TypeOfModule = (CURSO)model.Modu_TypeOfModule, Modu_Forum = (FORO)model.Modu_Forum, Modu_BetterPractice = (FORO)model.Modu_BetterPractice, Modu_Improvement = (FORO)model.Modu_Improvement, Modu_Test = (FORO)model.Modu_Test, Modu_InitDate = model.Modu_InitDate, Modu_Validity = model.Modu_Validity, Modu_Period = (VIGENCIA)model.Modu_Period, Modu_Points = model.Modu_Points, Company = GetActualUserId().Company, Modu_ImageName = ruta };
+                            Module module = new Module {
+                                Modu_Name = model.Modu_Name,
+                                Modu_Description = model.Modu_Description,
+                                Modu_Statemodule = (MODULESTATE)model.Modu_Statemodule,
+                                Modu_TypeOfModule = (CURSO)model.Modu_TypeOfModule,
+                                Modu_Forum = (FORO)model.Modu_Forum,
+                                Modu_BetterPractice = (FORO)model.Modu_BetterPractice,
+                                Modu_Improvement = (FORO)model.Modu_Improvement,
+                                Modu_Test = (FORO)model.Modu_Test,
+                                Modu_InitDate = model.Modu_InitDate,
+                                Modu_Validity = model.Modu_Validity,
+                                Modu_Period = (VIGENCIA)model.Modu_Period,
+                                Modu_Points = model.Modu_Points,
+                                Company = GetActualUserId().Company, Modu_ImageName = ruta,
+                                hasProtectedFailure = (FORO)model.HasProtectedFailure
+                            };
                             if (model.QSMActive == FORO.Si)
                             {
                                 module.QSMActive = 1;
@@ -870,7 +890,9 @@ namespace SCORM1.Controllers
                 return View("Modules", model);
             }
         }
+        #endregion
 
+        #region Resources Managment
         [Authorize]
         public ActionResult AddResources(int id)
         {
@@ -1044,7 +1066,9 @@ namespace SCORM1.Controllers
             ApplicationDbContext.SaveChanges();
             return RedirectToAction("Grades", new { id = idg });
         }
+        #endregion
 
+        #region CategoryModule Managment
         [Authorize]
         public ActionResult CategoryModules()
         {
@@ -1074,7 +1098,6 @@ namespace SCORM1.Controllers
                 return View("CategoryModules", model);
             }
         }
-
 
         [HttpPost]
         [Authorize]
@@ -1157,7 +1180,9 @@ namespace SCORM1.Controllers
                 return View("categoryModules", model);
             }
         }
+        #endregion
 
+        #region Topics Management
         [Authorize]
         public ActionResult Topics()
         {
@@ -1166,6 +1191,7 @@ namespace SCORM1.Controllers
             model.Sesion = GetActualUserId().SesionUser;
             return View(model);
         }
+
         [HttpPost]
         [Authorize]
         public ActionResult SeachTopic(AdminTrainingTopicViewModel model)
@@ -1186,6 +1212,7 @@ namespace SCORM1.Controllers
                 return View("Topics", model);
             }
         }
+
         [Authorize]
         public ActionResult ListModules()
         {
@@ -1299,7 +1326,6 @@ namespace SCORM1.Controllers
             return View("Grades", model);
         }
 
-
         [Authorize]
         public ActionResult Form(int id)
         {
@@ -1389,6 +1415,7 @@ namespace SCORM1.Controllers
             return RedirectToAction("Grades", new { id = moduled.Modu_Id });
 
         }
+
         [HttpPost]
         public ActionResult UploadTopic()
         {
@@ -1780,6 +1807,7 @@ namespace SCORM1.Controllers
                 return View("Grades", model);
             }
         }
+        #endregion
 
         [Authorize]
         public ActionResult EditBetterPractice(int id)

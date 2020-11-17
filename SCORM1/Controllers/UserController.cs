@@ -27,6 +27,7 @@ using iTextSharp.tool.xml.pipeline.html;
 using System.Text;
 using System.Web.UI.WebControls;
 using Microsoft.Ajax.Utilities;
+using SCORM1.Models.RigidCourse;
 
 namespace SCORM1.Controllers
 {
@@ -1728,10 +1729,13 @@ namespace SCORM1.Controllers
         {
             var url = HttpRuntime.AppDomainAppVirtualPath;
             ApplicationUser user = ApplicationDbContext.Users.Find(GetActualUserId().Id);
+            Module mod = ApplicationDbContext.Modules.Find(id);
             var enrollments = ApplicationDbContext.Enrollments.Single(x => x.Modu_Id == id && x.User_Id == user.Id);
             var AdvanceUser = user.AdvanceUser.Where(x => x.User_Id == user.Id && x.TopicsCourse.Modu_Id == enrollments.Modu_Id).ToList();
             var Attempt = user.Attempts.Where(x => x.UserId == user.Id && x.BankQuestion.TopicsCourse.Modu_Id == enrollments.Modu_Id).ToList();
             var listenrollments = enrollments.Module.TopicsCourse.Where(x => x.Modu_Id == id && x.ToCo_Visible == FORO.Si).OrderBy(x => x.ToCo_Id).ToList();
+            var listCompletedFlashTests = ApplicationDbContext.UserModuleAdvances.Where(x => x.Enro_id == enrollments.Enro_Id).ToList();
+            var flashtestloaded = ApplicationDbContext.FlashTest.Where(x => x.TopicsCourse.Modu_Id == enrollments.Modu_Id).ToList();
             UserGeneralViewModel model = new UserGeneralViewModel
             {
                 ActualRole = GetActualUserId().Role,
@@ -1741,6 +1745,9 @@ namespace SCORM1.Controllers
                 listadvanceuser = AdvanceUser,
                 baseUrl = url,
                 listenrollment = listenrollments,
+                userFlashTestResults = listCompletedFlashTests,
+                flashTests = flashtestloaded,
+                Modules = mod
             };
             model.Sesion = GetActualUserId().SesionUser;
             model.Logo = GetUrlLogo();
@@ -2427,12 +2434,7 @@ namespace SCORM1.Controllers
             int TotalQuestions = model.Listgeneralquestion.Count;
             double PointTest = AsignarPuntajedelTest(TotalPoints, model.BaQu_Id, model.topic.Module.Modu_Id, TotalQuestions);
             //return RedirectToAction("Grades", new { id = model.topic.Module.Modu_Id });
-
             return RedirectToAction("ResulQuestions", new { id = model.BaQu_Id });
-
-
-
-
         }
         [Authorize]
 

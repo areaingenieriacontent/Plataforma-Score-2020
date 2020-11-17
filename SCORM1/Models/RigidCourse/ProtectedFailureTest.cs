@@ -21,7 +21,8 @@ namespace SCORM1.Models.RigidCourse
 
         [Display(Name = "Porcentaje de aprobación general")]
         public float GeneralAproveScore { get; set; }
-
+        public DateTime DateCreated { get; set; }
+        public bool testAvailable { get; set; }
 
         public virtual Module Module { get; set; }
     }

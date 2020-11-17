@@ -416,14 +416,18 @@ namespace SCORM1.Controllers
             {
                 int tocoId = crvm.flashTest.ToCo_Id;
                 int enroId = enrollmentId;
-                UserModuleAdvance uma = new UserModuleAdvance
+                UserModuleAdvance um = ApplicationDbContext.UserModuleAdvances.Where(x => x.ToCo_id == tocoId && x.Enro_id == enrollmentId).FirstOrDefault();
+                if (um != null)
                 {
-                    Enro_id = enroId,
-                    ToCo_id = tocoId,
-                    Completed = 1
-                };
-                ApplicationDbContext.UserModuleAdvances.Add(uma);
-                ApplicationDbContext.SaveChanges();
+                    UserModuleAdvance uma = new UserModuleAdvance
+                    {
+                        Enro_id = enroId,
+                        ToCo_id = tocoId,
+                        Completed = 1
+                    };
+                    ApplicationDbContext.UserModuleAdvances.Add(uma);
+                    ApplicationDbContext.SaveChanges();
+                }
             }
             return RedirectToAction("Grades", "User", new { id = crvm.module.Modu_Id});
         }

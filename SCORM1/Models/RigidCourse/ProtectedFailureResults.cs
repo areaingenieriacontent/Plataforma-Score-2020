@@ -18,6 +18,8 @@ namespace SCORM1.Models.RigidCourse
         [Column(Order = 1)]
         [ForeignKey("Category")]
         public int Cate_Id { get; set; }
+        
+        public int correctAnswersQuantity { get; set; }
 
         public float Score { get; set; }
 

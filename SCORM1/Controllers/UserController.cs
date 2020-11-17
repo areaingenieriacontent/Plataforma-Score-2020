@@ -1729,6 +1729,7 @@ namespace SCORM1.Controllers
         {
             var url = HttpRuntime.AppDomainAppVirtualPath;
             ApplicationUser user = ApplicationDbContext.Users.Find(GetActualUserId().Id);
+            Module mod = ApplicationDbContext.Modules.Find(id);
             var enrollments = ApplicationDbContext.Enrollments.Single(x => x.Modu_Id == id && x.User_Id == user.Id);
             var AdvanceUser = user.AdvanceUser.Where(x => x.User_Id == user.Id && x.TopicsCourse.Modu_Id == enrollments.Modu_Id).ToList();
             var Attempt = user.Attempts.Where(x => x.UserId == user.Id && x.BankQuestion.TopicsCourse.Modu_Id == enrollments.Modu_Id).ToList();
@@ -1745,7 +1746,8 @@ namespace SCORM1.Controllers
                 baseUrl = url,
                 listenrollment = listenrollments,
                 userFlashTestResults = listCompletedFlashTests,
-                flashTests = flashtestloaded
+                flashTests = flashtestloaded,
+                Modules = mod
             };
             model.Sesion = GetActualUserId().SesionUser;
             model.Logo = GetUrlLogo();

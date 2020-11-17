@@ -129,6 +129,14 @@ else
         <a href="@Url.Action("Index", "Home")" class="btn btn-info" stye="margin-left:-5em">Inicio</a>
     </div>
 </div>
+<div>
+    @if (Model.Modules.hasProtectedFailure==FORO.Si)
+    {
+        <br/>
+        <a href="@Url.Action("TestUser", "ProtectedFailure", new { id = Model.Modules.Modu_Id })"><i class="fa fa-chevron-down" aria-hidden="true">Test de falla protegida</i></a>
+        <br/>
+    }
+</div>
 <br />
 <div class="panel panel-primary">
     <div id="AddBettertractice" class="modal fade" role="dialog">
@@ -334,7 +342,6 @@ else
             {
                 if (Model.Enrollment.Module.TopicsCourse.Where(x => x.ToCo_Visible == FORO.Si).ToList() != null)
                 {
-
                 <ul class="nav nav-tabs">
                     @if (Model.Enrollment.Module.Modu_BetterPractice == FORO.No && Model.Enrollment.Module.Modu_Improvement == FORO.No)
                     {
@@ -380,7 +387,6 @@ else
                         }
                     }
                  </ul>
-
                     <div class="tab-content">
                         @if (Model.Enrollment.Module.Modu_BetterPractice == FORO.No && Model.Enrollment.Module.Modu_Improvement == FORO.No)
                         {
@@ -626,7 +632,6 @@ else
                                 else
                                 {
                                     <div class="fecha2">
-
                                         <!--<h4 class="fecha"><strong> Evaluación</strong></h4><br />-->
                                         @if (Model.user.AdvanceUser.Where(x => x.ToCo_id == Model.listenrollment[0].ToCo_Id).Count() == 0)
                                         {
@@ -684,8 +689,6 @@ else
                                                 else
                                                 {
 
-
-
                                                 }
                                             }
                                         }
@@ -708,8 +711,12 @@ else
                                 }
                             </div>
                             <div class="fecha">
-                                <a href="@Url.Action("TestUser", "FlashTests", new { Toco_Id = @Model.listenrollment[0].ToCo_Id })"><i class="fa fa-chevron-down" aria-hidden="true">Ir a test rápido</i></a>
+                                @if (Model.listenrollment[0].ToCo_Id != Model.listenrollment[0].ConditionedTopic && Model.listenrollment[0].ToCo_Id != 0)
+                                {
+                                    <a href="@Url.Action("TestUser", "FlashTests", new { Toco_Id = @Model.listenrollment[0].ToCo_Id })"><i class="fa fa-chevron-down" aria-hidden="true">Ir a test rápido</i></a>
+                                }
                             </div>
+                            <br/>
                         </div>
                         
                         @foreach (TopicsCourse topic1 in Model.Enrollment.Module.TopicsCourse.Where(x => x.ToCo_Visible == FORO.Si))

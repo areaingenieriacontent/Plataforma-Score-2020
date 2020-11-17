@@ -333,11 +333,13 @@ namespace SCORM1.Controllers
             cursoRigidoViewModel.Sesion = GetActualUserId().SesionUser;
             List<FlashQuestion> flashQuestion = new List<FlashQuestion>();
             List<FlashQuestionAnswer> flashQuestionAnswer = new List<FlashQuestionAnswer>();
-            FlashTest flashTest = db.FlashTest.Where(x=>x.ToCo_Id==Toco_Id).FirstOrDefault();
+            FlashTest flashTest1 = db.FlashTest.Where(x=>x.ToCo_Id==Toco_Id).FirstOrDefault();
             
-            if (flashTest != null)
+            if (flashTest1 != null)
             {
-                flashQuestion = db.FlashQuestion.Where(i => i.FlashTestId == flashTest.FlashTestId).ToList();
+                flashQuestion = db.FlashQuestion.Where(i => i.FlashTestId == flashTest1.FlashTestId).ToList();
+                cursoRigidoViewModel.flashTest = flashTest1;
+                cursoRigidoViewModel.FlashTestId = flashTest1.FlashTestId;
             }
 
             foreach(FlashQuestion question in flashQuestion)
@@ -365,8 +367,6 @@ namespace SCORM1.Controllers
 
             List<UserModuleAdvance> userModuleAdvances = db.UserModuleAdvances.Where(x=>x.ToCo_id==Toco_Id && x.Enro_id== enrollmentId).OrderBy(z => z.ToCo_id).ToList();
 
-            cursoRigidoViewModel.flashTest = flashTest;
-            cursoRigidoViewModel.FlashTestId = flashTest.FlashTestId;
             cursoRigidoViewModel.ToCo_Id = Toco_Id;
             cursoRigidoViewModel.module = mod;
             cursoRigidoViewModel.flashQuestions = flashQuestion;
@@ -416,16 +416,20 @@ namespace SCORM1.Controllers
             {
                 int tocoId = crvm.flashTest.ToCo_Id;
                 int enroId = enrollmentId;
-                UserModuleAdvance uma = new UserModuleAdvance
+                UserModuleAdvance um = ApplicationDbContext.UserModuleAdvances.Where(x => x.ToCo_id == tocoId && x.Enro_id == enrollmentId).FirstOrDefault();
+                if (um != null)
                 {
-                    Enro_id = enroId,
-                    ToCo_id = tocoId,
-                    Completed = 1
-                };
-                ApplicationDbContext.UserModuleAdvances.Add(uma);
-                ApplicationDbContext.SaveChanges();
+                    UserModuleAdvance uma = new UserModuleAdvance
+                    {
+                        Enro_id = enroId,
+                        ToCo_id = tocoId,
+                        Completed = 1
+                    };
+                    ApplicationDbContext.UserModuleAdvances.Add(uma);
+                    ApplicationDbContext.SaveChanges();
+                }
             }
-            return userController.Grades(crvm.module.Modu_Id);
+            return RedirectToAction("Grades", "User", new { id = crvm.module.Modu_Id});
         }
 
         public float CalculatePercentage(List<int> userAnswers, List<FlashQuestionAnswer> answers)
@@ -446,7 +450,6 @@ namespace SCORM1.Controllers
             percentageToReturn = (correctAnswers / totalQuestions) * 100;
             return percentageToReturn;
         }
-
 
         protected override void Dispose(bool disposing)
         {

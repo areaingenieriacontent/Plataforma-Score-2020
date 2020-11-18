@@ -3,7 +3,7 @@ namespace SCORM1.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class intial : DbMigration
+    public partial class initial : DbMigration
     {
         public override void Up()
         {
@@ -89,15 +89,15 @@ namespace SCORM1.Migrations
                 .Index(t => t.ToCo_Id);
             
             CreateTable(
-                "dbo.ProtectedFailureMultiChoiceAnswer",
+                "dbo.ProtectedFailureAnswer",
                 c => new
                     {
-                        UserId = c.String(nullable: false, maxLength: 128),
+                        answerId = c.Int(nullable: false, identity: true),
                         QuestionId = c.Int(nullable: false),
                         AnswerContent = c.String(),
                         isCorrectQuestion = c.Boolean(nullable: false),
                     })
-                .PrimaryKey(t => t.UserId)
+                .PrimaryKey(t => t.answerId)
                 .ForeignKey("dbo.ProtectedFailureMultiChoice", t => t.QuestionId, cascadeDelete: true)
                 .Index(t => t.QuestionId);
             
@@ -116,11 +116,23 @@ namespace SCORM1.Migrations
                 .Index(t => new { t.Category_Id, t.Modu_Id });
             
             CreateTable(
+                "dbo.ProtectedFailureMultiChoiceAnswer",
+                c => new
+                    {
+                        UserId = c.String(nullable: false, maxLength: 128),
+                        AnswerId = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => new { t.UserId, t.AnswerId })
+                .ForeignKey("dbo.ProtectedFailureAnswer", t => t.AnswerId, cascadeDelete: true)
+                .Index(t => t.AnswerId);
+            
+            CreateTable(
                 "dbo.ProtectedFailureResults",
                 c => new
                     {
                         Enro_id = c.Int(nullable: false),
                         Cate_Id = c.Int(nullable: false),
+                        correctAnswersQuantity = c.Int(nullable: false),
                         Score = c.Single(nullable: false),
                     })
                 .PrimaryKey(t => new { t.Enro_id, t.Cate_Id })
@@ -151,7 +163,8 @@ namespace SCORM1.Migrations
             DropForeignKey("dbo.UserModuleAdvance", "Enro_id", "dbo.Enrollment");
             DropForeignKey("dbo.ProtectedFailureResults", "Enro_id", "dbo.Enrollment");
             DropForeignKey("dbo.ProtectedFailureResults", "Cate_Id", "dbo.Category");
-            DropForeignKey("dbo.ProtectedFailureMultiChoiceAnswer", "QuestionId", "dbo.ProtectedFailureMultiChoice");
+            DropForeignKey("dbo.ProtectedFailureMultiChoiceAnswer", "AnswerId", "dbo.ProtectedFailureAnswer");
+            DropForeignKey("dbo.ProtectedFailureAnswer", "QuestionId", "dbo.ProtectedFailureMultiChoice");
             DropForeignKey("dbo.ProtectedFailureMultiChoice", new[] { "Category_Id", "Modu_Id" }, "dbo.CategoryQuestionBank");
             DropForeignKey("dbo.FlashQuestion", "FlashTestId", "dbo.FlashTest");
             DropForeignKey("dbo.FlashTest", "ToCo_Id", "dbo.TopicsCourse");
@@ -164,8 +177,9 @@ namespace SCORM1.Migrations
             DropIndex("dbo.UserModuleAdvance", new[] { "Enro_id" });
             DropIndex("dbo.ProtectedFailureResults", new[] { "Cate_Id" });
             DropIndex("dbo.ProtectedFailureResults", new[] { "Enro_id" });
+            DropIndex("dbo.ProtectedFailureMultiChoiceAnswer", new[] { "AnswerId" });
             DropIndex("dbo.ProtectedFailureMultiChoice", new[] { "Category_Id", "Modu_Id" });
-            DropIndex("dbo.ProtectedFailureMultiChoiceAnswer", new[] { "QuestionId" });
+            DropIndex("dbo.ProtectedFailureAnswer", new[] { "QuestionId" });
             DropIndex("dbo.FlashTest", new[] { "ToCo_Id" });
             DropIndex("dbo.FlashQuestionAnswer", new[] { "FlashQuestionId" });
             DropIndex("dbo.FlashQuestion", new[] { "FlashTestId" });
@@ -175,8 +189,9 @@ namespace SCORM1.Migrations
             DropIndex("dbo.Category", new[] { "ToCo_Id" });
             DropTable("dbo.UserModuleAdvance");
             DropTable("dbo.ProtectedFailureResults");
-            DropTable("dbo.ProtectedFailureMultiChoice");
             DropTable("dbo.ProtectedFailureMultiChoiceAnswer");
+            DropTable("dbo.ProtectedFailureMultiChoice");
+            DropTable("dbo.ProtectedFailureAnswer");
             DropTable("dbo.FlashTest");
             DropTable("dbo.FlashQuestionAnswer");
             DropTable("dbo.FlashQuestion");

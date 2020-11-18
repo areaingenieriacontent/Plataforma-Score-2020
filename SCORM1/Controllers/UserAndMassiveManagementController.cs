@@ -1630,27 +1630,18 @@ namespace SCORM1.Controllers
             try
             {
                 MailMessage solicitud = new MailMessage();
-                solicitud.Subject = "Bienvenida a la Comunidad Social de Conocimiento Bureau Veritas";
-                solicitud.Body =
-                    "<img src='http://aprendeyavanza2.com.co/bureauveritastrainingcommunity/content/images/image6.jpg' width='50%' />" + "<br/>" +
-                    "Nos alegra saludarte, " + NameUser +
-                   "<br/>" + "Te damos la bienvenida a nuestra comunidad social de conocimiento: " + "<strong>" + "Bureau Veritas Training Community." + "</strong>" + "<br/>" +
-                   "<br/>" + "Nuestra comunidad es un espacio donde vas a tener la oportunidad de " + "<strong>" + "aprender y consultar conocimiento" + "<br/>" +
-                   " a partir de múltiples recursos," + " </strong> " + "los cuales están diseñados para que desarrolles tus" + "<br/>" +
-                   " competencias profesionales y te destaques en el mercado laboral. Aquí podrás compartir y" + "<br/>" +
-                   " aprender de las experiencias de otros miembros de la comunidad, además obtendrás puntos por" + "<br/>" +
-                   " tus interacciones y redimirlos por premios." + " <br/>" +
-                   "<strong>" + "Ponemos a tu disposición:" + "</strong>" + "<br/><br/>" +
-                   "<img src='http://aprendeyavanza2.com.co/bureauveritastrainingcommunity/content/images/imagencorreo1.png' width='50%' />" + "<br/>" +
-                   "<br/></br>" + "Nuestra comunidad estará disponible para ti, las 24 horas del día y los 7 días de la semana." +
-                   "<br/></br>" + "¡Te esperamos!" +
-                   "<h1><strong>" + "Empieza ahora" + "</strong></h1>" +
-                   "<br/>" + "Ahora es tiempo de ingresar y comenzar con tu experiencia de aprendizaje" +
-                   "<br/><br/>" + "Estos son tus datos de acceso:" + "<br/><br/>" +
-                   "Usuario: " + Usuario +
-                   "<br/>" + "Contraseña: " + Usuario + "<br/>" +
-                   "<br/>" +
-                   "<a href='http://aprendeyavanza2.com.co/bureauveritastrainingcommunity'><button style='background: #CC023B; color: #fff; padding: 10px; font-size: 20px; border-radius: 13px;'>Ingresa Aqu&igrave;</button></a>";
+                solicitud.Subject = "Bienvenida a la plataforma de capacitación de Bureau Veritas";
+                solicitud.Body = "Cordial saludo, " + "<br/>" + "<br/>" +
+                    "Respetado Sr(a). " + NameUser +
+                   "<br/>" + "Es un gusto darle la bienvenida a la plataforma de capacitación de Bureau Veritas." +
+                   "<br/>" + "Agradecemos ingresar y comenzar con su experiencia de aprendizaje con los siguientes datos de acceso:" + "<br/>" +
+                     "<br/>" + "Usuario: " + Usuario + "(sin puntos, sin espacios)" +
+                   "<br/>" + "Contraseña: " + Usuario + "(sin puntos, sin espacios)" + "<br/>" +
+                   "<br/>" + "Link de ingreso a la plataforma: " +
+                "<br/>" + "<a href='https://aprendeyavanza2.com.co/bureaulatam'><button style='background: #CC023B; color: #fff; padding: 10px; font-size: 20px; border-radius: 13px;'>Ingresa Aqu&igrave;</button></a>" +
+                "" + "<br/>" +
+                   "<br/>" + "Bureau Veritas" +
+                   "<br/>" + "Construyendo Confianza";
 
                 solicitud.To.Add(Email);
                 solicitud.IsBodyHtml = true;

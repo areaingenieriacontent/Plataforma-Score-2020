@@ -309,21 +309,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202011111625260_intial.cs" />
-    <Compile Include="Migrations\202011111625260_intial.Designer.cs">
-      <DependentUpon>202011111625260_intial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202011111826248_answersModification.cs" />
-    <Compile Include="Migrations\202011111826248_answersModification.Designer.cs">
-      <DependentUpon>202011111826248_answersModification.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202011111829144_answersModification2.cs" />
-    <Compile Include="Migrations\202011111829144_answersModification2.Designer.cs">
-      <DependentUpon>202011111829144_answersModification2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202011122141394_correctAnswersQuantity.cs" />
-    <Compile Include="Migrations\202011122141394_correctAnswersQuantity.Designer.cs">
-      <DependentUpon>202011122141394_correctAnswersQuantity.cs</DependentUpon>
+    <Compile Include="Migrations\202011171750518_initial.cs" />
+    <Compile Include="Migrations\202011171750518_initial.Designer.cs">
+      <DependentUpon>202011171750518_initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BasicAuthenticationAttribute.cs" />
@@ -2342,17 +2330,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202011111625260_intial.resx">
-      <DependentUpon>202011111625260_intial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202011111826248_answersModification.resx">
-      <DependentUpon>202011111826248_answersModification.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202011111829144_answersModification2.resx">
-      <DependentUpon>202011111829144_answersModification2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202011122141394_correctAnswersQuantity.resx">
-      <DependentUpon>202011122141394_correctAnswersQuantity.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202011171750518_initial.resx">
+      <DependentUpon>202011171750518_initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

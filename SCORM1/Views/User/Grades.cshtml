@@ -92,7 +92,8 @@ else
                     $("#AddImprovement").modal();
                 });
             </script>
-        }}
+        }
+    }
     else
     {
         if (TempData["Result"] != null)
@@ -103,7 +104,8 @@ else
                         $("#Result").modal();
                     });
                 </script>
-            }}
+            }
+        }
         else
         {
             if (TempData["Error"] != null)
@@ -114,7 +116,8 @@ else
                             $("#Errors").modal();
                         });
                     </script>
-                }}
+                }
+            }
         }
     }
 }
@@ -130,10 +133,10 @@ else
     </div>
 </div>
 <div>
-    @if (Model.Modules.hasProtectedFailure==FORO.Si)
+    @if (Model.Modules.hasProtectedFailure==FORO.Si&&Model.Modules.Modu_TypeOfModule==CURSO.Rigido)
     {
         <br/>
-        <a href="@Url.Action("TestUser", "ProtectedFailure", new { id = Model.Modules.Modu_Id })"><i class="fa fa-chevron-down" aria-hidden="true">Test de falla protegida</i></a>
+            <a href="@Url.Action("TestUser", "ProtectedFailure", new { id = Model.Modules.Modu_Id })"><i class="fa fa-chevron-down" aria-hidden="true">Test de falla protegida</i></a>
         <br/>
     }
 </div>

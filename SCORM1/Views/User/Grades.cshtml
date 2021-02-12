@@ -716,7 +716,8 @@ else
                             <div class="fecha">
                                 @if (Model.listenrollment[0].ToCo_Id != Model.listenrollment[0].ConditionedTopic && Model.listenrollment[0].ToCo_Id != 0)
                                 {
-                                    <a href="@Url.Action("TestUser", "FlashTests", new { Toco_Id = @Model.listenrollment[0].ToCo_Id })"><i class="fa fa-chevron-down" aria-hidden="true">Ir a test rápido</i></a>
+                                    @*
+                                    <a href="@Url.Action("TestUser", "FlashTests", new { Toco_Id = @Model.listenrollment[0].ToCo_Id })"><i class="fa fa-chevron-down" aria-hidden="true">Ir a test rápido</i></a>*@
                                 }
                             </div>
                             <br/>
@@ -759,7 +760,7 @@ else
                                     else
                                     {
                                         <div class="fecha2">
-                                            @*<h4 class="fecha"><strong> Evaluación</strong></h4><br />*@
+                                            <h4 class="fecha"><strong> Evaluación</strong></h4><br />
                                             @if (Model.user.AdvanceUser.Where(x => x.ToCo_id == topic1.ToCo_Id).Count() == 0)
                                             {
                                                 foreach (var item1 in topic1.BankQuestion)
@@ -767,7 +768,7 @@ else
                                                     if (item1.Attempts.Where(x => x.BaQu_Id == item1.BaQu_Id && x.UserId == Model.user.Id).Count() < item1.BaQu_Attempts)
                                                     {
                                                         var a = item1.Attempts.Where(x => x.BaQu_Id == item1.BaQu_Id && x.UserId == Model.user.Id).Count();
-                                                        @*<h4 class="fecha"><strong> Lleva  @a intento de @item1.BaQu_Attempts  </strong></h4><br />*@
+                                                        <h4 class="fecha"><strong> Lleva  @a intento de @item1.BaQu_Attempts  </strong></h4><br />
                                                         if (Model.Enrollment.Enro_FinishDateModule <= DateTime.Now)
                                                         {
 
@@ -777,9 +778,9 @@ else
                                                         else
                                                         {
                                                             @* se comenta la seccion donde aparece el link de la evaluacion para efectos de este despliegue*@
-                                                            @*<div class="fecha">
-                                  <a href="@Url.Action("TestUser", "User", new { id = @topic1.ToCo_Id })"><i class="fa fa-chevron-down" aria-hidden="true">Ir a Evaluación</i></a>
-                                </div>*@
+                                                            <div class="fecha">
+                                                                <a href="@Url.Action("TestUser", "User", new { id = @topic1.ToCo_Id })"><i class="fa fa-chevron-down" aria-hidden="true">Ir a Evaluación</i></a>
+                                                            </div>
                                                         }
                                                     }
                                                     else
@@ -808,9 +809,10 @@ else
                                     {
                                         if (flash.ToCo_Id == topic1.ToCo_Id)
                                         {
+                                            @*
                                             <div class="fecha">
                                                 <a href="@Url.Action("TestUser", "FlashTests", new { Toco_Id = @topic1.ToCo_Id })"><i class="fa fa-chevron-down" aria-hidden="true">Ir a test rápido</i></a>
-                                            </div>
+                                            </div>*@
                                         }
                                     }
                                     @if (topic1.Job.Count != 0)

@@ -1,0 +1,40 @@
+﻿@using SCORM1.Models.VSDR;
+@using SCORM1.Models.ViewModel;
+@model VsdrUserVM
+@{
+    ViewBag.Title = "VsdrContent";
+}
+
+<h2>@Model.actualVsdr.name</h2>
+<br />
+<br />
+<br />
+<br />
+<div class="row fecha">
+    <div class="btn-group btn-breadcrumb">
+        <a href="@Url.Action("Index", "Home")" class="btn btn-info"><i class="glyphicon glyphicon-home"></i></a>
+        <a href="@Url.Action("VsdrUserList", "VSDR")" class="btn btn-info">VSDR</a>
+    </div>
+</div>
+<br />
+<br />
+<br />
+<div class="panel panel-primary" style="border-color:brown; border-width:3px">
+    <br />
+    <p><strong>@Html.Raw(Model.actualVsdr.case_content)</strong></p>
+    <br />
+    <div class="fecha" style="text-align:center">
+        @Html.ActionLink("Subir archivo", "VsdrContent", "VSDR", new { @class = "btn btn-primary", style = "margin:10px" })
+        @if (Model.meetingAvailable)
+        {
+            @Html.ActionLink("Ir a la sala", "RedirectToUrl", "VSDR", new { id = @Model.actualVsdr.id }, new { @class = "btn btn-primary", style = "margin: 10px" })
+        }
+        else
+        {
+            @Html.ActionLink("Ir a la sala", "RedirectToUrl", "VSDR", new { id = @Model.actualVsdr.id }, new { @class = "btn btn-primary disabled", style = "margin:10px" })
+        }
+    </div>
+</div>
+<br />
+<br />
+<br />

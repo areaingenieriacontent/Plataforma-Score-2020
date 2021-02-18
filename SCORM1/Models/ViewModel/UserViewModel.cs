@@ -661,4 +661,19 @@ namespace SCORM1.Models.ViewModel
         public Certification certificado { get; set; }
 
     }
+    public class AdvanceViewModel : BaseViewModel
+    {
+
+        public List<Enrollment> enrollment { get; set; }
+        public List<Advance> Modulo { get; set; }
+        public int Modulo_Id { get; set; }
+        public string SearchModuleVirtual { get; set; }
+        public string SearchModuleEvaluative { get; set; }
+        public float Score { get; set; }
+        public DateTime FechaActual { get; set; }
+        public string Usuario_Id { get; set; }
+
+
+
+    }
 }

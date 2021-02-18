@@ -2516,7 +2516,7 @@ namespace SCORM1.Controllers
 
         }
 
-        //Revisar como se realiza el calculo de putnos To-Do
+        //Revisar como se realiza el calculo de puntos To-Do
         // (cantidad de respuesta correctas/total de respuestas)*100
         public double AsignarPuntajedelTest(int TotalPoints, int BaQu_Id, int Modu_Id, int TotalQuestions)
         {
@@ -2539,6 +2539,7 @@ namespace SCORM1.Controllers
                 TopicsCourse topic = ApplicationDbContext.TopicsCourses.Find(BankQuestion.TopicsCourse.ToCo_Id);
 
                 var vali = ApplicationDbContext.AdvanceUsers.Where(x => x.ToCo_id == topic.ToCo_Id && x.User_Id == useractial.Id).ToList();
+                var valiadvance = ApplicationDbContext.Advances.Where(x => x.Modulo_Id == topic.Modu_Id).ToList();
                 if (vali.Count == 0)
                 {
                     AdvanceUser advanceuser = new AdvanceUser
@@ -2548,8 +2549,41 @@ namespace SCORM1.Controllers
                         AdUs_PresentDate = DateTime.Now,
                         AdUs_ScoreObtained = porcentajeObtenido,
                     };
-                    ApplicationDbContext.AdvanceUsers.Add(advanceuser);
+
+                    if (valiadvance.Count == 0)
+                    {
+                        Advance advance = new Advance
+                        {
+                            Modulo_Id = enrollments.Modu_Id,
+                            FechaActualizacion = DateTime.Now,
+                            Score = (float)porcentajeObtenido,
+                            Usuario_Id = useractial.Id,
+                        };
+                        ApplicationDbContext.Advances.Add(advance);
+                        ApplicationDbContext.SaveChanges();
+
+                    }
+                    else 
+                    {
+                        ApplicationDbContext.Advances.Find(topic.Modu_Id);
+                        Advance advance = new Advance
+                        {
+                            Modulo_Id = enrollments.Modu_Id,
+                            FechaActualizacion = DateTime.Now,
+                            Score = (float)porcentajeObtenido,
+                            Usuario_Id = useractial.Id,
+                        };                        
+                        ApplicationDbContext.SaveChanges();
+                        
+                    }
+             
+                    ApplicationDbContext.AdvanceUsers.Add(advanceuser);                    
                     ApplicationDbContext.SaveChanges();
+
+                   
+
+
+
                     TempData["Result"] = "¡ Has Realizado tu intento de evaluación";// + "El puntaje obtenido fue : " + ax + "   de un total de  " + bx + " puntos asignados";
                     var advanceusers = useractial.AdvanceUser.Where(x => x.TopicsCourse.Module.Modu_Id == enrollments.Module.Modu_Id).ToList().Count();
                     if (advanceusers == TotalTopic)
@@ -2649,6 +2683,7 @@ namespace SCORM1.Controllers
                                 Cert_Date = DateTime.Now,
                                 Enrollment = enrollments
                             };
+                          
                             ApplicationDbContext.Certifications.Add(CertificationUser);
                             ApplicationDbContext.SaveChanges();
                         }
@@ -2693,6 +2728,8 @@ namespace SCORM1.Controllers
                 TopicsCourse topic = ApplicationDbContext.TopicsCourses.Find(BankQuestion.TopicsCourse.ToCo_Id);
                 var vali = ApplicationDbContext.AdvanceLoseUser.Where(x => x.ToCo_id == topic.ToCo_Id && x.User_Id == useractial.Id).ToList();
 
+                var valiadvance = ApplicationDbContext.Advances.Where(x => x.Modulo_Id == topic.Modu_Id).ToList();
+
                 AdvanceLoseUser advanceloseuser = new AdvanceLoseUser
 
                 {
@@ -2701,8 +2738,37 @@ namespace SCORM1.Controllers
                     AdLoUs_PresentDate = DateTime.Now,
                     AdLoUs_ScoreObtained = porcentajeObtenido,
                 };
+
+                if (valiadvance.Count == 0)
+                {
+                    Advance advance = new Advance
+                    {
+                        Modulo_Id = enrollments.Modu_Id,
+                        FechaActualizacion = DateTime.Now,
+                        Score = (float)porcentajeObtenido,
+                        Usuario_Id = useractial.Id,
+                    };
+                    ApplicationDbContext.Advances.Add(advance);
+                    ApplicationDbContext.SaveChanges();
+
+                }
+                else
+                {
+                    ApplicationDbContext.Advances.Find(topic.Modu_Id);
+                    Advance advance = new Advance
+                    {
+                        Modulo_Id = enrollments.Modu_Id,
+                        FechaActualizacion = DateTime.Now,
+                        Score = (float)porcentajeObtenido,
+                        Usuario_Id = useractial.Id,
+                    };
+                    ApplicationDbContext.SaveChanges();
+
+                }               
+                
                 ApplicationDbContext.AdvanceLoseUser.Add(advanceloseuser);
                 ApplicationDbContext.SaveChanges();
+              
 
                 int a = (int)porcentajeObtenido;
                 int b = (int)PountTest;
@@ -2754,6 +2820,14 @@ namespace SCORM1.Controllers
                     ApplicationDbContext.SaveChanges();
                 }
             }
+
+
+            TopicsCourse topic1 = ApplicationDbContext.TopicsCourses.Find(BankQuestion.TopicsCourse.ToCo_Id);
+            var valiUse = ApplicationDbContext.AdvanceUsers.Where(x => x.ToCo_id == topic1.ToCo_Id && x.User_Id == useractial.Id).ToList();
+            var valiLose = ApplicationDbContext.AdvanceLoseUser.Where(x => x.ToCo_id == topic1.ToCo_Id && x.User_Id == useractial.Id).ToList();
+           
+
+
             return Result;
         }
         public int resultOptionMultiple(List<GeneralQuestions> result)
@@ -3486,14 +3560,28 @@ namespace SCORM1.Controllers
             var id = GetActualUserId().Id;
 
             var enrollments = ApplicationDbContext.Enrollments.Where(x => x.User_Id == id).ToList();
-            var enrollmentsQSM = ApplicationDbContext.QuienSabeMasPuntajes.Where(x => x.User_Id == id).ToList();
-            UserEnrollmentViewmodel model = new UserEnrollmentViewmodel
+            var modulo = ApplicationDbContext.Modules.Where(x => x.User_Id == id).ToList();
+            var advances = ApplicationDbContext.Advances.Where(x=> x.Usuario_Id == id).ToList();
+            /*UserEnrollmentViewmodel model = new UserEnrollmentViewmodel
             {
                 quienSabeMasPuntajes = enrollmentsQSM,
                 ActualRole = GetActualUserId().Role,
                 enrollment = enrollments,
                 Logo = GetUrlLogo()
             };
+            */
+
+            AdvanceViewModel model = new AdvanceViewModel
+            {
+
+                Usuario_Id = id,
+                Modulo = advances,
+                ActualRole = GetActualUserId().Role,
+                enrollment = enrollments,
+                Logo = GetUrlLogo()
+
+            };
+
             model.Sesion = GetActualUserId().SesionUser;
             var table = ApplicationDbContext.TableChanges.Find(34);
             var UserCurrent = ApplicationDbContext.Users.Find(GetActualUserId().Id);
@@ -3531,6 +3619,7 @@ namespace SCORM1.Controllers
             }
             return View(model);
         }
+         
 
         public ActionResult ViewEvaluaciones()
         {

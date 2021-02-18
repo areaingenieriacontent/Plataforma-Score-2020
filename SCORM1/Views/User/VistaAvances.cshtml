@@ -1,6 +1,6 @@
 ﻿@using SCORM1.Models.ViewModel;
 @using SCORM1.Models.Lms;
-@model UserEnrollmentViewmodel
+@model AdvanceViewModel
 <br /><br /><br /><br /><br /><br />
 <div class="row fecha">
     <div class="btn-group btn-breadcrumb">
@@ -37,36 +37,37 @@
                         @*
                         <th>Portada</th>
                         <th>Ver</th>*@
-
-
+                    </tr>
+                    <tr>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
 
                     @foreach (var modules in Model.enrollment)
                     {
-                        if (modules.Module.QSMActive == 0)
+                                                 
+                    <tr>
+                        <td>@modules.Module.Modu_Name</td>
+                        <td>@modules.Enro_InitDateModule</td>
+                        <td>@modules.Enro_FinishDateModule</td>
+                        @foreach (var a in Model.Modulo)
                         {
-
-                            if (modules.AdvanceCourse.Count == 1)
+                            if (a.Modulo_Id == modules.Modu_Id)
                             {
-                                <tr>
-                                    <td>@modules.Module.Modu_Name</td>
-                                    <td>@modules.Enro_InitDateModule</td>
-                                    <td>@modules.Enro_FinishDateModule</td>
-                                    @foreach (var a in modules.AdvanceCourse)
-                                    {
-                                        <td>
-                                            <div class="progress" style="margin-top:10%; background-color: #babdbd;height: 20px;">
-                                                <div class="progress-bar progress-bar-striped" role="progressbar"
-                                                     aria-valuenow="@a.AdCo_ScoreObtanied" aria-valuemin="0" aria-valuemax="100"
-                                                     style="width: @a.AdCo_ScoreObtanied%">
-                                                    <span>@a.AdCo_ScoreObtanied%</span>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    }
-                                    @*
+                                <td>
+                                    <div class="progress" style="margin-top:10%; background-color: #babdbd;height: 20px;">
+                                        <div class="progress-bar progress-bar-striped" role="progressbar"
+                                             aria-valuenow="@a.Score" aria-valuemin="0" aria-valuemax="100"
+                                             style="width: @a.Score%">
+                                            <span>@a.Score%</span>
+                                        </div>
+                                    </div>
+                                </td>
+                            }
+                            
+                        }
+                        @*
                                     <td>
                                         <img src="~/Resources/@modules.Module.Modu_ImageName" style="width:50px; height:50px" />
                                     </td>
@@ -75,45 +76,45 @@
                                             <img src='~/Content/Images/Ver_1.png' style="width:60px;height:15%;" class="img img-responsive" />
                                         </a>
                                     </td>
-                                    *@
-                                </tr>
-                            }
-                        }
-                        //quien sabe mas
-                        else
-                        {
-                            <tr>
-                                <td>@modules.Module.Modu_Name</td>
-                                <td>@modules.Enro_InitDateModule</td>
-                                <td>@modules.Enro_FinishDateModule</td>
-                                @foreach (var a in Model.quienSabeMasPuntajes)
-                                {
-                                    if (a.Mudole_Id == modules.Module.Modu_Id)
-                                    {
-                                        <td>
-                                            <div class="progress" style="margin-top:10%; background-color: #babdbd;height: 20px;">
-                                                <div class="progress-bar progress-bar-striped" role="progressbar"
-                                                     aria-valuenow="@a.Puntaje" aria-valuemin="0" aria-valuemax="100"
-                                                     style="width: @a.Puntaje%">
-                                                    <span>@a.Puntaje%</span>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    }
+                       
+                            </tr>
+                            
                                 }
-                                @*
-                                <td>
-                                    <img src="~/Resources/@modules.Module.Modu_ImageName" style="width:50px; height:50px" />
-                                </td>
-                                <td>
-                                    <a href='@Url.Action("Grades", "User", new { id = @modules.Module.Modu_Id })'>
-                                        <img src='~/Content/Images/Ver_1.png' style="width:60px;height:15%;" class="img img-responsive" />
-                                    </a>
-                                </td>
-                                *@
+                                //quien sabe mas
+                                else
+                                {
+                                    <tr>
+                                        <td>@modules.Module.Modu_Name</td>
+                                        <td>@modules.Enro_InitDateModule</td>
+                                        <td>@modules.Enro_FinishDateModule</td>
+                                        @*foreach (var a in Model.quienSabeMasPuntajes)
+                                        {
+                                            if (a.Mudole_Id == modules.Module.Modu_Id)
+                                            {
+                                                <td>
+                                                    <div class="progress" style="margin-top:10%; background-color: #babdbd;height: 20px;">
+                                                        <div class="progress-bar progress-bar-striped" role="progressbar"
+                                                             aria-valuenow="@a.Puntaje" aria-valuemin="0" aria-valuemax="100"
+                                                             style="width: @a.Puntaje%">
+                                                            <span>@a.Puntaje%</span>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            }
+                                        }
+                                        @*
+                                        <td>
+                                            <img src="~/Resources/@modules.Module.Modu_ImageName" style="width:50px; height:50px" />
+                                        </td>
+                                        <td>
+                                            <a href='@Url.Action("Grades", "User", new { id = @modules.Module.Modu_Id })'>
+                                                <img src='~/Content/Images/Ver_1.png' style="width:60px;height:15%;" class="img img-responsive" />
+                                            </a>
+                                        </td>
+                                        *@
                             </tr>
 
-                        }
+                        
                     }
                 </tbody>
             </table>

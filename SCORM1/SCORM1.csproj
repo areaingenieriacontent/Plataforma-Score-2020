@@ -309,24 +309,17 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202011111625260_intial.cs" />
-    <Compile Include="Migrations\202011111625260_intial.Designer.cs">
-      <DependentUpon>202011111625260_intial.cs</DependentUpon>
+    <Compile Include="Migrations\202102121924369_Advance.cs" />
+    <Compile Include="Migrations\202102121924369_Advance.Designer.cs">
+      <DependentUpon>202102121924369_Advance.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202011111826248_answersModification.cs" />
-    <Compile Include="Migrations\202011111826248_answersModification.Designer.cs">
-      <DependentUpon>202011111826248_answersModification.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202011111829144_answersModification2.cs" />
-    <Compile Include="Migrations\202011111829144_answersModification2.Designer.cs">
-      <DependentUpon>202011111829144_answersModification2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202011122141394_correctAnswersQuantity.cs" />
-    <Compile Include="Migrations\202011122141394_correctAnswersQuantity.Designer.cs">
-      <DependentUpon>202011122141394_correctAnswersQuantity.cs</DependentUpon>
+    <Compile Include="Migrations\202102171736313_AddAdvance.cs" />
+    <Compile Include="Migrations\202102171736313_AddAdvance.Designer.cs">
+      <DependentUpon>202102171736313_AddAdvance.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BasicAuthenticationAttribute.cs" />
+    <Compile Include="Models\Lms\Advance.cs" />
     <Compile Include="Models\Lms\AdvanceLoseUser.cs" />
     <Compile Include="Models\Lms\AnserPairingStudent.cs" />
     <Compile Include="Models\Lms\AnswerOptionMultipleStudent.cs" />
@@ -2342,17 +2335,11 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202011111625260_intial.resx">
-      <DependentUpon>202011111625260_intial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202102121924369_Advance.resx">
+      <DependentUpon>202102121924369_Advance.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202011111826248_answersModification.resx">
-      <DependentUpon>202011111826248_answersModification.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202011111829144_answersModification2.resx">
-      <DependentUpon>202011111829144_answersModification2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202011122141394_correctAnswersQuantity.resx">
-      <DependentUpon>202011122141394_correctAnswersQuantity.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202102171736313_AddAdvance.resx">
+      <DependentUpon>202102171736313_AddAdvance.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

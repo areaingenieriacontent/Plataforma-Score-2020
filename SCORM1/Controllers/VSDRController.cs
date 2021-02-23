@@ -85,20 +85,72 @@ namespace SCORM1.Controllers
         [Authorize]
         public ActionResult VsdrContent(int id)
         {
+            var actualUser = ApplicationDbContext.Users.Find(GetActualUserId().Id);
             VsdrUserVM vsdrModel = new VsdrUserVM();
             VsdrSession vsdrToReturn = ApplicationDbContext.VsdrSessions.Find(id);
-            VsdrUserFile vsdrUserIssuedFiles;
-            VsdrTeacherComment vsdrTeacherComments;
+            List<VsdrUserFile> vsdrUserIssuedFiles = ApplicationDbContext.VsdrUserFiles.Where(x => x.user_id == actualUser.Id).ToList();
+            List<VsdrTeacherComment> vsdrTeacherComments = ApplicationDbContext.VsdrTeacherComments.Where(x => x.user_id == actualUser.Id).ToList();
+            VsdrUserFile file = new VsdrUserFile(); 
             if (vsdrToReturn.end_date.Subtract(DateTime.Now).TotalMinutes < 15)
             {
                 vsdrModel.meetingAvailable = true;
             }
             //add loaded data to view model
+            vsdrModel.vsdrFileToAdd = file;
             vsdrModel.actualVsdr = vsdrToReturn;
             vsdrModel.Sesion = GetActualUserId().SesionUser;
             return View(vsdrModel);
         }
 
+        //Function thats receive the view model information and an uploaded file
+        [HttpPost]
+        [Authorize]
+        [ValidateAntiForgeryToken]
+        public ActionResult UploadVSDRFile(VsdrUserVM vsdrModel, HttpPostedFileBase upload)
+        {
+            var actualUser = ApplicationDbContext.Users.Find(GetActualUserId().Id);
+            var vsdre = ApplicationDbContext.VsdrSessions.Find(vsdrModel.actualVsdr.id);
+            vsdrModel.Sesion = GetActualUserId().SesionUser;
+            if (upload != null && upload.ContentLength > 0 && upload.ContentLength <= (2 * 1000000))
+            {
+                string[] allowedExtensions = new[] { ".pdf", ".doc", ".pptx", ".xls", ".xlsx", ".docx" };
+                var ext = Path.GetExtension(DateTime.Now.ToString("yyyyMMddHHmmss") + "-" + upload.FileName).ToLower();
+                var file = "";
+                foreach(var extention in allowedExtensions)
+                {
+                    if (extention.Contains(ext))
+                    {
+                        file = (DateTime.Now.ToString("yyyyMMddHHmmss") + "-" + upload.FileName).ToLower();
+                        upload.SaveAs(Server.MapPath("~/VSDRUploads/" + file));
+                        VsdrUserFile fileToAdd = new VsdrUserFile
+                        {
+                            user_id = actualUser.Id,
+                            vsdr_id = vsdrModel.actualVsdr.id,
+                            register_name = vsdrModel.vsdrFileToAdd.register_name,
+                            file_description = vsdrModel.vsdrFileToAdd.file_description,
+                            file_extention = ext,
+                            file_name = file,
+                            registered_date = DateTime.Now
+                        };
+                        ApplicationDbContext.VsdrUserFiles.Add(fileToAdd);
+                        ApplicationDbContext.SaveChanges();
+                        TempData["Info"] = "Archivo cargado exitosamente";
+                        List<VsdrUserFile> fileList = ApplicationDbContext.VsdrUserFiles.Where(x => x.user_id == actualUser.Id).ToList();
+                        List<VsdrTeacherComment> teacherComments = ApplicationDbContext.VsdrTeacherComments.Where(x => x.user_id == actualUser.Id).ToList();
+                        vsdrModel.listOfIssuedFiles = fileList;
+                        vsdrModel.listOfComments = teacherComments;
+                        return View("VsdrContent", vsdrModel);
+                    }
+                }
+                TempData["Info"] = "El formato del archivo no es valido";
+                return View("VsdrContent", vsdrModel);
+            }
+            else
+            {
+                TempData["Info"] = "Los campos no pueden estar vacios";
+                return View("VsdrContent", vsdrModel);
+            }
+        }
         public ActionResult RedirectToUrl(int id)
         {
             VsdrSession vsdrToReturn = ApplicationDbContext.VsdrSessions.Find(id);

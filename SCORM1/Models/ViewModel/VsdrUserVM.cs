@@ -15,5 +15,8 @@ namespace SCORM1.Models.ViewModel
         public string teacherName;
         public string teacherLastName;
         public bool meetingAvailable;
+
+        /*file upload variables*/
+        public VsdrUserFile vsdrFileToAdd;
     }
 }

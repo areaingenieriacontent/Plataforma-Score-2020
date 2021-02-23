@@ -2332,6 +2332,7 @@
     <Folder Include="Views\ReportController\" />
     <Folder Include="Views\SendOfEmails\" />
     <Folder Include="Views\WebService\" />
+    <Folder Include="VSDRUploads\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

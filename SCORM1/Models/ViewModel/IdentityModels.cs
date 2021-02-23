@@ -22,6 +22,7 @@ using System;
 using SCORM1.Models.MainGame;
 using SCORM1.Models.ratings;
 using SCORM1.Models.RigidCourse;
+using SCORM1.Models.VSDR;
 
 namespace SCORM1.Models
 {
@@ -252,6 +253,13 @@ namespace SCORM1.Models
         public virtual DbSet<UserModuleAdvance> UserModuleAdvances { get; set; }
         public virtual DbSet<ProtectedFailureMultiChoiceAnswer> ProtectedFailureMultiChoiceAnswers { get; set; }
 
+        //Virtual Syncronic Debate Room
+
+        public virtual DbSet<VsdrSession> VsdrSessions { get; set; }
+        public virtual DbSet<VsdrEnrollment> VsdrEnrollments { get; set; }
+        public virtual DbSet<VsdrTeacherComment> VsdrTeacherComments { get; set; }
+        public virtual DbSet<VsdrUserFile> VsdrUserFiles { get; set; }
+
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
@@ -313,6 +321,12 @@ namespace SCORM1.Models
                 {
                     ma.ToTable("MyOfficeUser");
                 });
+
+
+            modelBuilder.Entity<VsdrSession>().ToTable("VsdrSession");
+            modelBuilder.Entity<VsdrEnrollment>().ToTable("VsdrEnrollment");
+            modelBuilder.Entity<VsdrTeacherComment>().ToTable("VsdrTeacherComment");
+            modelBuilder.Entity<VsdrUserFile>().ToTable("VsdrUserFile");
 
             modelBuilder.Entity<Question>()
                 .HasMany(question => question.Tests)

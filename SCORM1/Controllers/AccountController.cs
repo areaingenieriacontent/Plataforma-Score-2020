@@ -518,20 +518,18 @@ namespace SCORM1.Controllers
         private void SendEmail(string NameUser, string Email, string Usuario, string company)
         {
             MailMessage solicitud = new MailMessage();
-            solicitud.Subject = "Bienvenida a la Comunidad Social de Conocimiento Bureau Veritas";
-            solicitud.Body = "<img src='http://aprendeyavanza2.com.co/bureauveritastrainingcommunity/content/images/image6.jpg' width='45%' />"
-            +"<br/>"+ "Cordial saludo, " + "<br/>" +"<br/>" +
+            solicitud.Subject = "Bienvenida a la plataforma de capacitación de Bureau Veritas";
+            solicitud.Body = "Cordial saludo, " + "<br/>" + "<br/>" +
                 "Respetado Sr(a). " + NameUser +
-               "<br/>" + "Es un gusto darle la bienvenida a la comunidad social de conocimiento de Bureau Veritas." +
+               "<br/>" + "Es un gusto darle la bienvenida a la plataforma de capacitación de Bureau Veritas." +
                "<br/>" + "Agradecemos ingresar y comenzar con su experiencia de aprendizaje con los siguientes datos de acceso:" + "<br/>" +
-                 "<br/>" + "Usuario: " + Usuario +
-               "<br/>" + "Contraseña: " + Usuario + "<br/>" +
+                 "<br/>" + "Usuario: " + Usuario + "(sin puntos, sin espacios)" +
+               "<br/>" + "Contraseña: " + Usuario + "(sin puntos, sin espacios)" + "<br/>" +
                "<br/>" + "Link de ingreso a la plataforma: " +
-            "<br/>" + "https://www.aprendeyavanza2.com.co/bureauveritastrainingcommunity/" +
+            "<br/>" + "https://www.aprendeyavanza2.com.co/bureaulatam/" +
             "" + "<br/>" +
                "<br/>" + "Bureau Veritas" +
-               "<br/>" + "Construyendo Confianza"+
-               "<br/>" + "<img src='http://aprendeyavanza2.com.co/bureauveritastrainingcommunity/content/images/firmabureau.png' width='80%' />";
+               "<br/>" + "Construyendo Confianza";
             solicitud.To.Add(Email);
             solicitud.IsBodyHtml = true;
             var smtp2 = new SmtpClient();

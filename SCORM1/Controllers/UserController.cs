@@ -2234,12 +2234,11 @@ namespace SCORM1.Controllers
             ApplicationUser UserActual = GetActualUserId();
             AdvanceUser userAdva = ApplicationDbContext.AdvanceUsers.Where(z => z.ToCo_id == id && z.User_Id == UserActual.Id).FirstOrDefault();
             var usuario = User.Identity.GetUserId();
-            var Attempt = ApplicationDbContext.Attempts.Where(x => x.UserId == usuario && x.BankQuestion.TopicsCourse.Modu_Id == topic.Modu_Id).ToList();
+            var Attempt = ApplicationDbContext.Attempts.Where(x => x.UserId == usuario && x.BankQuestion.TopicsCourse.ToCo_Id == topic.ToCo_Id).ToList();
 
             if (topic.ToCo_Attempt <= Attempt.Count)
             {
                 return RedirectToAction("ListModuleVirtual");
-
             }
             if (userAdva != null)
             {
@@ -2754,6 +2753,7 @@ namespace SCORM1.Controllers
                     ApplicationDbContext.SaveChanges();
                 }
             }
+
             return Result;
         }
         public int resultOptionMultiple(List<GeneralQuestions> result)

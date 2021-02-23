@@ -7,13 +7,13 @@ namespace SCORM1.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class correctAnswersQuantity : IMigrationMetadata
+    public sealed partial class vsdr : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(correctAnswersQuantity));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(vsdr));
         
         string IMigrationMetadata.Id
         {
-            get { return "202011122141394_correctAnswersQuantity"; }
+            get { return "202102081804467_vsdr"; }
         }
         
         string IMigrationMetadata.Source

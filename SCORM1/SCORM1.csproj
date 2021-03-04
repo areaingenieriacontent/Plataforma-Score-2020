@@ -2313,6 +2313,9 @@
     <Content Include="Views\ProtectedFailure\UserResults.cshtml" />
     <Content Include="Views\VSDR\VsdrUserList.cshtml" />
     <Content Include="Views\VSDR\VsdrContent.cshtml" />
+    <Content Include="Views\VSDR\VsdrTeacher.cshtml" />
+    <Content Include="Views\VSDR\VsdrUserListTeacher.cshtml" />
+    <Content Include="Views\VSDR\AddCommentView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

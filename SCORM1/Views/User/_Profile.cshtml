@@ -204,11 +204,11 @@
         <!-- Titulos De Los Botones Del Menu/-->
 
         <a class="col-md-4 aDiv active" data-toggle="tab" href="#home">ZONA DE APRENDIZAJE INTERACTIVO</a>
-        @*
+        
         @if (Model.ComunidadActiva != 0)
         {<a class="col-md-4 aDiv" data-toggle="tab" href="#menu1" >COMUNIDAD SOCIAL DE CONOCIMIENTO</a>
         }
-        *@
+        
         <a class="col-md-4 aDiv" data-toggle="tab" href="#menu2">TABLERO DE CONTROL</a>
         <!-- Fin De Los Titulos/-->
     </div>
@@ -251,7 +251,7 @@
 
             <!-- Fin Del Menu 1 (ZONA DE AORENDIZAJE INTERACTIVO) -->
             <!-- Contenedor Del Menu 2 (COMUNIDAD SOCIAL DEL CONOCIMIENTO) -->
-            @*
+            
         @if (Model.ComunidadActiva == 0)
         {
             <div id="menu1" class="tab-pane fade">
@@ -266,6 +266,7 @@
                 <br />
                 <br />
                 <!-- Inicio Del Contenido Del Menu 2 Con sus Imagenes Y Links -->
+                @*
                 <div class="col-md-3">
                     <a href="../logscomunidad/clickobl"><img src="~/Content/Images/pbl.png" style="width:150px; height:150px;"><h1>LECCIONES <b>APRENDIDAS</b></h1></a>
                 </div>
@@ -289,9 +290,13 @@
                 <div class="col-md-3">
                     <a href="../logscomunidad/clickjuego" target="_blank" style="background-color:#fff"><img src="~/Content/Images/bateria-juegos.png" style="width:150px; height:150px;"><h1>SERIOUS LEARNING <b>GAMES</b></h1></a>
                 </div>
+                    *@
+                <div class="col-md-3">
+                    <a href="../vsdr/VsdrUserList" style="background-color:#fff"><img src="~/Content/Images/bateria-juegos.png" style="width:150px; height:150px;"><h1>VSDR</h1></a>
+                </div>
             </div>
         }
-            *@
+            
             <div id="menu2" class="tab-pane fade">
                 <br />
                 <br />

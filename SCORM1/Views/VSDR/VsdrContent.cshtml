@@ -13,7 +13,7 @@
 <div class="row fecha">
     <div class="btn-group btn-breadcrumb">
         <a href="@Url.Action("Index", "Home")" class="btn btn-info"><i class="glyphicon glyphicon-home"></i></a>
-        <a href="@Url.Action("VsdrUserList", "VSDR")" class="btn btn-info">VSDR</a>
+        <a href="@Url.Action("VsdrUserList", "VSDR")" class="btn btn-info">Lista VSDR</a>
     </div>
 </div>
 <br />
@@ -34,7 +34,50 @@
             @Html.ActionLink("Ir a la sala", "RedirectToUrl", "VSDR", new { id = @Model.actualVsdr.id }, new { @class = "btn btn-primary disabled", style = "margin:10px" })
         }
     </div>
-    <div class="col-md-12">
+    <br />
+    <br />
+    <div class="panel panel-primary" style="border-color:brown; border-width:1px">
+        <h3>Aportes</h3>
+        @if (Model.listOfIssuedFiles.Count > 0)
+        {
+            <div>
+                @for (int cont = 0; cont < Model.listOfIssuedFiles.Count; cont++)
+                {
+                    <br />
+                    <h5>@Html.Raw(Model.listOfIssuedFiles[cont].register_name)</h5>
+                    <p>@Html.Raw(Model.listOfIssuedFiles[cont].file_description)</p>
+                    <p>@Html.Raw(Model.listOfIssuedFiles[cont].registered_date)</p>
+                    <br />
+                }
+            </div>
+        }
+        else
+        {
+            <div>
+                <p><strong>No has realizado ningún aporte</strong></p>
+            </div>
+        }
+    </div>
+    <div class="panel panel-primary" style="border-color:brown; border-width:1px">
+    <h3>Comentarios del docente</h3>
+        <br />
+        @if (Model.listOfComments.Count>0) {
+        <div>
+            @foreach (VsdrTeacherComment comment in Model.listOfComments)
+            {
+                <br />
+                <h2><strong>@Html.Raw(comment.content)</strong></h2>
+                <p>@Html.Raw(comment.commentDate)</p>
+                <br />
+            }
+        </div>
+        }
+        else
+        {
+            <div>
+                <p><strong>El docente aún no ha comentado tus aportes</strong></p>
+            </div>
+        }
     </div>
 
     <div id="AddVSDRFile" class="modal fade" role="dialog">
@@ -48,6 +91,13 @@
                     @using (Html.BeginForm("UploadVSDRFile", "VSDR", FormMethod.Post, new { @class = "form-horizontal", role = "form", enctype = "multipart/form-data" }))
                     {
                         @Html.HiddenFor(model => model.actualVsdr.id)
+                        @Html.HiddenFor(model => model.actualVsdr.case_content)
+                        @Html.HiddenFor(model => model.actualVsdr.name)
+                        @Html.HiddenFor(model => model.actualVsdr.end_date)
+                        @Html.HiddenFor(model => model.actualVsdr.start_date)
+                        @Html.HiddenFor(model => model.actualVsdr.resource_url)
+                        @Html.HiddenFor(model => model.actualVsdr.available)
+                        @Html.HiddenFor(model => model.meetingAvailable)
                         @Html.AntiForgeryToken()
                         <div class="row">
                             <br />

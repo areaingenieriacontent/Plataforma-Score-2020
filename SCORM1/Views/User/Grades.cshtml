@@ -122,6 +122,10 @@ else
 <br />
 <br />
 <br />
+
+<div id="encabezadocursos">
+
+</div>
 <div class="row fecha">
     <div class="btn-group btn-breadcrumb">
         <a href="@Url.Action("Index", "Home")" class="btn btn-info"><i class="glyphicon glyphicon-home"></i></a>
@@ -152,6 +156,7 @@ else
                         @Html.AntiForgeryToken()
                         @Html.HiddenFor(model => model.Enrollment.Modu_Id)
                         @Html.HiddenFor(model => Model.Enrollment.Module.Modu_Id)
+                        @Html.HiddenFor(model => Model.Modu_ImageName)
                         <form class="form-horizontal">
                             <div class="form-group">
                                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })

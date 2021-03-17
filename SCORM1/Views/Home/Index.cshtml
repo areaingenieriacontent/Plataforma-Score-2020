@@ -3,6 +3,7 @@
 @model indexMain
 @Styles.Render("~/Content/demo.css")
 @Styles.Render("~/Content/style1.css")
+@Styles.Render("~/Content/StyleHome")
 @{
     ViewBag.Title = "Home Page";
 }
@@ -15,6 +16,8 @@
             });
         </script>
     }}
+
+
 <div id="Inform" class="modal fade" role="dialog">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -36,7 +39,7 @@
     switch (Model.Home.ActualRole)
     {
         case ROLES.Usuario:
-            <br /><br />
+            
             <div class="center-block">
                 <!--Si los terminos y condiciones no han sido aceptados (RenderAction) envía a la vista de T&C-->
                 @if (Model.TermsandConditions.terms == Terms_and_Conditions.No_apceptado)
@@ -147,14 +150,8 @@
 else
 {
     <br />
-    <div class="cb-slideshow">
-
-        <!--Video-->
-        <video class="video"  muted autoplay="autoplay" loop="loop" volume="0" id="video_background">
-                <source src="~/Content/Images/dd.mp4" type="video/mp4" />
-            </video>
-        @*<image src="~/Content/Images/BV-Training-Community-background.jpg" style="width:100%"></image>*@
-        <!--Fin Video-->
+    <div class="cb-slideshow">    
+        <img src="~/Content/Images/slider-login/slide-1.jpg" style="width:100%">
     </div>
 
 

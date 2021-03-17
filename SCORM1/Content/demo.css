@@ -8,13 +8,13 @@ body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,
 
 /* Login */
 
-body{
-
-    background-size: cover;
-    font-family: 'Roboto', sans-serif;
-    letter-spacing:-0.2px;
-    margin: 0;
-    background-color: #fff;
+body {
+	background-size: cover;
+	font-family: 'Roboto', sans-serif;
+	letter-spacing: -0.2px;
+	margin: 0;
+	background-color: #fff;
+	
 }
 
 .containerA {
@@ -33,7 +33,7 @@ h1
 a {
     text-decoration: none;
     color: #fff;
-    background-color: #B0002D;
+    
 }
 
 .descripcion_incial{
@@ -271,11 +271,11 @@ a {
 }
 
 
-header{
-	background: url(Images/banner.jpg) no-repeat right;
-	background-size:cover;
-	width:100%;
-	height:120px;
+header {
+	/*background: url(Images/banner.jpg) no-repeat right;*/
+	background-size: cover;
+	width: 100%;
+	height: 120px;
 }
 
 .logo-header{
@@ -1060,3 +1060,4 @@ button[type=info-premios]{
 
 }
 
+/**/

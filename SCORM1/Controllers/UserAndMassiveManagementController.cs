@@ -1631,7 +1631,55 @@ namespace SCORM1.Controllers
             {
                 MailMessage solicitud = new MailMessage();
                 solicitud.Subject = "Bienvenida a la plataforma de capacitación de Bureau Veritas";
-                solicitud.Body = "Cordial saludo, " + "<br/>" + "<br/>" +
+
+                string casoPrueba =
+                "<body bgcolor = '#FFFFFF' leftmargin = '0' topmargin = '0' marginwidth = '0' marginheight = '0' >" +
+             "<table id = 'Tabla_01' width = '700' height = '2016' border = '0' cellpadding = '0' cellspacing = '0' >" +
+                 "<tr>" +
+                     "<td>" +
+                         "<img src = 'https://aprendeyavanza2.com.co/contentgroup/bureau/mail_template/bv_latam/welcome/1-header.jpg' width = '700' height = '197' alt = '' ></td>" +
+                 "</tr>" +
+                 "<tr>" +
+                     "<td>" +
+                         "<p style='text-align:left;color:#ee224e;font-size:59px;letter-spacing: -1px;'>" + NameUser + "</p></td>" +
+                 "</tr>" +
+                 "<tr>" +
+                     "<td>" +
+                         "<img src = 'https://aprendeyavanza2.com.co/contentgroup/bureau/mail_template/bv_latam/welcome/3-banner.jpg' width = '700' height = '558' alt =  ></td>" +
+                 "</tr>" +
+                 "<tr>" +
+                     "<td>" +
+                         "<a href='https://aprendeyavanza2.com.co/contentgroup/bureau/documentos/Guia%20navegacion%20bv%20latam.pdf'><img src = 'https://aprendeyavanza2.com.co/contentgroup/bureau/mail_template/bv_latam/welcome/4-link-guia-navegacion.jpg' width = '700' height = '261' alt = '' ></a></td>" +
+                 "</tr>" +
+                 "<tr>" +
+                     "<td>" +
+                         "<img src = 'https://aprendeyavanza2.com.co/contentgroup/bureau/mail_template/bv_latam/welcome/5-banner.jpg' width = '700' height = '340' alt = '' ></td>" +
+                 "</tr>" +
+                 "<tr>" +
+                     "<td>" +
+                         "<img src = 'https://aprendeyavanza2.com.co/contentgroup/bureau/mail_template/bv_latam/welcome/6-ESTO_VA_TEXTO.jpg' width = '700' height = '116' alt = '' ></td>" +
+                 "</tr>" +
+                 "<tr>" +
+                     "<td>" +
+                         "<img src = 'https://aprendeyavanza2.com.co/contentgroup/bureau/mail_template/bv_latam/welcome/7-banner.jpg' width = '700' height = '197' alt = '' ></td>" +
+                 "</tr>" +
+                 "<tr>" +
+                     "<td>" +
+                         "<p style='text-align:left;color:#ee224e'>Usuario: " + Usuario+"<br>Contraseña: "+Usuario+"</p></td>" +
+                 "</tr>" +
+                 "<tr>" +
+                     "<td>" +
+                         "<a href='https://aprendeyavanza2.com.co/bureaulatam/'><img src = 'https://aprendeyavanza2.com.co/contentgroup/bureau/mail_template/bv_latam/welcome/8-link-plataforma.jpg' width = '700' height = '90' alt = '' ></a></td>" +
+                 "</tr>" +
+                 "<tr>" +
+                     "<td>" +
+                         "<img src = 'https://aprendeyavanza2.com.co/contentgroup/bureau/mail_template/bv_latam/welcome/9-link-bureau-veritas.jpg' width = '700' height = '185' alt = '' ></td>" +
+                 "</tr>" +
+             "</table>" +
+             "</body>";
+                solicitud.Body = casoPrueba;
+                    
+                string correoTemplate ="Cordial saludo, " + "<br/>" + "<br/>" +
                     "Respetado Sr(a). " + NameUser +
                    "<br/>" + "Es un gusto darle la bienvenida a la plataforma de capacitación de Bureau Veritas." +
                    "<br/>" + "Agradecemos ingresar y comenzar con su experiencia de aprendizaje con los siguientes datos de acceso:" + "<br/>" +

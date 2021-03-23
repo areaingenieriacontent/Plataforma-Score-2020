@@ -318,6 +318,10 @@
     <Compile Include="Migrations\202102081804467_vsdr.Designer.cs">
       <DependentUpon>202102081804467_vsdr.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202103191734003_pending_changes.cs" />
+    <Compile Include="Migrations\202103191734003_pending_changes.Designer.cs">
+      <DependentUpon>202103191734003_pending_changes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BasicAuthenticationAttribute.cs" />
     <Compile Include="Models\Lms\AdvanceLoseUser.cs" />
@@ -565,6 +569,15 @@
     <Content Include="Content\Images\logosan2.png" />
     <Content Include="Content\Images\magazine-de-noticias.png" />
     <Content Include="Content\Images\magazine_de_noticias.png" />
+    <Content Include="Content\Images\mail\1-header.jpg" />
+    <Content Include="Content\Images\mail\2-ESTO VA TEXTO.jpg" />
+    <Content Include="Content\Images\mail\3-banner.jpg" />
+    <Content Include="Content\Images\mail\4-link-guia-navegacion.jpg" />
+    <Content Include="Content\Images\mail\5-banner.jpg" />
+    <Content Include="Content\Images\mail\6-ESTO VA TEXTO.jpg" />
+    <Content Include="Content\Images\mail\7-banner.jpg" />
+    <Content Include="Content\Images\mail\8-link-plataforma.jpg" />
+    <Content Include="Content\Images\mail\9-link-bureau-veritas.jpg" />
     <Content Include="Content\Images\Mal-100.jpg" />
     <Content Include="Content\Images\manual.png" />
     <Content Include="Content\Images\medicion-desarrollo-comportamientos.png" />
@@ -2351,6 +2364,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202102081804467_vsdr.resx">
       <DependentUpon>202102081804467_vsdr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202103191734003_pending_changes.resx">
+      <DependentUpon>202103191734003_pending_changes.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -31,10 +31,10 @@ namespace SCORM1.Controllers
             correo.To.Add("bureauveritassoporte@gmail.com");
             correo.Subject = categoria + identificacion;
             string caso = "El usuario " + nombres + " identicado con el numero " + identificacion + " genero un nuevo caso de soporte: ";
-            correo.Body = caso + descripcion;
-            correo.IsBodyHtml = false;
+            correo.Body = caso + " " + descripcion;
+            correo.IsBodyHtml = true;
             correo.Priority = MailPriority.Normal;
-            //
+            
             var smtp = new SmtpClient();
         
             smtp.Send(correo);

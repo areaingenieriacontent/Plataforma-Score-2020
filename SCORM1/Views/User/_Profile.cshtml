@@ -109,7 +109,7 @@
 
 <div class="container-fluid" id="ContenedorPrincipal">
     <div class="row" style="margin-bottom:20px;">
-        <div class="container">
+        <div class="container" style="margin-left:70px">
             <div id="form" class="modal fade" role="dialog">
                 <div class="modal-dialog1">
                     <div class="modal-content">
@@ -197,19 +197,19 @@
 
 
 <!-- Inicio Del Menu De Contenidos     -->
-<div class="menuunuevo" style="width:100%">
+<div class="menuunuevo" style="width:80%;margin-left:85px">
     <!-- Propiedad Se Encuentra En El Archivo Bootstrap Contiene Los Estilos Y Posicion DeL Menu    -->
-    <div class="nav nav-tabs " id="tabuser">
+    <div class="nav nav-tabs" id="tabuser">
         <!-- TabUser Es El Identificador Que Se Encuentra En El Archivo De Bootstrap Contiene La Posicion De Los Titulos Y Sus Estilos   -->
         <!-- Titulos De Los Botones Del Menu/-->
 
-        <a class="col-md-4 aDiv active" data-toggle="tab" href="#home">ZONA DE APRENDIZAJE INTERACTIVO</a>
-        
+        <a class="col-md-12 aDiv active" data-toggle="tab" href="#home" style="text-align:center;">ZONA DE APRENDIZAJE INTERACTIVO</a>
+        @*
         @if (Model.ComunidadActiva != 0)
         {<a class="col-md-4 aDiv" data-toggle="tab" href="#menu1" >COMUNIDAD SOCIAL DE CONOCIMIENTO</a>
         }
-        
-        <a class="col-md-4 aDiv" data-toggle="tab" href="#menu2">TABLERO DE CONTROL</a>
+
+        <a class="col-md-4 aDiv" data-toggle="tab" href="#menu2">TABLERO DE CONTROL</a>*@
         <!-- Fin De Los Titulos/-->
     </div>
     <div class="container" style="border-style:solid;border-color: #B0002D; width:100%; margin-bottom:50px">
@@ -229,23 +229,25 @@
                                 color: #000;
                             }
                         </style>
-
+                    </div>
+                    <div class="col-md-3">
+                        <a href="@Url.Action("VistaAvances", "User")" style="background-color:#fff"><img src="~/Content/Images/libro-calificaciones.png" style="width:150px; height:150px;"><h1>MIS <b>AVANCES</b></h1></a>
                     </div>
                     @*<div class="col-md-3">
-                    <a href="@Url.Action("ListModuleVirtual", "User")" style="background-color:#fff"><img src="~/Content/Images/aprendizaje-extendido.png" style="width:150px; height:150px;"><h1>APRENDIZAJE <b>EXTENDIDO</b></h1></a>
-                </div>
-                <div class="col-md-3">
-                    <a href="https://www.aprendeyavanza2.com.co/UnAula/User/ViewArticle/7" style="background-color:#fff">
-                        <img src="~/Content/Images/base-de-datos.png" style="width:150px; height:150px;"><h1>
-                            <b>BASES DE DATOS</b>
-                        </h1>
-                    </a>
-                </div>
+            <a href="@Url.Action("ListModuleVirtual", "User")" style="background-color:#fff"><img src="~/Content/Images/aprendizaje-extendido.png" style="width:150px; height:150px;"><h1>APRENDIZAJE <b>EXTENDIDO</b></h1></a>
+        </div>
+        <div class="col-md-3">
+            <a href="https://www.aprendeyavanza2.com.co/UnAula/User/ViewArticle/7" style="background-color:#fff">
+                <img src="~/Content/Images/base-de-datos.png" style="width:150px; height:150px;"><h1>
+                    <b>BASES DE DATOS</b>
+                </h1>
+            </a>
+        </div>
 
 
-                <div class="col-md-3" style="padding-bottom:20px">
-                    <a href="https://www.aprendeyavanza2.com.co/UnAula/Recursos/pdf_(1).pdf" target="_blank"><img src="~/Content/Images/sistema-de-evaluacion.png" style="width:150px; height:150px;"><h1>SISTEMA  <b>DE EVALUACIÓN</b></h1></a>
-                </div>*@
+        <div class="col-md-3" style="padding-bottom:20px">
+            <a href="https://www.aprendeyavanza2.com.co/UnAula/Recursos/pdf_(1).pdf" target="_blank"><img src="~/Content/Images/sistema-de-evaluacion.png" style="width:150px; height:150px;"><h1>SISTEMA  <b>DE EVALUACIÓN</b></h1></a>
+        </div>*@
                 </center>
             </div>
 

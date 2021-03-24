@@ -91,9 +91,7 @@ namespace SCORM1.Controllers
             correo.Priority = MailPriority.Normal;
             //
             var smtp = new SmtpClient();
-
             smtp.Send(correo);
-
             return RedirectToAction("Index", "Home");
 
         }

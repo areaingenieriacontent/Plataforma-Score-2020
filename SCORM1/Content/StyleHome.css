@@ -3627,8 +3627,8 @@ html.no-cssmask .teaser-verbatim.small .teaser-verbatim--picture {
 
     .list-community--item a, .list-community li a {
         transition: all .25s ease-out;
-        width: 24px;
-        height: 24px;
+        width: 55px;
+        height: 55px;
         background-repeat: no-repeat;
         background-position: 50%;
         display: block
@@ -7510,7 +7510,7 @@ form input:not([type=checkbox]):not([type=radio]):focus, form select:focus, form
 }
 
 .site-footer--sitemap {
-    padding: 50px 8.3333%;
+    padding: 30px 3.50%;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -17349,3 +17349,34 @@ input:-webkit-autofill:active {
 }
 
 /*# sourceMappingURL=bootstrap.css.map */
+
+#hiperlink {
+    margin-top:20px;
+
+}
+#hiperlink > a{
+    margin-top: 20px;
+    color:black;
+}
+.nav-link {
+    
+    background-color:lightgrey;
+}
+
+.nav-tabs .nav-link:hover, .nav-tabs .nav-link:focus {
+   
+    background-color: #FC3650;
+    color: #FFFFFF;
+}
+
+li.nav-item.active {
+    background-color:white;
+}
+
+
+.tab-content > .active {
+    display: block;
+    background: rgb(0,0,0);
+    background: linear-gradient( 4deg, rgba(0,0,0,0.5385504543614321) 16%, rgba(242,237,237,1) 100%);
+}
+

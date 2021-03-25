@@ -4259,12 +4259,13 @@ input[type="button"].btn-block {
   border-bottom: 1px solid #dee2e6;
 }
 
-.nav-tabs .nav-link {
-  margin-bottom: -1px;
-  border: 1px solid transparent;
-  border-top-left-radius: 0.25rem;
-  border-top-right-radius: 0.25rem;
-}
+    .nav-tabs .nav-link {
+        border-color: #e9ecef #e9ecef #dee2e6;
+        margin-bottom: -1px;      
+        border-top-left-radius: 0.50rem;
+        border-top-right-radius: 0.50rem;
+
+    }
 
 .nav-tabs .nav-link:hover, .nav-tabs .nav-link:focus {
   border-color: #e9ecef #e9ecef #dee2e6;

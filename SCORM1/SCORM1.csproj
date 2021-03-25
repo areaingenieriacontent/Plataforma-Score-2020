@@ -478,6 +478,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap1.min.css" />
+    <Content Include="Content\Images\calificaciones\banner-calificaciones.jpg" />
     <Content Include="Content\Images\cursos\ejemplo-curso-1.jpg" />
     <Content Include="Content\Images\cursos\ejemplo-curso-2.jpg" />
     <Content Include="Content\Images\cursos\ejemplo-curso-3.jpg" />
@@ -494,6 +495,8 @@
     <Content Include="Content\Images\comunidad\congreso-virtual.jpg" />
     <Content Include="Content\Images\comunidad\juegos-serios-hover.jpg" />
     <Content Include="Content\Images\comunidad\juegos-serios.jpg" />
+    <Content Include="Content\Images\home.jpg" />
+    <Content Include="Content\Images\home.png" />
     <Content Include="Content\Images\lecciones-aprendidas-hover.jpg" />
     <Content Include="Content\Images\lecciones-aprendidas.jpg" />
     <Content Include="Content\Images\comunidad\periodico-virtual-hover.jpg" />
@@ -501,6 +504,12 @@
     <Content Include="Content\Images\comunidad\salon-debate-hover.jpg" />
     <Content Include="Content\Images\comunidad\salon-debate.jpg" />
     <Content Include="Content\Images\logo-general.png" />
+    <Content Include="Content\Images\perfil-usuario\banner-perfil-usuario.jpg" />
+    <Content Include="Content\Images\perfil-usuario\user.png" />
+    <Content Include="Content\Images\sistema de puntos\banner-sistema-de-puntos.jpg" />
+    <Content Include="Content\Images\sistema de puntos\premio-diamante.png" />
+    <Content Include="Content\Images\sistema de puntos\premio-oro.png" />
+    <Content Include="Content\Images\sistema de puntos\premio-plata.png" />
     <Content Include="Content\Images\slider-zona-de-informacion\afterslideicon.png" />
     <Content Include="Content\Images\slider-zona-de-informacion\beforeslideicon.png" />
     <Content Include="Content\Images\slider-zona-de-informacion\go down icon.png" />

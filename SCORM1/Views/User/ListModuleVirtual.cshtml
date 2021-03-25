@@ -46,76 +46,79 @@
     </div>
     @if (Model.enrollment != null)
     {
-        <div class="table-responsive" style="columns: 3">
+        <div class="table-responsive">
             <table class="table">
                 <tbody>
-                    @foreach (var modules in Model.enrollment)
-                    {
-                        <div class="col-md" style="">
-                            <div class="card card-border">
+                    <div class="row">
+                        @foreach (var modules in Model.enrollment)
+                        {
+
+                            <div class="col-4">
+                                <div class="card card-border">
+                                    @if (modules.Enro_FinishDateModule > DateTime.Today)
+                                    {
+                                        <a id="btn-curso" href='@Url.Action("Grades", "User", new { id = @modules.Module.Modu_Id })' class="button-action" style="z-index:3">INGRESAR</a>
+                                    }
+                                    <div id="picturecursos" class="teaser-img--picture" style="background: white">
+                                        <picture>
+                                            <source srcset="~/Content/Images/cursos/ejemplo-curso-1.jpg" media="all and (min-width: 1280px)" type="image/jgp">
+                                            <source srcset="~/Content/Images/cursos/ejemplo-curso-1.jpg" media="all and (min-width: 960px)" type="image/jpg">
+                                            <source srcset="~/Content/Images/cursos/ejemplo-curso-1.jpg" media="all and (min-width: 640px)" type="image/jpg">
+                                            <source srcset="~/Content/Images/cursos/ejemplo-curso-1.jpg" type="image/jpg">
+                                            <img src="~/Content/Images/cursos/ejemplo-curso-1.jpg" alt=" " typeof="foaf:Image">
+                                        </picture>
+                                    </div>
+                                    @*<img src="~/Content/Images/cursos/ejemplo-curso-1.jpg" alt="..." style="">*@
+                                </div>
+                                <div class="card-body ">
+                                    <h4 style="text-transform:uppercase;color: #fc3650;"><b>@modules.Module.Modu_Name</b></h4>
+                                    <p><b>Comienzo:</b>@modules.Enro_InitDateModule</p>
+                                    <p><b>Termina:</b>@modules.Enro_FinishDateModule</p>
+                                </div>
+                            </div>
+
+                            @*
+                        <tr>
+                            <td>@modules.Module.Modu_Name</td>
+                            <td>@modules.Enro_InitDateModule</td>
+                            <td>@modules.Enro_FinishDateModule</td>
+                            <td>
+                                <img src="~/Resources/@modules.Module.Modu_ImageName" style="width:50px; height:50px" />
+                            </td>
+                            <td>
                                 @if (modules.Enro_FinishDateModule > DateTime.Today)
                                 {
-                                    <a id="btn-curso" href='@Url.Action("Grades", "User", new { id = @modules.Module.Modu_Id })' class="button-action" style="z-index:3">INGRESAR</a>
+                                    <a href='@Url.Action("Grades", "User", new { id = @modules.Module.Modu_Id })'>
+                                        <button style="background: #b0002d;padding: 7px;border: #b0002d;font-size: 16px;">Ingresar</button>
+                                    </a>
                                 }
-                                <div id="picturecursos" class="teaser-img--picture" style="background: white">
-                                    <picture>
-                                        <source srcset="~/Content/Images/cursos/ejemplo-curso-1.jpg" media="all and (min-width: 1280px)" type="image/jgp">
-                                        <source srcset="~/Content/Images/cursos/ejemplo-curso-1.jpg" media="all and (min-width: 960px)" type="image/jpg">
-                                        <source srcset="~/Content/Images/cursos/ejemplo-curso-1.jpg" media="all and (min-width: 640px)" type="image/jpg">
-                                        <source srcset="~/Content/Images/cursos/ejemplo-curso-1.jpg" type="image/jpg">
-                                        <img src="~/Content/Images/cursos/ejemplo-curso-1.jpg" alt=" " typeof="foaf:Image">
-                                    </picture>
-                                </div>
-                                @*<img src="~/Content/Images/cursos/ejemplo-curso-1.jpg" alt="..." style="">*@
-                            </div>
-                            <div class="card-body ">
-                                <h4 style="text-transform:uppercase;color: #fc3650;"><b>@modules.Module.Modu_Name</b></h4>
-                                <p><b>Comienzo:</b>@modules.Enro_InitDateModule</p>
-                                <p><b>Termina:</b>@modules.Enro_FinishDateModule</p>
-                            </div>
-                        </div>
+                            </td>
+                        </tr>
 
-                        @*
-                                        <tr>
-                                            <td>@modules.Module.Modu_Name</td>
-                                            <td>@modules.Enro_InitDateModule</td>
-                                            <td>@modules.Enro_FinishDateModule</td>
-                                            <td>
-                                                <img src="~/Resources/@modules.Module.Modu_ImageName" style="width:50px; height:50px" />
-                                            </td>
-                                            <td>
-                                                @if (modules.Enro_FinishDateModule > DateTime.Today)
-                                                {
-                                                    <a href='@Url.Action("Grades", "User", new { id = @modules.Module.Modu_Id })'>
-                                                        <button style="background: #b0002d;padding: 7px;border: #b0002d;font-size: 16px;">Ingresar</button>
-                                                    </a>
-                                                }
-                                            </td>
-                                        </tr>
-
-                                       else if (modules.User_Id == "46c9ac7f-39d0-4300-a0fc-b21e404ccbe8")
-                            {
-                                <tr>
-                                    <td>@modules.Module.Modu_Name</td>
-                                    <td>@modules.Enro_InitDateModule</td>
-                                    <td>@modules.Enro_FinishDateModule</td>
-                                    <td>
-                                        <img src="~/Resources/@modules.Module.Modu_ImageName" style="width:50px; height:50px" />
-                                    </td>
-                                    <td>
-                                        @if (modules.Enro_FinishDateModule > DateTime.Today)
-                                        {
-                                            <a href='@Url.Action("Grades", "User", new { id = @modules.Module.Modu_Id })'>
-                                                <button style="background: #b0002d;padding: 7px;border: #b0002d;font-size: 16px;">Ingresar</button>
-                                            </a>
-                                        }
-                                    </td>
+                       else if (modules.User_Id == "46c9ac7f-39d0-4300-a0fc-b21e404ccbe8")
+            {
+                <tr>
+                    <td>@modules.Module.Modu_Name</td>
+                    <td>@modules.Enro_InitDateModule</td>
+                    <td>@modules.Enro_FinishDateModule</td>
+                    <td>
+                        <img src="~/Resources/@modules.Module.Modu_ImageName" style="width:50px; height:50px" />
+                    </td>
+                    <td>
+                        @if (modules.Enro_FinishDateModule > DateTime.Today)
+                        {
+                            <a href='@Url.Action("Grades", "User", new { id = @modules.Module.Modu_Id })'>
+                                <button style="background: #b0002d;padding: 7px;border: #b0002d;font-size: 16px;">Ingresar</button>
+                            </a>
+                        }
+                    </td>
 
 
-                                </tr>
-                            }*@
-                    }
-                </tbody>
+                </tr>
+            }*@
+                        }
+                    </div>
+                    </tbody>
             </table>
         </div>
     }

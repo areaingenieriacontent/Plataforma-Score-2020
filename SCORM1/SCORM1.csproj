@@ -322,6 +322,10 @@
     <Compile Include="Migrations\202103191734003_pending_changes.Designer.cs">
       <DependentUpon>202103191734003_pending_changes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202103291428281_re-enter_vsdr.cs" />
+    <Compile Include="Migrations\202103291428281_re-enter_vsdr.Designer.cs">
+      <DependentUpon>202103291428281_re-enter_vsdr.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BasicAuthenticationAttribute.cs" />
     <Compile Include="Models\Lms\AdvanceLoseUser.cs" />
@@ -2367,6 +2371,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202103191734003_pending_changes.resx">
       <DependentUpon>202103191734003_pending_changes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202103291428281_re-enter_vsdr.resx">
+      <DependentUpon>202103291428281_re-enter_vsdr.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

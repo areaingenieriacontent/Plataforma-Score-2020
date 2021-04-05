@@ -2916,3 +2916,4 @@ C:\Users\nanit\Source\Repos\areaingenieriacontent\Plataforma-Score-2020\SCORM1\o
 C:\Users\nanit\Source\Repos\areaingenieriacontent\Plataforma-Score-2020\SCORM1\obj\Debug\SCORM1.pdb
 C:\Users\nanit\Source\Repos\areaingenieriacontent\Plataforma-Score-2020\SCORM1\obj\Debug\SCORM1.Migrations.vsdr.resources
 C:\Users\nanit\Source\Repos\areaingenieriacontent\Plataforma-Score-2020\SCORM1\obj\Debug\SCORM1.Migrations.pending_changes.resources
+C:\Users\nanit\Source\Repos\areaingenieriacontent\Plataforma-Score-2020\SCORM1\obj\Debug\SCORM1.Migrations.reenter_vsdr.resources

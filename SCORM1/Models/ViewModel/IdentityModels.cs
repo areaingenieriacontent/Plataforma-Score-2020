@@ -338,6 +338,15 @@ namespace SCORM1.Models
             modelBuilder.Entity<VsdrTeacherComment>().ToTable("VsdrTeacherComment");
             modelBuilder.Entity<VsdrUserFile>().ToTable("VsdrUserFile");
 
+            modelBuilder.Entity<SurveyModule>().ToTable("SurveyModule");
+            modelBuilder.Entity<SurveyQuestionBank>().ToTable("SurveyQuestionBank");
+            modelBuilder.Entity<UserSurveyResponse>().ToTable("UserSurveyResponse");
+            modelBuilder.Entity<MultipleOptionsSurveyQuestion>().ToTable("MultipleOptionsSurveyQuestion");
+            modelBuilder.Entity<MultipleOptionsSurveyAnswer>().ToTable("MultipleOptionsSurveyAnswer");
+            modelBuilder.Entity<MultipleOptionsSurveyUser>().ToTable("MultipleOptionsSurveyUser");
+            modelBuilder.Entity<TrueFalseSurveyQuestion>().ToTable("TrueFalseSurveyQuestion");
+            modelBuilder.Entity<TrueFalseSurveyUser>().ToTable("TrueFalseSurveyUser");
+
             modelBuilder.Entity<Question>()
                 .HasMany(question => question.Tests)
                 .WithMany(test => test.Questions)

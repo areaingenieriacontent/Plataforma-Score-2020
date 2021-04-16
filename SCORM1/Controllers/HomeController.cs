@@ -235,6 +235,15 @@ namespace SCORM1.Controllers
                 return RedirectToAction("Index", "Home");
 
             }
-        }      
+            
+        }   
+        public ActionResult ComunidadSocial()
+        {        
+            return View();
+        }
+        public ActionResult TableroControl()
+        {
+            return View();
+        }
     }
 }

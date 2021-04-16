@@ -8,7 +8,6 @@
     ViewBag.Title = "Profile";
 }
 @Styles.Render("~/Content/style1.css")
-@Styles.Render("~/Content/demo.css")
 @Styles.Render("~/Content/StyleDemo.css")
 @Styles.Render("~/Content/StyleHome.css")
 
@@ -17,26 +16,19 @@
 <body class="path-frontpage eu-cookie-compliance-status-null eu-cookie-compliance-popup-open" style="position: relative; overflow-y: auto;">
     <div class="page-wrapper">
         <noscript aria-hidden="true"><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WTWSFNR" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-        <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas="">
-            @*
-        <div class="page-hat simple">
-            <div class="page-hat--content">
-                <div class="page-hat--title js-letters-effect clearfix text-formatted field field--type-text-long field--label-hidden field__items" style=" opacity: 1; margin-top: 20%;position:absolute">
-                    <h2>
-                        ENCUENTRA AQUÍ LA<br />
-                        <b>GUÍA DE NAVEGACIÓN</b>
-                    </h2>
-                </div>
-            </div>
-        </div>
-            *@
+        <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas="">          
             <div id="block-homepage-cover-local" class="block block-block-content block-block-content01f17a1b-15d1-4a30-b5f0-df2818d6a3fd">
                 <div style="position:relative">
                     <div class="slideshow-container">
                         <!-- Full-width images with number and caption text -->
                         <div class="mySlides fade">
                             <img src="~/Content/Images/slider-zona-de-informacion/slide-1-guia-de-navegacion.jpg" style="width:100%">
-                            <a id="btn-landing" href="https://www.aprendeyavanza2.com.co/UnAula/Recursos/pdf_(1).pdf" target="_blank" class="button-action" style="margin-left: -25%;margin-top: 40%;">CLIC AQUÍ</a>
+                         <div class="container" style="position:relative">
+                            <div class="row justify-content-end">
+                                <a id="btn-landing" href="https://www.aprendeyavanza2.com.co/UnAula/Recursos/pdf_(1).pdf" target="_blank" class="button-action" style="margin-top:-20%;">CLIC AQUÍ</a>
+                            </div>
+                        </div>
+                            
                         </div>
 
                         <div class="mySlides fade">
@@ -102,7 +94,7 @@
 
         <br />
         <div>
-            <div class="page-intro" >
+            <div class="page-intro">
                 <div id="block-ourmarketssync" class="block block-block-content block-block-content15642d29-61f3-4219-bc83-2976579cec1e">
                     <div class="page-hat simple row" style="margin-top:35%">
                         <div class="page-hat--content">
@@ -114,11 +106,13 @@
                             </div>
                         </div>
                     </div>
-                    <div class="paragraph paragraph--type--button paragraph--view-mode--default" style="margin-top:12%">
-                        <div class="container">
-                            <div class="marger text-center-from-mobile">
-                                <a id="btn-landing" href="@Url.Action("ListModuleVirtual", "User")" class="button-action" style="position:relative">INGRESA A TUS CURSOS</a>
-                            </div>
+                </div>
+                <br />
+                <br />
+                <div class="paragraph paragraph--type--button paragraph--view-mode--default" style="margin-top:12%">
+                    <div class="container">
+                        <div class="marger text-center-from-mobile">
+                            <a id="btn-landing" href="@Url.Action("ListModuleVirtual", "User")" class="button-action" style="position:relative">INGRESA A TUS CURSOS</a>
                         </div>
                     </div>
                 </div>

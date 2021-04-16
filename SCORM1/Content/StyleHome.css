@@ -1205,28 +1205,8 @@ html {
 }
 
 .sticky .burger-menu--trigger {
-    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMSAxOS4yaDIydi0xLjRIMXYxLjR6bTAtNi45aDIyVjExSDF2MS4zem0wLTcuNXYxLjNoMjJWNC44SDF6IiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZmlsbD0iIzMzMyIvPjwvc3ZnPg==");
+    background-image: url();
     background-repeat: no-repeat
-}
-
-.link-icons.call:not(.disabled):hover:before, .tooltip.contact .tooltip--button:hover:after {
-    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMyIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDIzIDE2Ij48cGF0aCBkPSJNOS44IDVjLjMtLjMuMy0uOCAwLTEuMmwtMi0yLjVjLS4zLS40LS45LS40LTEuMy0uMS0uNy42LTEuMiAxLjMtMS42IDItMSAyIC4zIDUuMyAzLjIgOC4yIDIuMiAyLjIgNC44IDMuNSA2LjcgMy41LjUgMCAxLS4xIDEuNS0uMy44LS40IDEuNS0xIDItMS42LjMtLjQuMy0xLS4xLTEuM2wtMi41LTJjLS4zLS4zLS44LS4zLTEuMiAwbC0xLjMgMS4xYy0uMS4xLS4yLjEtLjMgMC0uOC0uNi0xLjUtMS4zLTIuMi0yLS43LS43LTEuNC0xLjQtMi0yLjItLjEtLjEtLjEtLjIgMC0uM0w5LjggNXoiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2YxMzg0ZCIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIvPjwvc3ZnPg==");
-    background-repeat: no-repeat
-}
-
-.layer-accordion-info.documents > li.expanded > .layer-accordion-info--trigger + .layer-accordion-info--tools a.link-icons.call:before, .link-icons.call.reversed:before {
-    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMyIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDIzIDE2Ij48cGF0aCBkPSJNOS44IDVjLjMtLjMuMy0uOCAwLTEuMmwtMi0yLjVjLS4zLS40LS45LS40LTEuMy0uMS0uNy42LTEuMiAxLjMtMS42IDItMSAyIC4zIDUuMyAzLjIgOC4yIDIuMiAyLjIgNC44IDMuNSA2LjcgMy41LjUgMCAxLS4xIDEuNS0uMy44LS40IDEuNS0xIDItMS42LjMtLjQuMy0xLS4xLTEuM2wtMi41LTJjLS4zLS4zLS44LS4zLTEuMiAwbC0xLjMgMS4xYy0uMS4xLS4yLjEtLjMgMC0uOC0uNi0xLjUtMS4zLTIuMi0yLS43LS43LTEuNC0xLjQtMi0yLjItLjEtLjEtLjEtLjIgMC0uM0w5LjggNXoiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIvPjwvc3ZnPg==");
-    background-repeat: no-repeat
-}
-
-.link-icons.call:before, .tooltip.contact .tooltip--button:after {
-    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMyIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDIzIDE2Ij48cGF0aCBkPSJNOS44IDVjLjMtLjMuMy0uOCAwLTEuMmwtMi0yLjVjLS4zLS40LS45LS40LTEuMy0uMS0uNy42LTEuMiAxLjMtMS42IDItMSAyIC4zIDUuMyAzLjIgOC4yIDIuMiAyLjIgNC44IDMuNSA2LjcgMy41LjUgMCAxLS4xIDEuNS0uMy44LS40IDEuNS0xIDItMS42LjMtLjQuMy0xLS4xLTEuM2wtMi41LTJjLS4zLS4zLS44LS4zLTEuMiAwbC0xLjMgMS4xYy0uMS4xLS4yLjEtLjMgMC0uOC0uNi0xLjUtMS4zLTIuMi0yLS43LS43LTEuNC0xLjQtMi0yLjItLjEtLjEtLjEtLjIgMC0uM0w5LjggNXoiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIvPjwvc3ZnPg==");
-    background-repeat: no-repeat;
-    content: "";
-    display: inline-block;
-    width: 23px;
-    height: 16px;
-    background-size: 23px 16px
 }
 
 
@@ -7915,7 +7895,6 @@ form input:not([type=checkbox]):not([type=radio]):focus, form select:focus, form
 .site-header:not(.sticky) .site-logo--inner {
     padding: 0 40px 30px;
     transform: scale(.525) translateX(-95%);
-    top: -40px
 }
 
 .site-header:not(.sticky) .veristar-login-menu .veristar-login-menu--title:before, .site-header:not(.sticky) .veristar-login-menu > h2:before {
@@ -9840,11 +9819,6 @@ html.no-cssmask .layer-long-verbatim--picture {
 html.no-cssmask .layer-contact-long--picture {
     border-radius: 80px/120px;
     overflow: hidden
-}
-
-.layer-contact-long--picture img {
-    -webkit-mask-image: url(/themes/custom/bureauveritasbase/img/teaser-verbatim-mask.png);
-    mask-image: url(/themes/custom/bureauveritasbase/img/teaser-verbatim-mask.png)
 }
 
 .layer-contact-long--card {
@@ -17132,7 +17106,7 @@ a.linkedin {
     font-family: 'Source Sans Pro';
     font-size: xxx-large;
     text-align: center;
-    z-index:15;    
+    z-index:999;    
 }
 
 
@@ -17373,10 +17347,128 @@ li.nav-item.active {
     background-color:white;
 }
 
-
 .tab-content > .active {
     display: block;
     background: rgb(0,0,0);
     background: linear-gradient( 4deg, rgba(0,0,0,0.5385504543614321) 16%, rgba(242,237,237,1) 100%);
 }
+.menu-scroll {
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+    margin-left: 1%;
+    visibility: hidden;
+}
+
+
+@media (max-width:575.98px) {
+    #btn-landing {
+        font-size: 25px;
+        margin-top: 5%
+    }
+
+    #btn-curso {
+        font-size: 25px;
+    }
+
+    #pfooter {
+        font-size: 50px
+    }
+}
+}
+@media (min-width: 576px) and (max-width: 767.98px) {
+    #btn-landing {
+        font-size: 35px;
+        margin-top:5%;
+    }
+    #btn-curso {
+        font-size: 35px;
+    }
+    #pfooter {
+        font-size: 60px
+    } 
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+    #btn-landing {
+        font-size: 45px;
+    }
+    #pfooter {
+        font-size: 80px;
+    }
+    
+}
+
+@media (min-width: 992px)  {
+    #btn-landing {
+        font-size: xxx-large;       
+    }
+    #pfooter {
+        font-size: 100px;
+    }
+        
+}
+@media(max-width:1050px) {
+    .menu-scroll {
+        visibility: visible;
+    }
+
+}
+
+.overlay {
+    height: 100%;
+    width: 80%;
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    top: 0;
+    left: 0;
+    background-color: white;
+    
+}
+
+.overlay-content {
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 30px;
+    color: #333;
+    display: block;
+    transition: 1s;
+    border-style: solid;
+    border-width: 1px 0 0;
+    border-color: #eaeaea;
+    font-weight: 700
+}
+
+    .overlay a:hover, .overlay a:focus {
+        color: #f1f1f1;
+    }
+
+.overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+}
+
+@media screen and (max-height: 450px) {
+    .overlay a {
+        font-size: 20px
+    }
+
+    .overlay .closebtn {
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
+    }
+}
+
+
 

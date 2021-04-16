@@ -485,7 +485,6 @@
     <Content Include="Content\Images\cursos\ejemplo-curso-4.jpg" />
     <Content Include="Content\Images\cursos\ejemplo-curso-interno-1.jpg" />
     <Content Include="Content\Images\cursos\portada.jpg" />
-    <Content Include="Content\demo.css" />
     <Content Include="Content\dropzone.css" />
     <Content Include="Content\Images\comunidad\cafeteria-virtual-hover.jpg" />
     <Content Include="Content\Images\comunidad\cafeteria-virtual.jpg" />
@@ -2500,6 +2499,8 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Views\Home\ComunidadSocial.cshtml" />
+    <Content Include="Views\Home\TableroControl.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

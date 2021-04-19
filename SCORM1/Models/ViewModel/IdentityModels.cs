@@ -401,6 +401,7 @@ namespace SCORM1.Models
          .WillCascadeOnDelete(false);
 
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+            //modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
         }
 
     }

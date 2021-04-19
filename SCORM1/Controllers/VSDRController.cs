@@ -57,7 +57,7 @@ namespace SCORM1.Controllers
             List<VsdrSession> tempList= new List<VsdrSession>();
             vsdrList = ApplicationDbContext.VsdrSessions.ToList();
 
-            //Removes not available and date expired vsdr sessions
+            //Removes not available and date expired vsdr sessions To-Do
             if (vsdrList.Count > 0)
             {
                 foreach (VsdrSession debateRoom in vsdrList)
@@ -76,7 +76,7 @@ namespace SCORM1.Controllers
                     vsdrList.Remove(debateRoom);
                 }
             }
-            //Fillter list by date and availability;
+            //To-Do, filter list by enrollment and open
             vsdrModel.listOfVsdr = vsdrList;
             vsdrModel.Sesion = GetActualUserId().SesionUser;
             return View(vsdrModel);

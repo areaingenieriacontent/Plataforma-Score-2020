@@ -298,6 +298,7 @@
     <Compile Include="Controllers\SendOfEmailsController.cs" />
     <Compile Include="Controllers\ServiciosMovilController.cs" />
     <Compile Include="Controllers\SuperAdminGeneralController.cs" />
+    <Compile Include="Controllers\SurveyController.cs" />
     <Compile Include="Controllers\UploadController.cs" />
     <Compile Include="Controllers\UserAndMassiveManagementController.cs" />
     <Compile Include="Controllers\UserController.cs" />
@@ -317,6 +318,10 @@
     <Compile Include="Migrations\202102081804467_vsdr.cs" />
     <Compile Include="Migrations\202102081804467_vsdr.Designer.cs">
       <DependentUpon>202102081804467_vsdr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104191448294_VSDR_open.cs" />
+    <Compile Include="Migrations\202104191448294_VSDR_open.Designer.cs">
+      <DependentUpon>202104191448294_VSDR_open.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BasicAuthenticationAttribute.cs" />
@@ -423,6 +428,14 @@
     <Compile Include="Models\Scorm\UserInfo.cs" />
     <Compile Include="Models\ServiceBlock\BlockService.cs" />
     <Compile Include="Models\ServiceBlock\TypeServiceBlock.cs" />
+    <Compile Include="Models\Survey\MultipleOptionsSurveyAnswer.cs" />
+    <Compile Include="Models\Survey\MultipleOptionsSurveyQuestion.cs" />
+    <Compile Include="Models\Survey\MultipleOptionsSurveyUser.cs" />
+    <Compile Include="Models\Survey\SurveyModule.cs" />
+    <Compile Include="Models\Survey\SurveyQuestionBank.cs" />
+    <Compile Include="Models\Survey\TrueFalseSurveyQuestion.cs" />
+    <Compile Include="Models\Survey\TrueFalseSurveyUser.cs" />
+    <Compile Include="Models\Survey\UserSurveyResponse.cs" />
     <Compile Include="Models\ValidationUser.cs" />
     <Compile Include="Models\ViewModel\AccountViewModels.cs" />
     <Compile Include="Models\ViewModel\AdminGameViewModel.cs" />
@@ -448,6 +461,7 @@
     <Compile Include="Models\ViewModel\ServiceWebModel.cs" />
     <Compile Include="Models\ViewModel\StandarModels.cs" />
     <Compile Include="Models\ViewModel\SuperAdminGeneralControllerViewModel.cs" />
+    <Compile Include="Models\ViewModel\SurveyViewModel.cs" />
     <Compile Include="Models\ViewModel\UploadViewModel.cs" />
     <Compile Include="Models\ViewModel\UserAndMassiveManagementViewModel.cs" />
     <Compile Include="Models\ViewModel\UserViewModel.cs" />
@@ -2313,6 +2327,7 @@
     <Content Include="Views\ProtectedFailure\UserResults.cshtml" />
     <Content Include="Views\VSDR\VsdrUserList.cshtml" />
     <Content Include="Views\VSDR\VsdrContent.cshtml" />
+    <Content Include="Views\Survey\Survey.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -2348,6 +2363,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202102081804467_vsdr.resx">
       <DependentUpon>202102081804467_vsdr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104191448294_VSDR_open.resx">
+      <DependentUpon>202104191448294_VSDR_open.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

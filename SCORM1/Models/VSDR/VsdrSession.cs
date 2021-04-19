@@ -25,5 +25,7 @@ namespace SCORM1.Models.VSDR
         public string resource_url { get; set; }
         [Display(Name = "Visible")]
         public bool available { get; set; }
+        [Display(Name ="Disponible para todos")]
+        public bool open { get; set; }
     }
 }

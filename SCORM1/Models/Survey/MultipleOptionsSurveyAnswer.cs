@@ -17,6 +17,7 @@ namespace SCORM1.Models.Survey
         public int mosq_id { get; set; }
         [AllowHtml]
         public string content { get; set; }
+        public int correct_answer { get; set; }
         public virtual MultipleOptionsSurveyQuestion MultipleOptionsSurveyQuestion { get; set; }
     }
 }

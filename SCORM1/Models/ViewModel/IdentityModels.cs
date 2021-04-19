@@ -189,6 +189,8 @@ namespace SCORM1.Models
         public virtual DbSet<AnswerOptionMultiple> AnswerOptionMultiples { get; set; }
         public virtual DbSet<AnswerOptionMultipleStudent> AnswerOptionMultipleStudent { get; set; }
 
+        public virtual DbSet<Advance> Advances {get;set;}
+
         //Creating table Of Logs
         public virtual DbSet<CodeLogs> CodeLogs { get; set; }
         public virtual DbSet<TableChange> TableChanges { get; set; }
@@ -284,7 +286,7 @@ namespace SCORM1.Models
             modelBuilder.Entity<IdentityUserRole>().ToTable("UserRoles");
             modelBuilder.Entity<IdentityUserLogin>().ToTable("UserLogins");
             modelBuilder.Entity<IdentityUserClaim>().ToTable("UserClaims");
-
+            modelBuilder.Entity<Advance>().ToTable("Advance");
             modelBuilder.Entity<ApplicationUser>()
                 .HasOptional(a => a.Area)
                 .WithMany()

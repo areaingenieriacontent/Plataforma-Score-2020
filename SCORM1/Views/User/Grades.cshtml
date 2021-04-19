@@ -4,8 +4,8 @@
 @using SCORM1.Models.RigidCourse;
 @model UserGeneralViewModel
 <script src="~/Scripts/Tinymce1/tinymce.min.js"></script>
+@Styles.Render("~/Content/StyleHome.css")
 
-<br />
 <script>
     tinymce.init({
         selector: "textarea",
@@ -116,30 +116,37 @@ else
                             $("#Errors").modal();
                         });
                     </script>
-                }
-            }
+                }}
         }
     }
 }
-<br />
-<br />
-<br />
-<br />
-<div class="row fecha">
-    <div class="btn-group btn-breadcrumb">
-        <a href="@Url.Action("Index", "Home")" class="btn btn-info"><i class="glyphicon glyphicon-home"></i></a>
-        @*<a href="@Url.Action(" Result", "Ratings" , new {id=Model.Enrollment.Modu_Id})" class="btn btn-info" stye="margin-left:-5em">Calificaciones</a> *@
+<div id="encabezadocursos">
+    <img src="~/Content/Images/calificaciones/banner-calificaciones.jpg" style="height:200px;width:100%" />
+</div>
+<div id="hiperlink">
+    <img src="~/Content/Images/home.jpg" alt="" style="margin-left:5%;width:25px" />
+    <a href="@Url.Action("Index", "Home")" style="font-weight: bolder">INICIO/</a>
+    <a href="@Url.Action("ListModuleVirtual", "User")" style="font-weight: bolder">CURSOS ACTIVOS/</a>
+    <a href="@Model.Enrollment.Module.Modu_Name" style="font-weight: bolder; color:#FC3650">@Model.Enrollment.Module.Modu_Name</a>
+</div>
+@*
+        <div class="row fecha">
+                <div class="btn-group btn-breadcrumb">
+                    <a href="@Url.Action("Index", "Home")" class="btn btn-info"><i class="glyphicon glyphicon-home"></i></a>
+                    <a href="@Url.Action(" Result", "Ratings" , new {id=Model.Enrollment.Modu_Id})" class="btn btn-info" stye="margin-left:-5em">Calificaciones</a>
         <a href="@Url.Action("Index", "Home")" class="btn btn-info" stye="margin-left:-5em">Inicio</a>
-    </div>
-</div>
-<div>
-    @if (Model.Modules.hasProtectedFailure==FORO.Si&&Model.Modules.Modu_TypeOfModule==CURSO.Rigido)
-    {
-        <br/>
+            </div>
+        </div>
+
+    <div>
+        @if (Model.Modules.hasProtectedFailure == FORO.Si)
+        {
+            <br />
             <a href="@Url.Action("TestUser", "ProtectedFailure", new { id = Model.Modules.Modu_Id })"><i class="fa fa-chevron-down" aria-hidden="true">Test de falla protegida</i></a>
-        <br/>
-    }
-</div>
+            <br />
+        }
+    </div>
+*@
 <br />
 <div class="panel panel-primary">
     <div id="AddBettertractice" class="modal fade" role="dialog">
@@ -155,6 +162,7 @@ else
                         @Html.AntiForgeryToken()
                         @Html.HiddenFor(model => model.Enrollment.Modu_Id)
                         @Html.HiddenFor(model => Model.Enrollment.Module.Modu_Id)
+                        @Html.HiddenFor(model => Model.Modu_ImageName)
                         <form class="form-horizontal">
                             <div class="form-group">
                                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
@@ -318,11 +326,11 @@ else
         </div>
     </div>
     <!--Muestra el curso seleccionado de los que estan inscritos-->
-    <div class="panel-heading panel-head"><center><h1 style="font-size:45px;"> @Model.Enrollment.Module.Modu_Name</h1> </center></div>
-    <div class="panel-body">
+    <div class="panel-heading panel-head"><center><h1 style="font-size:45px;color:black;margin:3%"> @Model.Enrollment.Module.Modu_Name</h1> </center></div>  
+    <div class="panel-body" style="margin:5%">
         <div class="panel-body">
             <div class="col-md-2">
-                <img src="~/Resources/@Model.Enrollment.Module.Modu_ImageName" style="width:100%;" class="img-responsive" />
+                @*<img src="~/Resources/@Model.Enrollment.Module.Modu_ImageName" style="width:100%;" class="img-responsive" />*@
             </div>
             <div class="col-md-10">
                 <p style="color:#888888; font-size:30px;width:100%;text-align:left;">@Model.Enrollment.Module.Modu_Description</p>
@@ -345,51 +353,54 @@ else
             {
                 if (Model.Enrollment.Module.TopicsCourse.Where(x => x.ToCo_Visible == FORO.Si).ToList() != null)
                 {
-                <ul class="nav nav-tabs">
-                    @if (Model.Enrollment.Module.Modu_BetterPractice == FORO.No && Model.Enrollment.Module.Modu_Improvement == FORO.No)
-                    {
-                    }
-                    else
-                    {
-                        <li><a data-toggle="tab" href="#menu1" style="font-size:20px;">Aportes</a></li>
-                    }
-                    @*<li class="active"><a data-toggle="tab" href="#@Model.listenrollment[0].ToCo_Id" style="font-size:20px;">@Model.listenrollment[0].ToCo_Name</a></li>*@
-
-                    @*Parte de curso rigido, revisar y replicar en otras partes que que tienen mejora y buena practica*@
-                    @foreach (TopicsCourse topic in Model.Enrollment.Module.TopicsCourse.OrderBy(x => x.ToCo_Id).Where(x => x.ToCo_Visible == FORO.Si))
-                    {
-                        @*Agregar condición si el tema tiene predecesor y si ya cumplio la evaluación, siempre y cuando sea curso rígido*@
-                        if (topic.Module.Modu_TypeOfModule == CURSO.Rigido)
+                    <ul class="nav nav-tabs" id="nav-cursos" style="justify-content: center;border:none;">
+                        @if (Model.Enrollment.Module.Modu_BetterPractice == FORO.No && Model.Enrollment.Module.Modu_Improvement == FORO.No)
                         {
-                            if (topic.First_Topic == FORO.Si)
-                            {<li>
-                                <a data-toggle="tab" href="#@topic.ToCo_Id" style="font-size:20px;">@topic.ToCo_Name</a>
+                        }
+                        else
+                        {
+                            <li class="nav-item">
+                                 <a class="nav-link" data-toggle="tab" href="#menu1" style="font-size:40px;">Aportes</a>
                             </li>
-                            }
-                            foreach (UserModuleAdvance advance in Model.userFlashTestResults)
+                        }
+                        @*<li class="active"><a data-toggle="tab" href="#@Model.listenrollment[0].ToCo_Id" style="font-size:20px;">@Model.listenrollment[0].ToCo_Name</a></li>*@
+
+                        @*Parte de curso rigido, revisar y replicar en otras partes que que tienen mejora y buena practica*@
+                        @foreach (TopicsCourse topic in Model.Enrollment.Module.TopicsCourse.OrderBy(x => x.ToCo_Id).Where(x => x.ToCo_Visible == FORO.Si))
+                        {
+                            @*Agregar condición si el tema tiene predecesor y si ya cumplio la evaluación, siempre y cuando sea curso rígido*@
+                            if (topic.Module.Modu_TypeOfModule == CURSO.Rigido)
                             {
-                                if (topic.ToCo_Id == advance.ToCo_id && advance.Completed == 1)
+                                if (topic.First_Topic == FORO.Si)
                                 {
-                                    foreach (TopicsCourse topiCreate in Model.Enrollment.Module.TopicsCourse.OrderBy(x => x.ToCo_Id).Where(x => x.ToCo_Visible == FORO.Si))
+                                    <li class="nav-item">
+                                        <a class="nav-link" data-toggle="tab" href="#@topic.ToCo_Id" style="font-size:40px;">@topic.ToCo_Name</a>
+                                    </li>
+                                }
+                                foreach (UserModuleAdvance advance in Model.userFlashTestResults)
+                                {
+                                    if (topic.ToCo_Id == advance.ToCo_id && advance.Completed == 1)
                                     {
-                                        if (topiCreate.ToCo_Id == topic.ConditionedTopic&&topiCreate.First_Topic!=FORO.Si)
+                                        foreach (TopicsCourse topiCreate in Model.Enrollment.Module.TopicsCourse.OrderBy(x => x.ToCo_Id).Where(x => x.ToCo_Visible == FORO.Si))
                                         {
-                                             <li>
-                                                <a data-toggle="tab" href="#@topiCreate.ToCo_Id" style="font-size:20px;">@topiCreate.ToCo_Name</a>
-                                             </li>
+                                            if (topiCreate.ToCo_Id == topic.ConditionedTopic && topiCreate.First_Topic != FORO.Si)
+                                            {
+                                                <li class="nav-item">
+                                                    <a class="nav-link" data-toggle="tab" href="#@topiCreate.ToCo_Id" style="font-size:40px;">@topiCreate.ToCo_Name</a>
+                                                </li>
+                                            }
                                         }
                                     }
                                 }
                             }
-                        }
-                        else
-                        {
-                                <li>
-                                    <a data-toggle="tab" href="#@topic.ToCo_Id" style="font-size:20px;">@topic.ToCo_Name</a>
+                            else
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link" data-toggle="tab" href="#@topic.ToCo_Id" style="font-size:40px;">@topic.ToCo_Name</a>
                                 </li>
+                            }
                         }
-                    }
-                 </ul>
+                    </ul>
                     <div class="tab-content">
                         @if (Model.Enrollment.Module.Modu_BetterPractice == FORO.No && Model.Enrollment.Module.Modu_Improvement == FORO.No)
                         {
@@ -599,7 +610,7 @@ else
                                 </div>
                             </div>
                         }
-                        
+
                         <div id="@Model.listenrollment[0].ToCo_Id" class="tab-pane fade in active">
                             <div class="contenido-articulo">
 
@@ -697,7 +708,7 @@ else
                                         }
                                     </div>
                                 }
-                                <br />
+                                
                                 @if (Model.listenrollment[0].Job.Count != 0)
                                 {
                                     <div class="fecha">
@@ -720,9 +731,9 @@ else
                                     <a href="@Url.Action("TestUser", "FlashTests", new { Toco_Id = @Model.listenrollment[0].ToCo_Id })"><i class="fa fa-chevron-down" aria-hidden="true">Ir a test rápido</i></a>*@
                                 }
                             </div>
-                            <br/>
+                            <br />
                         </div>
-                        
+
                         @foreach (TopicsCourse topic1 in Model.Enrollment.Module.TopicsCourse.Where(x => x.ToCo_Visible == FORO.Si))
                         {
                             <div id="@topic1.ToCo_Id" class="tab-pane fade">
@@ -778,17 +789,17 @@ else
                                                         else
                                                         {
                                                             @* se comenta la seccion donde aparece el link de la evaluacion para efectos de este despliegue*@
-                                                            <div class="fecha">
-                                                                <a href="@Url.Action("TestUser", "User", new { id = @topic1.ToCo_Id })"><i class="fa fa-chevron-down" aria-hidden="true">Ir a Evaluación</i></a>
-                                                            </div>
+                                                            @*<div class="fecha">
+                                                                  <a href="@Url.Action("TestUser", "User", new { id = @topic1.ToCo_Id })"><i class="fa fa-chevron-down" aria-hidden="true">Ir a Evaluación</i></a>
+                                                                </div>*@
                                                         }
                                                     }
                                                     else
                                                     {
                                                         <h4 class="fecha"> <strong> Ya no tiene intentos disponibles</strong></h4>
                                                         @*<p class="fecha">
-                                @Html.ActionLink("Contactar al Administrador", "EmailAttempts", "User", new { BaQu_Id = item1.BaQu_Id }, new { @class = "btn btn-primary" })
-                            </p>*@
+                                                                @Html.ActionLink("Contactar al Administrador", "EmailAttempts", "User", new { BaQu_Id = item1.BaQu_Id }, new { @class = "btn btn-primary" })
+                                                            </p>*@
 
                                                         <p class="fecha">
                                                             @Html.ActionLink("Resultado test", "ResulQuestions", "User", new { BaQu_Id = item1.BaQu_Id }, new { @class = "btn btn-primary" })
@@ -809,7 +820,15 @@ else
                                     {
                                         if (flash.ToCo_Id == topic1.ToCo_Id)
                                         {
-                                            @*
+                                                <div class="page-hat simple">
+                                                    <div class="page-hat--content">
+                                                        <div class="page-hat--title js-letters-effect clearfix text-formatted field field--name-field-text-animation field--type-text-long field--label-hidden field__items" style=" opacity: 1;margin-left:-20%;margin-top:20%;position:absolute">
+                                                            <h2>
+                                                                EVALUACIONES<br /><b>TEMA</b>
+                                                            </h2>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             <div class="fecha">
                                                 <a href="@Url.Action("TestUser", "FlashTests", new { Toco_Id = @topic1.ToCo_Id })"><i class="fa fa-chevron-down" aria-hidden="true">Ir a test rápido</i></a>
                                             </div>*@

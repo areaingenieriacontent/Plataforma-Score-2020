@@ -300,17 +300,32 @@
     <Compile Include="Controllers\SendOfEmailsController.cs" />
     <Compile Include="Controllers\ServiciosMovilController.cs" />
     <Compile Include="Controllers\SuperAdminGeneralController.cs" />
+    <Compile Include="Controllers\SurveyController.cs" />
     <Compile Include="Controllers\UploadController.cs" />
     <Compile Include="Controllers\UserAndMassiveManagementController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\UserPlenamenteController.cs" />
     <Compile Include="Controllers\ViewGameController.cs" />
     <Compile Include="Controllers\ViewGameUserController.cs" />
+    <Compile Include="Controllers\VSDRController.cs" />
     <Compile Include="Controllers\WebServiceController.cs" />
     <Compile Include="Enum\Enum.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+<<<<<<< HEAD
+    <Compile Include="Migrations\202011171750518_initial.cs" />
+    <Compile Include="Migrations\202011171750518_initial.Designer.cs">
+      <DependentUpon>202011171750518_initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202102081804467_vsdr.cs" />
+    <Compile Include="Migrations\202102081804467_vsdr.Designer.cs">
+      <DependentUpon>202102081804467_vsdr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104191448294_VSDR_open.cs" />
+    <Compile Include="Migrations\202104191448294_VSDR_open.Designer.cs">
+      <DependentUpon>202104191448294_VSDR_open.cs</DependentUpon>
+=======
     <Compile Include="Migrations\202102121924369_Advance.cs" />
     <Compile Include="Migrations\202102121924369_Advance.Designer.cs">
       <DependentUpon>202102121924369_Advance.cs</DependentUpon>
@@ -318,6 +333,7 @@
     <Compile Include="Migrations\202102171736313_AddAdvance.cs" />
     <Compile Include="Migrations\202102171736313_AddAdvance.Designer.cs">
       <DependentUpon>202102171736313_AddAdvance.cs</DependentUpon>
+>>>>>>> origin/Ruben
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BasicAuthenticationAttribute.cs" />
@@ -425,6 +441,14 @@
     <Compile Include="Models\Scorm\UserInfo.cs" />
     <Compile Include="Models\ServiceBlock\BlockService.cs" />
     <Compile Include="Models\ServiceBlock\TypeServiceBlock.cs" />
+    <Compile Include="Models\Survey\MultipleOptionsSurveyAnswer.cs" />
+    <Compile Include="Models\Survey\MultipleOptionsSurveyQuestion.cs" />
+    <Compile Include="Models\Survey\MultipleOptionsSurveyUser.cs" />
+    <Compile Include="Models\Survey\SurveyModule.cs" />
+    <Compile Include="Models\Survey\SurveyQuestionBank.cs" />
+    <Compile Include="Models\Survey\TrueFalseSurveyQuestion.cs" />
+    <Compile Include="Models\Survey\TrueFalseSurveyUser.cs" />
+    <Compile Include="Models\Survey\UserSurveyResponse.cs" />
     <Compile Include="Models\ValidationUser.cs" />
     <Compile Include="Models\ViewModel\AccountViewModels.cs" />
     <Compile Include="Models\ViewModel\AdminGameViewModel.cs" />
@@ -450,11 +474,17 @@
     <Compile Include="Models\ViewModel\ServiceWebModel.cs" />
     <Compile Include="Models\ViewModel\StandarModels.cs" />
     <Compile Include="Models\ViewModel\SuperAdminGeneralControllerViewModel.cs" />
+    <Compile Include="Models\ViewModel\SurveyViewModel.cs" />
     <Compile Include="Models\ViewModel\UploadViewModel.cs" />
     <Compile Include="Models\ViewModel\UserAndMassiveManagementViewModel.cs" />
     <Compile Include="Models\ViewModel\UserViewModel.cs" />
     <Compile Include="Models\ViewModel\ViewDataUploadFileResults.cs" />
     <Compile Include="Models\ViewModel\ViewGameViewModel.cs" />
+    <Compile Include="Models\ViewModel\VsdrUserVM.cs" />
+    <Compile Include="Models\VSDR\VsdrSession.cs" />
+    <Compile Include="Models\VSDR\VsdrTeacherComment.cs" />
+    <Compile Include="Models\VSDR\VsdrEnrollment.cs" />
+    <Compile Include="Models\VSDR\VsdrUserFile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -2489,6 +2519,11 @@
     <Content Include="Views\FlashTests\TestUser.cshtml" />
     <Content Include="Views\ProtectedFailure\TestUser.cshtml" />
     <Content Include="Views\ProtectedFailure\UserResults.cshtml" />
+<<<<<<< HEAD
+    <Content Include="Views\VSDR\VsdrUserList.cshtml" />
+    <Content Include="Views\VSDR\VsdrContent.cshtml" />
+    <Content Include="Views\Survey\Survey.cshtml" />
+=======
     <Content Include="Scripts\umd\popper.min.js.map" />
     <Content Include="Scripts\umd\popper.js.map" />
     <Content Include="Scripts\umd\popper.js.flow" />
@@ -2499,8 +2534,12 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
+<<<<<<< HEAD
+>>>>>>> origin/Ruben
+=======
     <Content Include="Views\Home\ComunidadSocial.cshtml" />
     <Content Include="Views\Home\TableroControl.cshtml" />
+>>>>>>> c8be90cce52817ce8cd56531b1aa3cf37a3256bd
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -2520,17 +2559,29 @@
     <Folder Include="Views\ReportController\" />
     <Folder Include="Views\SendOfEmails\" />
     <Folder Include="Views\WebService\" />
+    <Folder Include="VSDRUploads\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
+    <EmbeddedResource Include="Migrations\202011171750518_initial.resx">
+      <DependentUpon>202011171750518_initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202102081804467_vsdr.resx">
+      <DependentUpon>202102081804467_vsdr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104191448294_VSDR_open.resx">
+      <DependentUpon>202104191448294_VSDR_open.cs</DependentUpon>
+=======
     <EmbeddedResource Include="Migrations\202102121924369_Advance.resx">
       <DependentUpon>202102121924369_Advance.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202102171736313_AddAdvance.resx">
       <DependentUpon>202102171736313_AddAdvance.cs</DependentUpon>
+>>>>>>> origin/Ruben
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

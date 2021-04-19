@@ -22,6 +22,8 @@ using System;
 using SCORM1.Models.MainGame;
 using SCORM1.Models.ratings;
 using SCORM1.Models.RigidCourse;
+using SCORM1.Models.VSDR;
+using SCORM1.Models.Survey;
 
 namespace SCORM1.Models
 {
@@ -254,6 +256,22 @@ namespace SCORM1.Models
         public virtual DbSet<UserModuleAdvance> UserModuleAdvances { get; set; }
         public virtual DbSet<ProtectedFailureMultiChoiceAnswer> ProtectedFailureMultiChoiceAnswers { get; set; }
 
+        //Virtual Syncronic Debate Room
+        public virtual DbSet<VsdrSession> VsdrSessions { get; set; }
+        public virtual DbSet<VsdrEnrollment> VsdrEnrollments { get; set; }
+        public virtual DbSet<VsdrTeacherComment> VsdrTeacherComments { get; set; }
+        public virtual DbSet<VsdrUserFile> VsdrUserFiles { get; set; }
+
+        //Survey
+        public virtual DbSet<SurveyModule> Surveys { get; set; }
+        public virtual DbSet<SurveyQuestionBank> SurveyQuestionBanks { get; set; }
+        public virtual DbSet<UserSurveyResponse> UserSurveyResponses { get; set; }
+        public virtual DbSet<MultipleOptionsSurveyQuestion> MultipleOptionsSurveyQuestions { get; set; }
+        public virtual DbSet<MultipleOptionsSurveyAnswer> MultipleOptionsSurveyAnswers { get; set; }
+        public virtual DbSet<MultipleOptionsSurveyUser> MultipleOptionsSurveyUsers { get; set; }
+        public virtual DbSet<TrueFalseSurveyQuestion> TrueFalseSurveyQuestions { get; set; }
+        public virtual DbSet<TrueFalseSurveyUser> TrueFalseSurveyUsers { get; set; }
+
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
@@ -316,6 +334,21 @@ namespace SCORM1.Models
                     ma.ToTable("MyOfficeUser");
                 });
 
+
+            modelBuilder.Entity<VsdrSession>().ToTable("VsdrSession");
+            modelBuilder.Entity<VsdrEnrollment>().ToTable("VsdrEnrollment");
+            modelBuilder.Entity<VsdrTeacherComment>().ToTable("VsdrTeacherComment");
+            modelBuilder.Entity<VsdrUserFile>().ToTable("VsdrUserFile");
+
+            modelBuilder.Entity<SurveyModule>().ToTable("SurveyModule");
+            modelBuilder.Entity<SurveyQuestionBank>().ToTable("SurveyQuestionBank");
+            modelBuilder.Entity<UserSurveyResponse>().ToTable("UserSurveyResponse");
+            modelBuilder.Entity<MultipleOptionsSurveyQuestion>().ToTable("MultipleOptionsSurveyQuestion");
+            modelBuilder.Entity<MultipleOptionsSurveyAnswer>().ToTable("MultipleOptionsSurveyAnswer");
+            modelBuilder.Entity<MultipleOptionsSurveyUser>().ToTable("MultipleOptionsSurveyUser");
+            modelBuilder.Entity<TrueFalseSurveyQuestion>().ToTable("TrueFalseSurveyQuestion");
+            modelBuilder.Entity<TrueFalseSurveyUser>().ToTable("TrueFalseSurveyUser");
+
             modelBuilder.Entity<Question>()
                 .HasMany(question => question.Tests)
                 .WithMany(test => test.Questions)
@@ -370,6 +403,7 @@ namespace SCORM1.Models
          .WillCascadeOnDelete(false);
 
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+            //modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
         }
 
     }

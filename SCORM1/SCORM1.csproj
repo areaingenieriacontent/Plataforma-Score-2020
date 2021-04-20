@@ -313,7 +313,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-<<<<<<< HEAD
     <Compile Include="Migrations\202011171750518_initial.cs" />
     <Compile Include="Migrations\202011171750518_initial.Designer.cs">
       <DependentUpon>202011171750518_initial.cs</DependentUpon>
@@ -323,9 +322,9 @@
       <DependentUpon>202102081804467_vsdr.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\202104191448294_VSDR_open.cs" />
-    <Compile Include="Migrations\202104191448294_VSDR_open.Designer.cs">
+    <Compile Include="Migrations\202104191448294_VSDR_open.Designer.cs"/>
       <DependentUpon>202104191448294_VSDR_open.cs</DependentUpon>
-=======
+
     <Compile Include="Migrations\202102121924369_Advance.cs" />
     <Compile Include="Migrations\202102121924369_Advance.Designer.cs">
       <DependentUpon>202102121924369_Advance.cs</DependentUpon>

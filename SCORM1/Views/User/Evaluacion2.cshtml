@@ -1,4 +1,9 @@
-﻿
+﻿@using SCORM1.Models.Lms;
+@using SCORM1.Models.ViewModel;
+@using SCORM1.Enum;
+@using SCORM1.Models.RigidCourse;
+@model UserGeneralViewModel
+
 @{
     ViewBag.Title = "Evaluacion2";
 }
@@ -21,7 +26,7 @@
     <br />
     <p style="text-align:right;margin:10px;">INSTRUCCIONES</p>
     <br />
-    <ul>
+    <ul id="listaevaluacion">
         <li type="circle">El examen está dividido en tres secciones, las cuales suman un total de 100 puntos.</li>
         <li>Se debe contestar todas las secciones.</li>
         <li>El puntaje mínimo para aprobar el examen, sumando las tres secciones es de 70 puntos y como mínimo se deebe obtener 50% en cada una de las seccines.</li>
@@ -32,10 +37,14 @@
         <li>Preguntas de opción Múltiple que requieren la sección de uan sola opción.</li>
         <li>Enunciados relacionados con los temas vistos, sobre los que deberá indicar si es Falso o Verdadero.</li>
         <li>Analísis de casos</li>
-            <li>SECCIÓN 1(30 puntos) Conocimientos Marco Legas</li>
-            <li>SECCIÓN 2(40 puntos) Conocimientos Marco Legas</li>
-            <li>SECCIÓN 3(30 puntos) Conocimientos Marco Legas</li>
+        <li>SECCIÓN 1(30 puntos) Conocimientos Marco Legas</li>
+        <li>SECCIÓN 2(40 puntos) Conocimientos Marco Legas</li>
+        <li>SECCIÓN 3(30 puntos) Conocimientos Marco Legas</li>
         <li>Analísis de casos:</li>
-            <li>Comprende una serie de situaciones en las que puede </li>
+        <li>Comprende una serie de situaciones en las que puede </li>
     </ul>
+    <p style="color:white;background-color:#FC3650;height:20px;text-align:center"><b>RECUERDA QUE TIENES # INTENTOS PARA APROBAR LA EVALUACIÓN</b></p>
+    <br />
+    <br />
+
 </div>

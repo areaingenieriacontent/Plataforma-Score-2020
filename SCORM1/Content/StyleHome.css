@@ -994,7 +994,7 @@ html {
 
 
 .site-logo--inner {
-    background-image: url("Images/logo-general.png");
+    background-image: url("Images/slider-login/logo-bv-fondo-claro.png");
     background-repeat: no-repeat;
     content: "";
     display: inline-block;
@@ -17333,8 +17333,7 @@ input:-webkit-autofill:active {
     color:black;
 }
 .nav-link {
-    
-    background-color:lightgrey;
+    background-color: #e7e7e7;
 }
 
 .nav-tabs .nav-link:hover, .nav-tabs .nav-link:focus {
@@ -17476,7 +17475,8 @@ li.nav-item.active {
     text-align: center;
     line-height: 2;
     max-width: none;
-    border-style: none
+    border-style: none;
+    font-family: 'Source Sans Pro'
 }
 .btn-fondo-negro {
     background-color: #333;
@@ -17484,6 +17484,6 @@ li.nav-item.active {
     text-align: center;
     line-height: 2;
     max-width: none;
-    border-style: none
+    font-family: 'Source Sans Pro'
 }
 

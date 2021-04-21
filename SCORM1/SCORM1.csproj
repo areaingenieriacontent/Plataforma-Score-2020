@@ -313,26 +313,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202011171750518_initial.cs" />
-    <Compile Include="Migrations\202011171750518_initial.Designer.cs">
-      <DependentUpon>202011171750518_initial.cs</DependentUpon>
+    <Compile Include="Migrations\202104201738166_uno.cs" />
+    <Compile Include="Migrations\202104201738166_uno.Designer.cs">
+      <DependentUpon>202104201738166_uno.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202102081804467_vsdr.cs" />
-    <Compile Include="Migrations\202102081804467_vsdr.Designer.cs">
-      <DependentUpon>202102081804467_vsdr.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202104191448294_VSDR_open.cs" />
-    <Compile Include="Migrations\202104191448294_VSDR_open.Designer.cs"/>
-      <DependentUpon>202104191448294_VSDR_open.cs</DependentUpon>
-
-    <Compile Include="Migrations\202102121924369_Advance.cs" />
-    <Compile Include="Migrations\202102121924369_Advance.Designer.cs">
-      <DependentUpon>202102121924369_Advance.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202102171736313_AddAdvance.cs" />
-    <Compile Include="Migrations\202102171736313_AddAdvance.Designer.cs">
-      <DependentUpon>202102171736313_AddAdvance.cs</DependentUpon>
->>>>>>> origin/Ruben
+    <Compile Include="Migrations\202104202028124_unodos.cs" />
+    <Compile Include="Migrations\202104202028124_unodos.Designer.cs">
+      <DependentUpon>202104202028124_unodos.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BasicAuthenticationAttribute.cs" />
@@ -508,12 +495,17 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap1.min.css" />
     <Content Include="Content\Images\calificaciones\banner-calificaciones.jpg" />
+    <Content Include="Content\Images\carga-de-evidencias\banner-carga-de-evidencias.jpg" />
+    <Content Include="Content\Images\carga-de-evidencias\portada-abe.jpg" />
+    <Content Include="Content\Images\carga-de-evidencias\portada-biblioteca.jpg" />
+    <Content Include="Content\Images\carga-de-evidencias\portada-videoteca.jpg" />
     <Content Include="Content\Images\cursos\ejemplo-curso-1.jpg" />
     <Content Include="Content\Images\cursos\ejemplo-curso-2.jpg" />
     <Content Include="Content\Images\cursos\ejemplo-curso-3.jpg" />
     <Content Include="Content\Images\cursos\ejemplo-curso-4.jpg" />
     <Content Include="Content\Images\cursos\ejemplo-curso-interno-1.jpg" />
     <Content Include="Content\Images\cursos\portada.jpg" />
+    <Content Include="Content\demo.css" />
     <Content Include="Content\dropzone.css" />
     <Content Include="Content\Images\comunidad\cafeteria-virtual-hover.jpg" />
     <Content Include="Content\Images\comunidad\cafeteria-virtual.jpg" />
@@ -523,6 +515,10 @@
     <Content Include="Content\Images\comunidad\congreso-virtual.jpg" />
     <Content Include="Content\Images\comunidad\juegos-serios-hover.jpg" />
     <Content Include="Content\Images\comunidad\juegos-serios.jpg" />
+    <Content Include="Content\Images\debate\banner-salon-de-debate.jpg" />
+    <Content Include="Content\Images\debate\ejemplo-debate1.jpg" />
+    <Content Include="Content\Images\evaluaciones\banner-evaluaciones.jpg" />
+    <Content Include="Content\Images\evaluaciones\portada-resultados-test.jpg" />
     <Content Include="Content\Images\home.jpg" />
     <Content Include="Content\Images\home.png" />
     <Content Include="Content\Images\lecciones-aprendidas-hover.jpg" />
@@ -2518,11 +2514,9 @@
     <Content Include="Views\FlashTests\TestUser.cshtml" />
     <Content Include="Views\ProtectedFailure\TestUser.cshtml" />
     <Content Include="Views\ProtectedFailure\UserResults.cshtml" />
-<<<<<<< HEAD
     <Content Include="Views\VSDR\VsdrUserList.cshtml" />
     <Content Include="Views\VSDR\VsdrContent.cshtml" />
     <Content Include="Views\Survey\Survey.cshtml" />
-=======
     <Content Include="Scripts\umd\popper.min.js.map" />
     <Content Include="Scripts\umd\popper.js.map" />
     <Content Include="Scripts\umd\popper.js.flow" />
@@ -2533,12 +2527,9 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
-<<<<<<< HEAD
->>>>>>> origin/Ruben
-=======
+    <Content Include="Views\User\Evaluacion2.cshtml" />
     <Content Include="Views\Home\ComunidadSocial.cshtml" />
     <Content Include="Views\Home\TableroControl.cshtml" />
->>>>>>> c8be90cce52817ce8cd56531b1aa3cf37a3256bd
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -2565,29 +2556,18 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
-    <EmbeddedResource Include="Migrations\202011171750518_initial.resx">
-      <DependentUpon>202011171750518_initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202102081804467_vsdr.resx">
-      <DependentUpon>202102081804467_vsdr.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202104191448294_VSDR_open.resx">
-      <DependentUpon>202104191448294_VSDR_open.cs</DependentUpon>
-=======
-    <EmbeddedResource Include="Migrations\202102121924369_Advance.resx">
-      <DependentUpon>202102121924369_Advance.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202102171736313_AddAdvance.resx">
-      <DependentUpon>202102171736313_AddAdvance.cs</DependentUpon>
->>>>>>> origin/Ruben
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202104201738166_uno.resx">
+      <DependentUpon>202104201738166_uno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104202028124_unodos.resx">
+      <DependentUpon>202104202028124_unodos.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

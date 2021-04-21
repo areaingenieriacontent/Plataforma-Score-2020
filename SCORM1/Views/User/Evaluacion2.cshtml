@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewBag.Title = "Evaluacion2";
+}
+
+<h2>Evaluacion2</h2>
+
+<div id="encabezadocursos">
+    <img src="~/Content/Images/evaluaciones/banner-evaluaciones.jpg" style="height:200px;width:100%" />
+</div>
+<div id="hiperlink">
+    <img src="~/Content/Images/home.jpg" alt="" style="margin-left:5%;width:25px" />
+    <a href="@Url.Action("Index", "Home")" style="font-weight: bolder">INICIO/</a>
+    <a href="@Url.Action("ListModuleVirtual", "User")" style="font-weight: bolder">CURSOS ACTIVOS/</a>
+    <a href="@Model.Enrollment.Module.Modu_Name" style="font-weight: bolder; color:#FC3650">@Model.Enrollment.Module.Modu_Name</a>
+</div>
+<p style="text-align:center; font-size: 70px;"><b>EVALUACIÓN</b></p>
+<br />
+<br />
+<div class="container border" style="border-color:#FC3650">
+    <br />
+    <p style="text-align:right;margin:10px;">INSTRUCCIONES</p>
+    <br />
+    <ul>
+        <li type="circle">El examen está dividido en tres secciones, las cuales suman un total de 100 puntos.</li>
+        <li>Se debe contestar todas las secciones.</li>
+        <li>El puntaje mínimo para aprobar el examen, sumando las tres secciones es de 70 puntos y como mínimo se deebe obtener 50% en cada una de las seccines.</li>
+        <li>Durante el examen se pueden consultar el Decreto 1072 de 2015, la Resolución 0312 de 2019 y la norma ISO 45001:2018.</li>
+        <li>Entiéndase por SGSST:"Sistema de Gestión en Seguridad y Salud en el Trabajo".</li>
+        <li>El tiempo estimado para resolver el examen es de DOS horas.</li>
+        <li>El examen se estructura en tres (3) secciones que incluye:</li>
+        <li>Preguntas de opción Múltiple que requieren la sección de uan sola opción.</li>
+        <li>Enunciados relacionados con los temas vistos, sobre los que deberá indicar si es Falso o Verdadero.</li>
+        <li>Analísis de casos</li>
+            <li>SECCIÓN 1(30 puntos) Conocimientos Marco Legas</li>
+            <li>SECCIÓN 2(40 puntos) Conocimientos Marco Legas</li>
+            <li>SECCIÓN 3(30 puntos) Conocimientos Marco Legas</li>
+        <li>Analísis de casos:</li>
+            <li>Comprende una serie de situaciones en las que puede </li>
+    </ul>
+</div>

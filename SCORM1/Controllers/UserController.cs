@@ -3679,6 +3679,11 @@ namespace SCORM1.Controllers
             return View(model);
 
         }
+
+        public ActionResult Evaluacion2()
+        {
+            return View();
+        }
     }
 }
 

@@ -2915,8 +2915,6 @@ C:\Users\nanit\Source\Repos\areaingenieriacontent\Plataforma-Score-2020\SCORM1\o
 C:\Users\nanit\Source\Repos\areaingenieriacontent\Plataforma-Score-2020\SCORM1\obj\Debug\SCORM1.csproj.CopyComplete
 C:\Users\nanit\Source\Repos\areaingenieriacontent\Plataforma-Score-2020\SCORM1\obj\Debug\SCORM1.dll
 C:\Users\nanit\Source\Repos\areaingenieriacontent\Plataforma-Score-2020\SCORM1\obj\Debug\SCORM1.pdb
-C:\Users\nanit\Source\Repos\areaingenieriacontent\Plataforma-Score-2020\SCORM1\obj\Debug\SCORM1.csproj.GenerateResource.cache
-C:\Users\nanit\Source\Repos\areaingenieriacontent\Plataforma-Score-2020\SCORM1\obj\Debug\SCORM1.csprojAssemblyReference.cache
 C:\Users\nanit\Source\Repos\areaingenieriacontent\Plataforma-Score-2020\SCORM1\obj\Debug\SCORM1.Migrations.answersModification.resources
 C:\Users\nanit\Source\Repos\areaingenieriacontent\Plataforma-Score-2020\SCORM1\obj\Debug\SCORM1.Migrations.answersModification2.resources
 C:\Users\nanit\Source\Repos\areaingenieriacontent\Plataforma-Score-2020\SCORM1\obj\Debug\SCORM1.Migrations.correctAnswersQuantity.resources
@@ -3068,8 +3066,8 @@ C:\Users\ruben\source\repos\areaingenieriacontent\Plataforma-Score-2020\SCORM1\b
 C:\Users\ruben\source\repos\areaingenieriacontent\Plataforma-Score-2020\SCORM1\bin\es\Microsoft.Owin.Security.Twitter.resources.dll
 C:\Users\ruben\source\repos\areaingenieriacontent\Plataforma-Score-2020\SCORM1\bin\es\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
 C:\Users\ruben\source\repos\areaingenieriacontent\Plataforma-Score-2020\SCORM1\obj\Debug\SCORM1.csprojAssemblyReference.cache
-C:\Users\ruben\source\repos\areaingenieriacontent\Plataforma-Score-2020\SCORM1\obj\Debug\SCORM1.Migrations.Advance.resources
-C:\Users\ruben\source\repos\areaingenieriacontent\Plataforma-Score-2020\SCORM1\obj\Debug\SCORM1.Migrations.AddAdvance.resources
+C:\Users\ruben\source\repos\areaingenieriacontent\Plataforma-Score-2020\SCORM1\obj\Debug\SCORM1.Migrations.uno.resources
+C:\Users\ruben\source\repos\areaingenieriacontent\Plataforma-Score-2020\SCORM1\obj\Debug\SCORM1.Migrations.unodos.resources
 C:\Users\ruben\source\repos\areaingenieriacontent\Plataforma-Score-2020\SCORM1\obj\Debug\SCORM1.csproj.GenerateResource.cache
 C:\Users\ruben\source\repos\areaingenieriacontent\Plataforma-Score-2020\SCORM1\obj\Debug\SCORM1.csproj.CoreCompileInputs.cache
 C:\Users\ruben\source\repos\areaingenieriacontent\Plataforma-Score-2020\SCORM1\obj\Debug\SCORM1.csproj.CopyComplete

@@ -17470,5 +17470,20 @@ li.nav-item.active {
     }
 }
 
-
+.btn-fondo-rojo {
+    background-color: #fc3650;
+    color: #FFFFFF;
+    text-align: center;
+    line-height: 2;
+    max-width: none;
+    border-style: none
+}
+.btn-fondo-negro {
+    background-color: #333;
+    color: #FFFFFF;
+    text-align: center;
+    line-height: 2;
+    max-width: none;
+    border-style: none
+}
 

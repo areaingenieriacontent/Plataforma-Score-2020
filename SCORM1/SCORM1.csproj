@@ -313,7 +313,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-<<<<<<< HEAD
+    <!--<<<<<<<< HEAD-->
     <Compile Include="Migrations\202011171750518_initial.cs" />
     <Compile Include="Migrations\202011171750518_initial.Designer.cs">
       <DependentUpon>202011171750518_initial.cs</DependentUpon>
@@ -325,7 +325,8 @@
     <Compile Include="Migrations\202104191448294_VSDR_open.cs" />
     <Compile Include="Migrations\202104191448294_VSDR_open.Designer.cs">
       <DependentUpon>202104191448294_VSDR_open.cs</DependentUpon>
-=======
+    </Compile>
+    <!--=======-->
     <Compile Include="Migrations\202102121924369_Advance.cs" />
     <Compile Include="Migrations\202102121924369_Advance.Designer.cs">
       <DependentUpon>202102121924369_Advance.cs</DependentUpon>
@@ -333,7 +334,19 @@
     <Compile Include="Migrations\202102171736313_AddAdvance.cs" />
     <Compile Include="Migrations\202102171736313_AddAdvance.Designer.cs">
       <DependentUpon>202102171736313_AddAdvance.cs</DependentUpon>
->>>>>>> origin/Ruben
+      <!-->>>>>>> origin/Ruben-->
+    </Compile>
+    <Compile Include="Migrations\202104191635266_new-qualification.cs" />
+    <Compile Include="Migrations\202104191635266_new-qualification.Designer.cs">
+      <DependentUpon>202104191635266_new-qualification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104200153036_changes_in_survey.cs" />
+    <Compile Include="Migrations\202104200153036_changes_in_survey.Designer.cs">
+      <DependentUpon>202104200153036_changes_in_survey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104200229455_survey_answers.cs" />
+    <Compile Include="Migrations\202104200229455_survey_answers.Designer.cs">
+      <DependentUpon>202104200229455_survey_answers.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BasicAuthenticationAttribute.cs" />
@@ -2520,11 +2533,11 @@
     <Content Include="Views\FlashTests\TestUser.cshtml" />
     <Content Include="Views\ProtectedFailure\TestUser.cshtml" />
     <Content Include="Views\ProtectedFailure\UserResults.cshtml" />
-<<<<<<< HEAD
+    <!--<<<<<<< HEAD-->
     <Content Include="Views\VSDR\VsdrUserList.cshtml" />
     <Content Include="Views\VSDR\VsdrContent.cshtml" />
     <Content Include="Views\Survey\Survey.cshtml" />
-=======
+    <!--=======-->
     <Content Include="Scripts\umd\popper.min.js.map" />
     <Content Include="Scripts\umd\popper.js.map" />
     <Content Include="Scripts\umd\popper.js.flow" />
@@ -2535,7 +2548,7 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
->>>>>>> origin/Ruben
+    <!-->>>>>>> origin/Ruben-->
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -2562,7 +2575,7 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
+    <!--<<<<<<< HEAD-->
     <EmbeddedResource Include="Migrations\202011171750518_initial.resx">
       <DependentUpon>202011171750518_initial.cs</DependentUpon>
     </EmbeddedResource>
@@ -2571,13 +2584,23 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202104191448294_VSDR_open.resx">
       <DependentUpon>202104191448294_VSDR_open.cs</DependentUpon>
-=======
+    </EmbeddedResource>
+    <!--=======-->
     <EmbeddedResource Include="Migrations\202102121924369_Advance.resx">
       <DependentUpon>202102121924369_Advance.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202102171736313_AddAdvance.resx">
       <DependentUpon>202102171736313_AddAdvance.cs</DependentUpon>
->>>>>>> origin/Ruben
+      <!-->>>>>>> origin/Ruben-->
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104191635266_new-qualification.resx">
+      <DependentUpon>202104191635266_new-qualification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104200153036_changes_in_survey.resx">
+      <DependentUpon>202104200153036_changes_in_survey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104200229455_survey_answers.resx">
+      <DependentUpon>202104200229455_survey_answers.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

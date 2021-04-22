@@ -19,6 +19,7 @@ namespace SCORM1.Models.Survey
         public string title { get; set; }
         [AllowHtml]
         public string content { get; set; }
+        public int correct { get; set; }
         public virtual SurveyQuestionBank SurveyQuestionBank { get; set; }
     }
 }

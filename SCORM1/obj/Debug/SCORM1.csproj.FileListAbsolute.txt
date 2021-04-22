@@ -2915,12 +2915,6 @@ C:\Users\nanit\Source\Repos\areaingenieriacontent\Plataforma-Score-2020\SCORM1\o
 C:\Users\nanit\Source\Repos\areaingenieriacontent\Plataforma-Score-2020\SCORM1\obj\Debug\SCORM1.csproj.CopyComplete
 C:\Users\nanit\Source\Repos\areaingenieriacontent\Plataforma-Score-2020\SCORM1\obj\Debug\SCORM1.dll
 C:\Users\nanit\Source\Repos\areaingenieriacontent\Plataforma-Score-2020\SCORM1\obj\Debug\SCORM1.pdb
-C:\Users\nanit\Source\Repos\areaingenieriacontent\Plataforma-Score-2020\SCORM1\obj\Debug\SCORM1.csproj.GenerateResource.cache
-C:\Users\nanit\Source\Repos\areaingenieriacontent\Plataforma-Score-2020\SCORM1\obj\Debug\SCORM1.csprojAssemblyReference.cache
-C:\Users\nanit\Source\Repos\areaingenieriacontent\Plataforma-Score-2020\SCORM1\obj\Debug\SCORM1.Migrations.answersModification.resources
-C:\Users\nanit\Source\Repos\areaingenieriacontent\Plataforma-Score-2020\SCORM1\obj\Debug\SCORM1.Migrations.answersModification2.resources
-C:\Users\nanit\Source\Repos\areaingenieriacontent\Plataforma-Score-2020\SCORM1\obj\Debug\SCORM1.Migrations.correctAnswersQuantity.resources
-C:\Users\nanit\Source\Repos\areaingenieriacontent\Plataforma-Score-2020\SCORM1\obj\Debug\SCORM1.Migrations.intial.resources
 C:\Users\ruben\source\repos\areaingenieriacontent\Plataforma-Score-2020\SCORM1\bin\ApplicationInsights.config
 C:\Users\ruben\source\repos\areaingenieriacontent\Plataforma-Score-2020\SCORM1\bin\roslyn\csc.exe
 C:\Users\ruben\source\repos\areaingenieriacontent\Plataforma-Score-2020\SCORM1\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
@@ -3075,3 +3069,9 @@ C:\Users\ruben\source\repos\areaingenieriacontent\Plataforma-Score-2020\SCORM1\o
 C:\Users\ruben\source\repos\areaingenieriacontent\Plataforma-Score-2020\SCORM1\obj\Debug\SCORM1.csproj.CopyComplete
 C:\Users\ruben\source\repos\areaingenieriacontent\Plataforma-Score-2020\SCORM1\obj\Debug\SCORM1.dll
 C:\Users\ruben\source\repos\areaingenieriacontent\Plataforma-Score-2020\SCORM1\obj\Debug\SCORM1.pdb
+C:\Users\nanit\Source\Repos\areaingenieriacontent\Plataforma-Score-2020\SCORM1\obj\Debug\SCORM1.Migrations.VSDR_open.resources
+C:\Users\nanit\Source\Repos\areaingenieriacontent\Plataforma-Score-2020\SCORM1\obj\Debug\SCORM1.Migrations.Advance.resources
+C:\Users\nanit\Source\Repos\areaingenieriacontent\Plataforma-Score-2020\SCORM1\obj\Debug\SCORM1.Migrations.AddAdvance.resources
+C:\Users\nanit\Source\Repos\areaingenieriacontent\Plataforma-Score-2020\SCORM1\obj\Debug\SCORM1.Migrations.newqualification.resources
+C:\Users\nanit\Source\Repos\areaingenieriacontent\Plataforma-Score-2020\SCORM1\obj\Debug\SCORM1.Migrations.changes_in_survey.resources
+C:\Users\nanit\Source\Repos\areaingenieriacontent\Plataforma-Score-2020\SCORM1\obj\Debug\SCORM1.Migrations.survey_answers.resources

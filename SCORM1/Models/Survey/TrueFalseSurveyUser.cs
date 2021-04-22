@@ -21,7 +21,7 @@ namespace SCORM1.Models.Survey
         [ForeignKey("TrueFalseSurveyQuestion")]
         public int tfsq_id { get; set; }
 
-        public bool user_answer { get; set; }
+        public int user_answer { get; set; }
 
         public virtual TrueFalseSurveyQuestion TrueFalseSurveyQuestion { get;set;}
         public virtual UserSurveyResponse UserSurveyResponse { get; set; }

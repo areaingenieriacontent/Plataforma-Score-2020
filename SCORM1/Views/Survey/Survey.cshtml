@@ -6,8 +6,28 @@
     ViewBag.Title = "Survey";
 }
 
-<h2>Survey</h2>
+<h2>Encuesta</h2>
+<script type="text/javascript">
 
+    function countdown() {
+        minutes = document.getElementById("timerLabelMinutes").innerHTML;
+        seconds = document.getElementById("timerLabelSeconds").innerHTML;
+        if (seconds > 0) {
+            document.getElementById("timerLabelSeconds").innerHTML = seconds - 1;
+            setTimeout("countdown()", 1000);
+        } else {
+            document.getElementById("timerLabelMinutes").innerHTML = minutes - 1;
+            if (minutes > 0) {
+                document.getElementById("timerLabelSeconds").innerHTML = 59;
+            }
+            setTimeout("countdown()", 1000);
+        }
+    }
+    setTimeout("countdown()", 1000);
+</script>
+<div class="card-body">
+    <p>Tiempo restante <span id="timerLabelMinutes" runat="server">120</span>:<span id="timerLabelSeconds" runat="server">0</span></p>
+</div>
 @if (Model.validSession)
 {
     <br />
@@ -32,6 +52,7 @@
             <div class="panel-heading panel-head"><h1 style="font-size:35px;"> @Html.Raw(Model.survey.survey_name) </h1> </div>
             <div class="panel-body">
                 @Html.HiddenFor(model => model.survey.survey_id)
+                @Html.HiddenFor(model => model.enro_id)
                 @Html.AntiForgeryToken()
                 <div class="contenido-articulo">
                     <br /><br />
@@ -47,7 +68,7 @@
                         <div class="panel-heading panel-head"><h1 style="font-size:35px;">Pregunta Opción Múltiple</h1> </div>
                         <div class="panel-body">
                             @Html.HiddenFor(model => model.multipleOptionQuestions[cont].question.mosq_id)
-                            <div class="comentario">
+                            <div class="card-body">
                                 <br />
                                 <p><strong>Pregunta: @Model.multipleOptionQuestions[cont].question.title</strong></p>
                                 <br />
@@ -102,8 +123,8 @@
                 }
             }
         </div>
+        <button class="btn btn-default">Enviar</button>
     }
-    <button class="btn btn-default">Enviar</button>
 }
 else
 {
@@ -114,8 +135,10 @@ else
     <br />
     <br />
     <div class="message">
+        @Html.HiddenFor(model => model.enro_id)
         <h3>Estimado(a) estudiante @Model.UserLog Usted ya ha realizado el cuestionario o su sesión ya venció</h3>
         <h4>
+            Calificación: @Model.calification
         </h4>
     </div>
 }

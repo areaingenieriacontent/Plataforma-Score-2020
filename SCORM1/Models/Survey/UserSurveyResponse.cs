@@ -18,6 +18,7 @@ namespace SCORM1.Models.Survey
         public int enro_id { get; set; }
         public DateTime survey_initial_time { get; set; }
         public DateTime survey_finish_time { get; set; }
+        public bool presented { get; set; }
         public virtual Enrollment Enrollment { get; set; }
     }
 }

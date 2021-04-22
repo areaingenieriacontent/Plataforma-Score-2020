@@ -11,11 +11,12 @@ namespace SCORM1.Models.ViewModel
     {
         public SurveyModule survey { get; set; }
         public int enro_id { get; set; }
+        public float calification { get; set; }
         public SurveyQuestionBank questionBank { get; set; }
-        public List<MultiOptionSurveyQuestion> multipleOptionQuestions;
-        public List<TrueFalseSurveyQuestion> trueFalseSurveyQuestions;
-        public List<MultipleOptionAnswer> userAnswers;
-        public List<TrueFalseSurveyAnswer> userAnswerTrueFalse;
+        public List<MultiOptionSurveyQuestion> multipleOptionQuestions { get; set; }
+        public List<TrueFalseSurveyQuestion> trueFalseSurveyQuestions { get; set; }
+        public List<MultipleOptionAnswer> userAnswers { get; set; }
+        public List<TrueFalseSurveyAnswer> userAnswerTrueFalse { get; set; }
         public bool validSession { get; set; }
     }
 

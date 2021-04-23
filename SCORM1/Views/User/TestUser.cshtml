@@ -1,13 +1,18 @@
-﻿ @using SCORM1.Models.Lms;
+﻿@using SCORM1.Models.Lms;
 @using SCORM1.Models.ViewModel;
 @using SCORM1.Enum;
 @model UserTestViewModel
-
+@Styles.Render("~/Content/StyleHome.css")
 
 @if (Model.acces == false)
 {
 
-    <br /><br /><br /><br /><br /><br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
 
     <div class="message">
         <h3>Estimado(a) estudiante @Model.UserLog Usted ya ha realizado el cuestionario</h3>
@@ -15,14 +20,14 @@
             su nota correspondiente es @Model.pointsObtained de 100%
 
         </h4>
-      
+
 
 
     </div>
 
     <script type="text/javascript">
 
-     window.history.forward(1);
+        window.history.forward(1);
 
     </script>
 
@@ -30,14 +35,77 @@
 }
 else
 {
-    <br /><br /><br /><br /><br /><br />
-    <div class="row fecha">
-        <div class="btn-group btn-breadcrumb">
-            <a href="@Url.Action("Index", "Home")" class="btn btn-info"><i class="glyphicon glyphicon-home"></i></a>
-            <a href="@Url.Action("Grades", "User", new {id = Model.topic.Module.Modu_Id})" class="btn btn-info">CURSO</a>
-        </div>
+
+
+
+    <div id="encabezadocursos">
+        <img src="~/Content/Images/evaluaciones/banner-evaluaciones.jpg" style="height:200px;width:100%" />
     </div>
-    <br /><br />
+    <div id="hiperlink">
+        <img src="~/Content/Images/home.jpg" alt="" style="margin-left:5%;width:25px" />
+        <a href="@Url.Action("Index", "Home")" style="font-weight: bolder">INICIO / </a>
+        <a href="@Url.Action("ListModuleVirtual", "User")" style="font-weight: bolder">CURSOS ACTIVOS / </a>
+        <a href="#" style="font-weight: bolder">NOMBRE DEL CURSO / </a>
+        <a href="#" style="font-weight: bolder; color:#FC3650">EVALUACIÓN</a>
+    </div>
+    <div class="panel-body">
+        <br />
+        <br />
+        <p style="text-align:center; font-size: 70px;"><b>EVALUACIÓN</b></p>
+        <br />
+        <br />
+        <div class="container" style="border:2px solid #FC3650;width:95%;padding:0px ">
+            <br />
+            <p style="text-align:left;padding: 0px 25px;color:#FC3650"><b>INSTRUCCIONES</b></p>
+            <ul id="listaevaluacion" style="margin: 0px 30px">
+                <li>El examen está dividido en tres secciones, las cuales suman un total de 100 puntos.</li>
+                <li>Se debe contestar todas las secciones.</li>
+                <li>El puntaje mínimo para aprobar el examen, sumando las tres secciones es de 70 puntos y como mínimo se deebe obtener 50% en cada una de las seccines.</li>
+                <li>Durante el examen se pueden consultar el Decreto 1072 de 2015, la Resolución 0312 de 2019 y la norma ISO 45001:2018.</li>
+                <li>Entiéndase por SGSST:"Sistema de Gestión en Seguridad y Salud en el Trabajo".</li>
+                <li>El tiempo estimado para resolver el examen es de DOS horas.</li>
+                <li>El examen se estructura en tres (3) secciones que incluye:</li>
+                <li>Preguntas de opción Múltiple que requieren la sección de uan sola opción.</li>
+                <li>Enunciados relacionados con los temas vistos, sobre los que deberá indicar si es Falso o Verdadero.</li>
+                <li>Analísis de casos</li>
+                <li class="li-interna">SECCIÓN 1(30 puntos) Conocimientos Marco Legas</li>
+                <li class="li-interna">SECCIÓN 2(40 puntos) Conocimientos Marco Legas</li>
+                <li class="li-interna">SECCIÓN 3(30 puntos) Conocimientos Marco Legas</li>
+                <li>Analísis de casos:</li>
+                <li class="li-interna">Comprende una serie de situaciones en las que puede requerir llenar un reporte de no conforminadad(RNC).</li>
+            </ul>
+            <br />
+            <p style="color:white;background-color:#FC3650;height:40px;padding :10px;text-align:center"><b>RECUERDA QUE TIENES # INTENTOS PARA APROBAR LA EVALUACIÓN</b></p>
+        </div>
+        <br />
+        <br />
+       
+        <br />
+        <br />
+        <div class="container " style="width:95%;border:2px solid #000000">
+            <br />
+            <p style="font-size:25px;color:#FC3650;margin:10px"><b>TIPO DE PREGUNTA: FALSO / VERDADERO</b></p>
+            <p style="margin:10px"><b>PREGUNTA #2.Titulo de la pregunta</b></p>
+            <p style="margin:10px">Lorem</p>
+            <br />
+            <div class="list-group list-group-horizontal">
+                <a href="" class="list-group-item list-group-item-action">Falso</a>
+                <a class="list-group-item" style=" visibility: hidden">      </a>
+                <br />
+                <a href="" class="list-group-item list-group-item-action">Verdadero</a>
+            </div>
+            <br />
+        </div>
+        <br />
+        <br />
+        <div class="container">
+            <div class="row justify-content-end">
+                <a id="btn-landing" href="@Url.Action("")" class="button-action" style="position:relative">FINALIZAR EVALUACIÓN</a>
+            </div>
+        </div>
+
+    </div>
+
 
     using (Html.BeginForm("AnswerTest", "User", FormMethod.Post, new { @class = "form-horizontal", role = "form", enctype = "multipart/form-data" }))
     {
@@ -71,20 +139,52 @@ else
 
                         if (Model.Listgeneralquestion[i].TypeQuestion == TYPEQUESTIONS.OptionMultiple)
                         {
-                            <div class="panel panel-primary">
-                                <div class="panel-heading panel-head"><h1 style="font-size:35px;"> Pregunta Opción Múltiple</h1> </div>
-                                <div class="panel-body">
 
-                                    @Html.HiddenFor(model => model.Listgeneralquestion[i].BaQu_Id)
+                            <div class="container" style="width:95%;border:2px solid #000000">
+                                <br />
+                                <p style="font-size:25px;color:#FC3650;margin:10px"><b>TIPO DE PREGUNTA:OPCIÓN MÚLTIPLE</b></p>
+                                <p style="margin:10px"><b> @Model.Listgeneralquestion[i].OpMu_Question</b></p>
+                                <p style="margin:10px">Descripción: @Model.Listgeneralquestion[i].OpMu_Description </p>
+
+                                 @Html.HiddenFor(model => model.Listgeneralquestion[i].BaQu_Id)
                                     @Html.HiddenFor(model => model.Listgeneralquestion[i].OpMu_Id)
                                     @Html.HiddenFor(model => model.Listgeneralquestion[i].OpMu_Question)
                                     @Html.HiddenFor(model => model.Listgeneralquestion[i].OpMu_Description)
                                     @*@Html.Raw(Model.Listgeneralquestion[i].OpMu_Description)*@
-
-
-
-
                                     @Html.HiddenFor(model => model.Listgeneralquestion[i].TypeQuestion)
+                                <div class="list-group">
+
+                                    @foreach (AnswerOptionMultiple answeroptionmultiple in Model.Listgeneralquestion[i].listanswerOM)
+                                    {
+                                        if (answeroptionmultiple.OptionMultiple.OpMu_Id == Model.Listgeneralquestion[i].OpMu_Id)
+                                        {
+                                           
+                                                <a class="list-group-item list-group-item-action"><span><b>A) </b></span>@Html.Raw(answeroptionmultiple.Answer_OpMult_Content)</a>
+                                                <br />
+                                                @Html.RadioButtonFor(model => Model.Listgeneralquestion[i].AnOp_Id, answeroptionmultiple.AnOp_Id, htmlAttributes: new { @class = "col-md-1" })
+                                                <strong>@Html.Raw(answeroptionmultiple.Answer_OpMult_Content)</strong>
+                                                <label class="col-md-11"> @answeroptionmultiple.AnOp_OptionAnswer</label>
+
+                                          
+                                            <br />
+
+                                        }
+                                    }
+                                    <a href="" class="list-group-item list-group-item-action"><span><b>A) </b></span> Cras justo odio</a>
+                                    <br />
+                                    <a href="" class="list-group-item list-group-item-action"><span><b>B) </b></span> Dapibus ac facilisis in</a>
+                                    <br />
+                                    <a href="" class="list-group-item list-group-item-action"><span><b>C) </b></span> Morbi leo risus</a>
+                                    <br />
+                                    <a href="" class="list-group-item list-group-item-action"><span><b>D) </b></span> Porta ac consectetur ac</a>
+                                    <br />
+                                </div>
+                            </div>
+                            <div class="panel panel-primary">
+                                <div class="panel-heading panel-head"><h1 style="font-size:35px;"> Pregunta Opción Múltiple</h1> </div>
+                                <div class="panel-body">
+
+                                   
                                     <div class="comentario">
                                         <br />
                                         <p><strong>Pregunta: @Model.Listgeneralquestion[i].OpMu_Question</strong></p>
@@ -103,7 +203,7 @@ else
                                                 <div class="fecha">
                                                     @Html.RadioButtonFor(model => Model.Listgeneralquestion[i].AnOp_Id, answeroptionmultiple.AnOp_Id, htmlAttributes: new { @class = "col-md-1" })
                                                     <strong>@Html.Raw(answeroptionmultiple.Answer_OpMult_Content)</strong>
-                                                      <label class = "col-md-11" > @answeroptionmultiple.AnOp_OptionAnswer</label>
+                                                    <label class="col-md-11"> @answeroptionmultiple.AnOp_OptionAnswer</label>
 
                                                 </div>
                                                 <br />
@@ -184,20 +284,20 @@ else
 
                                         <br />
                                         <div class="fecha">
-                                            @Html.RadioButtonFor(model => Model.Listgeneralquestion[i].TrFa_Answer, @OPTIONANSWER.Verdadero, htmlAttributes:  new { @class = " control-label col-sm-1" })
+                                            @Html.RadioButtonFor(model => Model.Listgeneralquestion[i].TrFa_Answer, @OPTIONANSWER.Verdadero, htmlAttributes: new { @class = " control-label col-sm-1" })
                                             <label>@OPTIONANSWER.Verdadero</label>
                                         </div>
                                         <br />
                                         <br />
                                         <div class="fecha">
-                                            @Html.RadioButtonFor(model => Model.Listgeneralquestion[i].TrFa_Answer, OPTIONANSWER.Falso, htmlAttributes:  new { @class = " control-label col-sm-1" })
+                                            @Html.RadioButtonFor(model => Model.Listgeneralquestion[i].TrFa_Answer, OPTIONANSWER.Falso, htmlAttributes: new { @class = " control-label col-sm-1" })
                                             <label>@OPTIONANSWER.Falso</label>
                                         </div>
                                         <br />
                                     </div>
                                 </div>
                             </div>
-                            
+
                         }
                         else
                         {

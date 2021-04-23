@@ -313,13 +313,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202104201738166_uno.cs" />
-    <Compile Include="Migrations\202104201738166_uno.Designer.cs">
-      <DependentUpon>202104201738166_uno.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202104202028124_unodos.cs" />
-    <Compile Include="Migrations\202104202028124_unodos.Designer.cs">
-      <DependentUpon>202104202028124_unodos.cs</DependentUpon>
+    <Compile Include="Migrations\202104212317559_unodos.cs" />
+    <Compile Include="Migrations\202104212317559_unodos.Designer.cs">
+      <DependentUpon>202104212317559_unodos.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BasicAuthenticationAttribute.cs" />
@@ -578,7 +574,6 @@
     <Content Include="Content\Images\tablerodecontrol\mis-calificaciones.jpg" />
     <Content Include="Content\Images\tablerodecontrol\sistema-de-puntos.jpg" />
     <Content Include="Content\flexslider.css" />
-    <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Content\Images\aa.png" />
     <Content Include="Content\Images\android2.png" />
     <Content Include="Content\Images\aprendizaje-extendido.png" />
@@ -1017,8 +1012,6 @@
     <Content Include="Rotativa\wkhtmltopdf.exe" />
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
-    <Content Include="Scripts\bootstrap.bundle.js" />
-    <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
@@ -1095,10 +1088,6 @@
     <Content Include="Content\bootstrap\utilities.less" />
     <Content Include="Content\bootstrap\variables.less" />
     <Content Include="Content\bootstrap\wells.less" />
-    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="Content\fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="Content\bootstrap-datetimepicker-build.less" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
@@ -1131,6 +1120,10 @@
     <Content Include="App_Browsers\qt.browser">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-grid.css.map" />
     <Content Include="Content\fonts\SourceSansPro-Black.ttf" />
     <Content Include="Content\fonts\SourceSansPro-BlackItalic.ttf" />
     <Content Include="Content\fonts\SourceSansPro-Bold.ttf" />
@@ -1143,10 +1136,6 @@
     <Content Include="Content\fonts\SourceSansPro-Regular.ttf" />
     <Content Include="Content\fonts\SourceSansPro-SemiBold.ttf" />
     <Content Include="Content\fonts\SourceSansPro-SemiBoldItalic.ttf" />
-    <Content Include="Content\bootstrap-reboot.min.css.map" />
-    <Content Include="Content\bootstrap-reboot.css.map" />
-    <Content Include="Content\bootstrap-grid.min.css.map" />
-    <Content Include="Content\bootstrap-grid.css.map" />
     <None Include="job_scheduling_data_2_0.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -1155,11 +1144,6 @@
     <Content Include="Scripts\esm\popper.js.map" />
     <Content Include="Scripts\esm\popper-utils.min.js.map" />
     <Content Include="Scripts\esm\popper-utils.js.map" />
-    <Content Include="Scripts\bootstrap.min.js.map" />
-    <Content Include="Scripts\bootstrap.js.map" />
-    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
-    <Content Include="Scripts\bootstrap.bundle.js.map" />
-    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\filemanager\ajax_calls.php" />
     <Content Include="Scripts\filemanager\config\config.php" />
     <Content Include="Scripts\filemanager\css\style.css" />
@@ -2529,9 +2513,10 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
-    <Content Include="Views\User\Evaluacion2.cshtml" />
     <Content Include="Views\Home\ComunidadSocial.cshtml" />
     <Content Include="Views\Home\TableroControl.cshtml" />
+    <Content Include="Views\Ratings\CargarEvidencias.cshtml" />
+    <Content Include="Views\User\Evalua.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -2564,11 +2549,8 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202104201738166_uno.resx">
-      <DependentUpon>202104201738166_uno.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202104202028124_unodos.resx">
-      <DependentUpon>202104202028124_unodos.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202104212317559_unodos.resx">
+      <DependentUpon>202104212317559_unodos.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

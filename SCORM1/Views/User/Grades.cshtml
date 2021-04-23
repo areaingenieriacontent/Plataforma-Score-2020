@@ -15,7 +15,7 @@
           "searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",
           "table contextmenu directionality emoticons template textcolor paste fullpage textcolor colorpicker textpattern"
         ],
-
+            
         toolbar1: "newdocument fullpage | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | styleselect formatselect fontselect fontsizeselect",
         toolbar2: "cut copy paste | searchreplace | bullist numlist | outdent indent blockquote | undo redo | link unlink anchor image media code | insertdatetime preview | forecolor backcolor",
         toolbar3: "table | hr removeformat | subscript superscript | charmap emoticons | print fullscreen | ltr rtl | visualchars visualblocks nonbreaking template pagebreak restoredraft",
@@ -336,37 +336,25 @@ else
                 <p style="color:#888888; font-size:30px;width:100%;text-align:left;">@Model.Enrollment.Module.Modu_Description</p>
                 <div class="col-md-7"></div>
                 @*<div class="col-md-5">
-                        <p style="font-size:25px; color:#000; text-align:left;">Progreso</p>
-                        <div class="progress" style="background-color: #babdbd; height:30px">
-                            @foreach (var a in Model.Enrollment.AdvanceCourse)
-                            {
-                                <div class="progress-bar progress-bar-striped" role="progressbar"
-                                     aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
-                                     style="width:@a.AdCo_ScoreObtanied%; padding:10px">
-                                    <span style="font-size:20px">@a.AdCo_ScoreObtanied%</span>
-                                </div>
-                            }
+                <p style="font-size:25px; color:#000; text-align:left;">Progreso</p>
+                <div class="progress" style="background-color: #babdbd; height:30px">
+                    @foreach (var a in Model.Enrollment.AdvanceCourse)
+                    {
+                        <div class="progress-bar progress-bar-striped" role="progressbar"
+                             aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
+                             style="width:@a.AdCo_ScoreObtanied%; padding:10px">
+                            <span style="font-size:20px">@a.AdCo_ScoreObtanied%</span>
                         </div>
-                    </div>*@
+                    }
+                </div>
+            </div>*@
             </div>
             @if (Model.Enrollment.Module.TopicsCourse.Where(x => x.ToCo_Visible == FORO.Si).ToList().Count != 0)
             {
                 if (Model.Enrollment.Module.TopicsCourse.Where(x => x.ToCo_Visible == FORO.Si).ToList() != null)
                 {
-                    <ul class="nav nav-tabs" id="nav-cursos" style="justify-content: center;border:none;">
-                        @if (Model.Enrollment.Module.Modu_BetterPractice == FORO.No && Model.Enrollment.Module.Modu_Improvement == FORO.No)
-                        {
-                        }
-                        else
-                        {
-                            <li class="nav-item">
-                                 <a class="nav-link" data-toggle="tab" href="#menu1" style="font-size:40px;">Aportes</a>
-                            </li>
-                        }
-                        @*<li class="active"><a data-toggle="tab" href="#@Model.listenrollment[0].ToCo_Id" style="font-size:20px;">@Model.listenrollment[0].ToCo_Name</a></li>*@
-
-                        @*Parte de curso rigido, revisar y replicar en otras partes que que tienen mejora y buena practica*@
-                        @foreach (TopicsCourse topic in Model.Enrollment.Module.TopicsCourse.OrderBy(x => x.ToCo_Id).Where(x => x.ToCo_Visible == FORO.Si))
+                    <ul class="nav nav-tabs" id="nav-cursos" style="justify-content: center;border-bottom:10px solid #888888;">
+                         @foreach (TopicsCourse topic in Model.Enrollment.Module.TopicsCourse.OrderBy(x => x.ToCo_Id).Where(x => x.ToCo_Visible == FORO.Si))
                         {
                             @*Agregar condición si el tema tiene predecesor y si ya cumplio la evaluación, siempre y cuando sea curso rígido*@
                             if (topic.Module.Modu_TypeOfModule == CURSO.Rigido)
@@ -374,7 +362,7 @@ else
                                 if (topic.First_Topic == FORO.Si)
                                 {
                                     <li class="nav-item">
-                                        <a class="nav-link" data-toggle="tab" href="#@topic.ToCo_Id" style="font-size:40px;">@topic.ToCo_Name</a>
+                                        <a class="nav-link"  data-toggle="tab" href="#tab-@topic.ToCo_Id" style="font-size:40px;">@topic.ToCo_Name</a>
                                     </li>
                                 }
                                 foreach (UserModuleAdvance advance in Model.userFlashTestResults)
@@ -386,7 +374,7 @@ else
                                             if (topiCreate.ToCo_Id == topic.ConditionedTopic && topiCreate.First_Topic != FORO.Si)
                                             {
                                                 <li class="nav-item">
-                                                    <a class="nav-link" data-toggle="tab" href="#@topiCreate.ToCo_Id" style="font-size:40px;">@topiCreate.ToCo_Name</a>
+                                                    <a  class="nav-link" data-toggle="tab" href="#tab-@topic.ToCo_Id" style="font-size:40px;">@topiCreate.ToCo_Name</a>
                                                 </li>
                                             }
                                         }
@@ -396,10 +384,23 @@ else
                             else
                             {
                                 <li class="nav-item">
-                                    <a class="nav-link" data-toggle="tab" href="#@topic.ToCo_Id" style="font-size:40px;">@topic.ToCo_Name</a>
+                                    <a class="nav-link"  data-toggle="tab" href="#tab-@topic.ToCo_Id" style="font-size:40px;">@topic.ToCo_Name</a>
                                 </li>
                             }
                         }
+                        @if (Model.Enrollment.Module.Modu_BetterPractice == FORO.No && Model.Enrollment.Module.Modu_Improvement == FORO.No)
+                        {
+                        }
+                        else
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#menu1" style="font-size:40px;">Aportes</a>
+                            </li>
+                        }
+                        @*<li class="active"><a data-toggle="tab" href="#@Model.listenrollment[0].ToCo_Id" style="font-size:20px;">@Model.listenrollment[0].ToCo_Name</a></li>*@
+
+                        @*Parte de curso rigido, revisar y replicar en otras partes que que tienen mejora y buena practica*@
+                       
                     </ul>
                     <div class="tab-content">
                         @if (Model.Enrollment.Module.Modu_BetterPractice == FORO.No && Model.Enrollment.Module.Modu_Improvement == FORO.No)
@@ -708,7 +709,7 @@ else
                                         }
                                     </div>
                                 }
-                                
+
                                 @if (Model.listenrollment[0].Job.Count != 0)
                                 {
                                     <div class="fecha">
@@ -728,7 +729,7 @@ else
                                 @if (Model.listenrollment[0].ToCo_Id != Model.listenrollment[0].ConditionedTopic && Model.listenrollment[0].ToCo_Id != 0)
                                 {
                                     @*
-                                    <a href="@Url.Action("TestUser", "FlashTests", new { Toco_Id = @Model.listenrollment[0].ToCo_Id })"><i class="fa fa-chevron-down" aria-hidden="true">Ir a test rápido</i></a>*@
+                                <a href="@Url.Action("TestUser", "FlashTests", new { Toco_Id = @Model.listenrollment[0].ToCo_Id })"><i class="fa fa-chevron-down" aria-hidden="true">Ir a test rápido</i></a>*@
                                 }
                             </div>
                             <br />
@@ -736,7 +737,7 @@ else
 
                         @foreach (TopicsCourse topic1 in Model.Enrollment.Module.TopicsCourse.Where(x => x.ToCo_Visible == FORO.Si))
                         {
-                            <div id="@topic1.ToCo_Id" class="tab-pane fade">
+                            <div id="tab-@topic1.ToCo_Id" class="tab-pane fade">
                                 <div class="contenido-articulo">
 
                                     <br /><br /><br />
@@ -790,16 +791,16 @@ else
                                                         {
                                                             @* se comenta la seccion donde aparece el link de la evaluacion para efectos de este despliegue*@
                                                             @*<div class="fecha">
-                                                                  <a href="@Url.Action("TestUser", "User", new { id = @topic1.ToCo_Id })"><i class="fa fa-chevron-down" aria-hidden="true">Ir a Evaluación</i></a>
-                                                                </div>*@
+                                                          <a href="@Url.Action("TestUser", "User", new { id = @topic1.ToCo_Id })"><i class="fa fa-chevron-down" aria-hidden="true">Ir a Evaluación</i></a>
+                                                        </div>*@
                                                         }
                                                     }
                                                     else
                                                     {
                                                         <h4 class="fecha"> <strong> Ya no tiene intentos disponibles</strong></h4>
                                                         @*<p class="fecha">
-                                                                @Html.ActionLink("Contactar al Administrador", "EmailAttempts", "User", new { BaQu_Id = item1.BaQu_Id }, new { @class = "btn btn-primary" })
-                                                            </p>*@
+                                                        @Html.ActionLink("Contactar al Administrador", "EmailAttempts", "User", new { BaQu_Id = item1.BaQu_Id }, new { @class = "btn btn-primary" })
+                                                    </p>*@
 
                                                         <p class="fecha">
                                                             @Html.ActionLink("Resultado test", "ResulQuestions", "User", new { BaQu_Id = item1.BaQu_Id }, new { @class = "btn btn-primary" })
@@ -820,15 +821,7 @@ else
                                     {
                                         if (flash.ToCo_Id == topic1.ToCo_Id)
                                         {
-                                                <div class="page-hat simple">
-                                                    <div class="page-hat--content">
-                                                        <div class="page-hat--title js-letters-effect clearfix text-formatted field field--name-field-text-animation field--type-text-long field--label-hidden field__items" style=" opacity: 1;margin-left:-20%;margin-top:20%;position:absolute">
-                                                            <h2>
-                                                                EVALUACIONES<br /><b>TEMA</b>
-                                                            </h2>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                            <p style="font-size:30px; text-align:center;color: black">EVALUACIONES <b>TEMA</b></p>
                                             <div class="fecha">
                                                 <a href="@Url.Action("TestUser", "FlashTests", new { Toco_Id = @topic1.ToCo_Id })"><i class="fa fa-chevron-down" aria-hidden="true">Ir a test rápido</i></a>
                                             </div>
@@ -865,6 +858,7 @@ else
                         }
                     </div>
                 }
+              <hr style="border:10px solid #808080"/>
             }
             else
             {

@@ -28,14 +28,14 @@
     <br />
     <div class="container">
         <div class="row justify-content-end">
-            <button id="BTN_ADD" type="button" class="btn-fondo-rojo btn-responsive" data-toggle="modal" data-target="#AddVSDRFile">Añadir Archivo</button>
+            <button id="BTN_ADD" type="button" class="btn-fondo-rojo btn-responsive" data-toggle="modal" data-target="#AddVSDRFile" style="margin-right:10px">AÑADIR ARCHIVO</button>
             @if (Model.meetingAvailable)
             {
-                @Html.ActionLink("Ir a la sala", "RedirectToUrl", "VSDR", new { id = @Model.actualVsdr.id }, new { @class = "btn-fondo-rojo btn-responsive", style = "margin: 10px;margin-right: 10px" })
+                @Html.ActionLink("IR A LA SALA", "RedirectToUrl", "VSDR", new { id = @Model.actualVsdr.id }, new { @class = "btn-fondo-rojo btn-responsive"})
             }
             else
             {
-                @Html.ActionLink("Ir a la sala", "RedirectToUrl", "VSDR", new { id = @Model.actualVsdr.id }, new { @class = "btn-fondo-rojo btn-responsive", style = "margin:10px" })
+                @Html.ActionLink("IR A LA SALA", "RedirectToUrl", "VSDR", new { id = @Model.actualVsdr.id }, new { @class = "btn-fondo-rojo btn-responsive" })
             }
         </div>
     </div>
@@ -50,9 +50,9 @@
                 <p style="font-weight: bolder">@Model.actualVsdr.name</p>
                 <p style="font-weight: bolder;color:#FC3650">@Model.actualVsdr.start_date</p>
             </div>
-            <div style="margin:5px>
-                @Html.ActionLink("DESCARGAR", "RedirectToUrl", "VSDR", new { id = @Model.actualVsdr.id }, new { @class = "btn-fondo-negro btn-responsive", style = "" })
-                @Html.ActionLink("COMENTAR", "RedirectToUrl", "VSDR", new { id = @Model.actualVsdr.id }, new { @class = "btn-fondo-negro btn-responsive", style = "" })
+            <div style="margin:5px; margin-right:10px">
+                @Html.ActionLink("DESCARGAR", "RedirectToUrl", "VSDR", new { id = @Model.actualVsdr.id }, new { @class = "btn-fondo-negro btn-responsive", style= "margin-right:10px" })
+                @Html.ActionLink("COMENTAR", "RedirectToUrl", "VSDR", new { id = @Model.actualVsdr.id }, new { @class = "btn-fondo-negro btn-responsive" })
             </div>
         </div>
         <hr style="" />

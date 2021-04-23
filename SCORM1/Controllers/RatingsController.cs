@@ -1406,5 +1406,10 @@ namespace SCORM1.Controllers
             }
 
         }
+
+        public ActionResult CargarEvidencias() 
+        {
+            return View();        
+        }
     }
 }

@@ -2451,7 +2451,7 @@ namespace SCORM1.Controllers
 
 
 
-            int TotalQuestion = actualbank.OptionMultiple.Count() + actualbank.Pairing.Count() + actualbank.TrueOrFalse.Count();
+             int TotalQuestion = actualbank.OptionMultiple.Count() + actualbank.Pairing.Count() + actualbank.TrueOrFalse.Count();
 
             List<pairing> modelpairing = new List<pairing>();
             foreach (Pairing pairings in actualbank.Pairing)
@@ -3679,8 +3679,8 @@ namespace SCORM1.Controllers
             return View(model);
 
         }
-
-        public ActionResult Evaluacion2()
+             
+        public ActionResult Evalua() 
         {
             return View();
         }

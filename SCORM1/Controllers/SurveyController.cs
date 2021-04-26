@@ -9,8 +9,6 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using SCORM1.Models.ViewModel;
 using SCORM1.Models.Survey;
 using SCORM1.Models.Lms;
-using System.Collections.Generic;
-using System;
 
 namespace SCORM1.Controllers
 {
@@ -37,6 +35,11 @@ namespace SCORM1.Controllers
             return View();
         }
 
+        /// <summary>
+        /// Load a survey by its asociated module, it also instantiate the user session
+        /// </summary>
+        /// <param name="id">id of the survey</param>
+        /// <returns>Survey view with an instantiated model</returns>
         [Authorize]
         public ActionResult Survey(int id)
         {
@@ -47,19 +50,27 @@ namespace SCORM1.Controllers
             Module module = ApplicationDbContext.Modules.Find(survey.modu_id);
             Enrollment enrollment = ApplicationDbContext.Enrollments.Where(x => x.User_Id == userId && x.Modu_Id == module.Modu_Id).FirstOrDefault();
             UserSurveyResponse usr = GetUserSurvey(enrollment.Enro_Id);
-            //now check if the session is still valid
+            int minutes = 0;
+            //if the user down't have a session, then create it
             if (usr == null)
             {
+                minutes = survey.survey_time_minutes;
                 usr = new UserSurveyResponse
                 {
                     calification = 0,
                     enro_id = enrollment.Enro_Id,
                     survey_initial_time = DateTime.Now,
-                    survey_finish_time = DateTime.Now.AddMinutes(survey.survey_time_minutes),
-                    presented = false
+                    survey_finish_time = DateTime.Now.AddMinutes(survey.survey_time_minutes)
                 };
                 ApplicationDbContext.UserSurveyResponses.Add(usr);
                 ApplicationDbContext.SaveChanges();
+            }
+            //if he has, then calculate the remaining time
+            else
+            {
+                minutes = (int)(usr.survey_finish_time - DateTime.Now).TotalMinutes;
+                if (minutes < 0)
+                    minutes = 0;
             }
             //Else create a session and load whole survey
             SurveyQuestionBank sqb = ApplicationDbContext.SurveyQuestionBanks.Where(x => x.survey_id == survey.survey_id).FirstOrDefault();
@@ -72,37 +83,36 @@ namespace SCORM1.Controllers
             List<TrueFalseSurveyQuestion> listOfTFQuestions = new List<TrueFalseSurveyQuestion>();
 
             //These are for storing users answers
-            List<MultipleOptionAnswer> ans = new List<MultipleOptionAnswer>();
             List<TrueFalseSurveyAnswer> tfa = new List<TrueFalseSurveyAnswer>();
 
             //Populate multiple option questions and prepare user answers
-            for(int cont = 0; cont < mosq.Count; cont++)
+            for (int cont = 0; cont < mosq.Count; cont++)
             {
                 MultiOptionSurveyQuestion questionToAdd = new MultiOptionSurveyQuestion();
-                MultipleOptionAnswer ans2 = new MultipleOptionAnswer();
                 questionToAdd.answers = new List<MultipleOptionsSurveyAnswer>();
-                questionToAdd.question=mosq[cont];
-                ans2.questionId = mosq[cont].mosq_id;
-                ans2.answerId = 0;
-                for (int cont2=0;cont2< mosa.Count; cont2++)
+                questionToAdd.question = mosq[cont];
+                questionToAdd.userAnswerId = 0;
+                for (int cont2 = 0; cont2 < mosa.Count; cont2++)
                 {
                     if (mosa[cont2].mosq_id == mosq[cont].mosq_id)
                     {
                         questionToAdd.answers.Add(mosa[cont2]);
                     }
                 }
-                ans.Add(ans2);
                 listOfQuestions.Add(questionToAdd);
             }
 
+            //Shuffle multipleOptionQuestions
+            listOfQuestions.Shuffle();
+
             //Populate True False questions and prepare user answers
-            for(int cont = 0; cont < tfsq.Count; cont++)
+            for (int cont = 0; cont < tfsq.Count; cont++)
             {
                 listOfTFQuestions.Add(tfsq[cont]);
                 TrueFalseSurveyAnswer a = new TrueFalseSurveyAnswer
                 {
-                    questionId = tfsq[cont].tfsq_id,
-                    value = 2
+                    question = tfsq[cont],
+                    userAnswerValue=2
                 };
                 tfa.Add(a);
             }
@@ -110,15 +120,14 @@ namespace SCORM1.Controllers
             SurveyViewModel model = new SurveyViewModel
             {
                 survey = survey,
-                enro_id = enrollment.Enro_Id,
                 questionBank = sqb,
+                calification = usr.calification,
                 multipleOptionQuestions = listOfQuestions,
-                userAnswers = ans,
-                trueFalseSurveyQuestions = listOfTFQuestions,
-                userAnswerTrueFalse = tfa
+                userAnswerTrueFalse = tfa,
+                minutes = minutes
             };
 
-            if (usr.survey_finish_time > DateTime.Now&&!usr.presented)
+            if (usr.survey_finish_time > DateTime.Now)
             {
                 model.validSession = true;
             }
@@ -147,87 +156,95 @@ namespace SCORM1.Controllers
         [HttpPost]
         public ActionResult SurveyResponse(SurveyViewModel model)
         {
-            //To-Do calculate results
-            UserSurveyResponse usr = ApplicationDbContext.UserSurveyResponses.Where(x=>x.enro_id==model.enro_id).FirstOrDefault();
-            Enrollment en = ApplicationDbContext.Enrollments.Find(usr.enro_id);
-            Module mod = ApplicationDbContext.Modules.Find(en.Modu_Id);
-            SurveyModule sur = ApplicationDbContext.Surveys.Where(x => x.modu_id == mod.Modu_Id).FirstOrDefault();
-            SurveyQuestionBank sqb = ApplicationDbContext.SurveyQuestionBanks.Where(x => x.survey_id == sur.survey_id).FirstOrDefault();
-
-            List<MultipleOptionsSurveyAnswer> mosa = ApplicationDbContext.MultipleOptionsSurveyAnswers.ToList();//Check just load answers of questions
-            List<TrueFalseSurveyQuestion> tfsq = ApplicationDbContext.TrueFalseSurveyQuestions.Where(x => x.bank_id == sqb.bank_id).ToList();
-
-            if (model.userAnswers != null && model.userAnswers.Count > 0)
+            if (model.validSession)
             {
-                for (int cont = 0; cont < model.userAnswers.Count; cont++)
-                {
-                    MultipleOptionsSurveyUser answer = new MultipleOptionsSurveyUser
-                    {
-                        usr_id = usr.us_id,
-                        mosa_id = model.userAnswers[cont].answerId
-                    };
-                    ApplicationDbContext.MultipleOptionsSurveyUsers.Add(answer);
-                }
-            }
-            if (model.userAnswerTrueFalse!=null && model.userAnswerTrueFalse.Count > 0)
-            {
-                for (int cont = 0; cont < model.userAnswerTrueFalse.Count; cont++)
-                {
-                    TrueFalseSurveyUser answer = new TrueFalseSurveyUser
-                    {
-                        usr_id = usr.us_id,
-                        tfsq_id = model.userAnswerTrueFalse[cont].questionId,
-                        user_answer = model.userAnswerTrueFalse[cont].value
-                    };
-                    ApplicationDbContext.TrueFalseSurveyUsers.Add(answer);
-                }
-            }
-            float qualification = 0;
+                //To-Doi validate that answers are not in database
+                UserSurveyResponse usr = ApplicationDbContext.UserSurveyResponses.Where(x => x.enro_id == model.enro_id).FirstOrDefault();
+                Enrollment en = ApplicationDbContext.Enrollments.Find(usr.enro_id);
+                Module mod = ApplicationDbContext.Modules.Find(en.Modu_Id);
+                SurveyModule sur = ApplicationDbContext.Surveys.Where(x => x.modu_id == mod.Modu_Id).FirstOrDefault();
+                SurveyQuestionBank sqb = ApplicationDbContext.SurveyQuestionBanks.Where(x => x.survey_id == sur.survey_id).FirstOrDefault();
 
-            if (model.userAnswerTrueFalse != null && model.userAnswerTrueFalse.Count > 0)
-            {
-                // count correct true false answers
-                for (int cont = 0; cont < model.userAnswerTrueFalse.Count; cont++)
+                List<MultipleOptionsSurveyAnswer> mosa = ApplicationDbContext.MultipleOptionsSurveyAnswers.ToList();//Check just load answers of questions
+                List<TrueFalseSurveyQuestion> tfsq = ApplicationDbContext.TrueFalseSurveyQuestions.Where(x => x.bank_id == sqb.bank_id).ToList();
+
+                if (model.multipleOptionQuestions != null && model.multipleOptionQuestions.Count > 0)
                 {
-                    for (int cont2 = 0; cont2 < tfsq.Count; cont2++)
+                    for (int cont = 0; cont < model.multipleOptionQuestions.Count; cont++)
                     {
-                        if (model.userAnswerTrueFalse[cont].questionId == tfsq[cont2].tfsq_id)
+                        if (model.multipleOptionQuestions[cont].userAnswerId != 0)
                         {
-                            if (model.userAnswerTrueFalse[cont].value == tfsq[cont2].correct)
+                            MultipleOptionsSurveyUser answer = new MultipleOptionsSurveyUser
                             {
-                                qualification += 1;
-                            }
-                            cont2 = tfsq.Count;
+                                usr_id = usr.us_id,
+                                mosa_id = model.multipleOptionQuestions[cont].userAnswerId
+                            };
+                            ApplicationDbContext.MultipleOptionsSurveyUsers.Add(answer);
                         }
                     }
                 }
-            }
-
-            if (model.userAnswers!=null && model.userAnswers.Count > 0)
-            {
-                // count correct multiple option answers
-                for (int cont = 0; cont < model.userAnswers.Count; cont++)
+                if (model.userAnswerTrueFalse != null && model.userAnswerTrueFalse.Count > 0)
                 {
-                    for (int cont2 = 0; cont2 < mosa.Count; cont2++)
+                    for (int cont = 0; cont < model.userAnswerTrueFalse.Count; cont++)
                     {
-                        if (model.userAnswers[cont].answerId == mosa[cont2].mosa_id)
+                        if (model.userAnswerTrueFalse[cont].userAnswerValue <= 1)
                         {
-                            if (mosa[cont2].correct_answer == 1)
+                            TrueFalseSurveyUser answer = new TrueFalseSurveyUser
                             {
-                                qualification += 1;
-                            }
-                            cont2 = mosa.Count;
+                                usr_id = usr.us_id,
+                                tfsq_id = model.userAnswerTrueFalse[cont].question.tfsq_id,
+                                user_answer = model.userAnswerTrueFalse[cont].userAnswerValue
+                            };
+                            ApplicationDbContext.TrueFalseSurveyUsers.Add(answer);
                         }
                     }
                 }
-            }
+                float qualification = 0;
 
-            usr.calification = (qualification / sqb.questionsToEvaluate)*100f;
-            usr.presented = true;
-            model.validSession = false;
-            model.calification = usr.calification;
-            model.validSession = false;
-            ApplicationDbContext.SaveChanges();
+                if (model.userAnswerTrueFalse != null && model.userAnswerTrueFalse.Count > 0)
+                {
+                    // count correct true false answers
+                    for (int cont = 0; cont < model.userAnswerTrueFalse.Count; cont++)
+                    {
+                        for (int cont2 = 0; cont2 < tfsq.Count; cont2++)
+                        {
+                            if (model.userAnswerTrueFalse[cont].question.tfsq_id == tfsq[cont2].tfsq_id)
+                            {
+                                if (model.userAnswerTrueFalse[cont].userAnswerValue == tfsq[cont2].correct)
+                                {
+                                    qualification += 1;
+                                }
+                                cont2 = tfsq.Count;
+                            }
+                        }
+                    }
+                }
+
+                if (model.multipleOptionQuestions != null && model.multipleOptionQuestions.Count > 0)
+                {
+                    // count correct multiple option answers
+                    for (int cont = 0; cont < model.multipleOptionQuestions.Count; cont++)
+                    {
+                        for (int cont2 = 0; cont2 < mosa.Count; cont2++)
+                        {
+                            if (model.multipleOptionQuestions[cont].userAnswerId == mosa[cont2].mosa_id)
+                            {
+                                if (mosa[cont2].correct_answer == 1)
+                                {
+                                    qualification += 1;
+                                }
+                                cont2 = mosa.Count;
+                            }
+                        }
+                    }
+                }
+
+                usr.calification = (qualification / sqb.questionsToEvaluate) * 100f;
+                usr.presented = true;
+                model.validSession = false;
+                model.calification = usr.calification;
+                ApplicationDbContext.SaveChanges();
+            }
             model.Sesion = GetActualUserId().SesionUser;
             return View("Survey", model);
         }

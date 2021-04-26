@@ -19,15 +19,20 @@
             document.getElementById("timerLabelMinutes").innerHTML = minutes - 1;
             if (minutes > 0) {
                 document.getElementById("timerLabelSeconds").innerHTML = 59;
+            } else {
+                $.ajax({
+                    url: 'https://aprendeyavanza2.com.co/bureaulatam/Home/Index',
+                    data: { id: id }
+                }).done(function () {
+                    alert('Tiempo agotado');
+                });
             }
             setTimeout("countdown()", 1000);
         }
     }
     setTimeout("countdown()", 1000);
 </script>
-<div class="card-body">
-    <p>Tiempo restante <span id="timerLabelMinutes" runat="server">120</span>:<span id="timerLabelSeconds" runat="server">0</span></p>
-</div>
+@Html.HiddenFor(model => model.validSession)
 @if (Model.validSession)
 {
     <br />
@@ -44,6 +49,9 @@
     </div>
     <br />
     <br />
+    <div class="card-body">
+        <p>Tiempo restante <span id="timerLabelMinutes" runat="server">@Model.minutes</span>:<span id="timerLabelSeconds" runat="server">0</span></p>
+    </div>
 
     using (Html.BeginForm("SurveyResponse", "Survey", FormMethod.Post, new { @class = "form-horizontal", role = "form", enctype = "multipart/form-data" }))
     {
@@ -79,8 +87,7 @@
                                     @Html.HiddenFor(model => Model.multipleOptionQuestions[cont].answers[cont2].mosa_id)
                                     @Html.HiddenFor(model => Model.multipleOptionQuestions[cont].answers[cont2].mosq_id)
                                     <div class="fecha">
-                                        @Html.HiddenFor(model => Model.userAnswers[cont].questionId)
-                                        @Html.RadioButtonFor(model => Model.userAnswers[cont].answerId, Model.multipleOptionQuestions[cont].answers[cont2].mosa_id, htmlAttributes: new { @class = "col-md-1" })
+                                        @Html.RadioButtonFor(model => Model.multipleOptionQuestions[cont].userAnswerId, Model.multipleOptionQuestions[cont].answers[cont2].mosa_id, htmlAttributes: new { @class = "col-md-1" })
                                         <strong>@Html.Raw(Model.multipleOptionQuestions[cont].answers[cont2].content)</strong>
                                     </div>
                                 }
@@ -94,27 +101,27 @@
             <br /><br />
             @if (Model.multipleOptionQuestions.Count > 0)
             {
-                for (int cont = 0; cont < Model.trueFalseSurveyQuestions.Count; cont++)
+                for (int cont = 0; cont < Model.userAnswerTrueFalse.Count; cont++)
                 {
                     <div class="panel panel-primary">
                         <div class="panel-heading panel-head"><h1 style="font-size:35px;">Pregunta Verdadero Falso</h1> </div>
                         <div class="panel-body">
-                            @Html.HiddenFor(model => model.trueFalseSurveyQuestions[cont].tfsq_id)
-                            @Html.HiddenFor(model => model.userAnswerTrueFalse[cont].questionId)
+                            @Html.HiddenFor(model => model.userAnswerTrueFalse[cont].question.tfsq_id)
+                            @Html.HiddenFor(model => model.userAnswerTrueFalse[cont].question.tfsq_id)
                             <div class="comentario">
                                 <br />
-                                <p><strong>Pregunta: @Model.trueFalseSurveyQuestions[cont].title</strong></p>
+                                <p><strong>Pregunta: @Model.userAnswerTrueFalse[cont].question.title</strong></p>
                                 <br />
-                                <p><strong>@Html.Raw(Model.trueFalseSurveyQuestions[cont].content)</strong></p>
+                                <p><strong>@Html.Raw(Model.userAnswerTrueFalse[cont].question.content)</strong></p>
                                 <br />
                                 <div class="fecha">
-                                    @Html.RadioButtonFor(model => Model.userAnswerTrueFalse[cont].value, 1, htmlAttributes: new { @class = " control-label col-sm-1" })
+                                    @Html.RadioButtonFor(model => Model.userAnswerTrueFalse[cont].userAnswerValue, 1, htmlAttributes: new { @class = " control-label col-sm-1" })
                                     <label>Verdadero</label>
                                 </div>
                                 <br />
                                 <br />
                                 <div class="fecha">
-                                    @Html.RadioButtonFor(model => Model.userAnswerTrueFalse[cont].value, 0, htmlAttributes: new { @class = " control-label col-sm-1" })
+                                    @Html.RadioButtonFor(model => Model.userAnswerTrueFalse[cont].userAnswerValue, 0, htmlAttributes: new { @class = " control-label col-sm-1" })
                                     <label>Verdadero</label>
                                 </div>
                             </div>
@@ -126,6 +133,22 @@
         <button class="btn btn-default">Enviar</button>
     }
 }
+else if (Model.questionBank.questionsToEvaluate <= 0||(Model.multipleOptionQuestions.Count==0&&Model.trueFalseSurveyQuestions.Count==0))
+{
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <div class="message">
+        @Html.HiddenFor(model => model.enro_id)
+        <h3 style="text-align:center">Este formulario aún no tiene preguntas a evaluar</h3>
+        <h4>
+            Calificación: @Model.calification
+        </h4>
+    </div>
+}
 else
 {
     <br />
@@ -136,7 +159,7 @@ else
     <br />
     <div class="message">
         @Html.HiddenFor(model => model.enro_id)
-        <h3>Estimado(a) estudiante @Model.UserLog Usted ya ha realizado el cuestionario o su sesión ya venció</h3>
+        <h3 style="text-align:center">Estimado(a) estudiante @Model.UserLog Usted ya ha realizado el cuestionario o su sesión ya venció</h3>
         <h4>
             Calificación: @Model.calification
         </h4>

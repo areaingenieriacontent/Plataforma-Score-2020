@@ -317,6 +317,10 @@
     <Compile Include="Migrations\202104212317559_unodos.Designer.cs">
       <DependentUpon>202104212317559_unodos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202104241335372_abcdos.cs" />
+    <Compile Include="Migrations\202104241335372_abcdos.Designer.cs">
+      <DependentUpon>202104241335372_abcdos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BasicAuthenticationAttribute.cs" />
     <Compile Include="Models\Lms\Advance.cs" />
@@ -2516,7 +2520,6 @@
     <Content Include="Views\Home\ComunidadSocial.cshtml" />
     <Content Include="Views\Home\TableroControl.cshtml" />
     <Content Include="Views\Ratings\CargarEvidencias.cshtml" />
-    <Content Include="Views\User\Evalua.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -2551,6 +2554,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202104212317559_unodos.resx">
       <DependentUpon>202104212317559_unodos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104241335372_abcdos.resx">
+      <DependentUpon>202104241335372_abcdos.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

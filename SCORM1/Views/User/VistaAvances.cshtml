@@ -9,12 +9,12 @@
     <img src="~/Content/Images/calificaciones/banner-calificaciones.jpg" style="height:200px;width:100%" />
 </div>
 <div class="panel-primary">
-    <div id="hiperlink">
-        <img src="~/Content/Images/home.jpg" alt="" style="margin-left:5%;width:25px" />
-        <a href="@Url.Action("Index", "Home")" style="font-weight: bolder;">INICIO/</a>
-        <a href="@Url.Action("ListModuleVirtual", "User")" style="font-weight: bolder">CURSOS ACTIVOS/</a>
-        <a href="@Url.Action("VistaAvances", "User")" style="font-weight: bolder; color:#FC3650">MIS CALIFICACIONES</a>
-    </div>
+<div id="hiperlink">
+    <img src="~/Content/Images/home.jpg" alt="" style="margin-left:5%;width:25px" />
+    <a href="@Url.Action("Index", "Home")" style="font-weight: bolder;">INICIO/</a>
+    <a href="@Url.Action("ListModuleVirtual", "User")" style="font-weight: bolder">CURSOS ACTIVOS/</a>
+    <a href="@Url.Action("VistaAvances", "User")" style="font-weight: bolder; color:#FC3650">MIS CALIFICACIONES</a>
+</div>
 
     @*
         @using (Html.BeginForm("SearchMVirtual", "User", FormMethod.Post, new { @class = "row", role = "search" }))

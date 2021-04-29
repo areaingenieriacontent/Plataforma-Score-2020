@@ -3680,10 +3680,7 @@ namespace SCORM1.Controllers
 
         }
              
-        public ActionResult Evalua() 
-        {
-            return View();
-        }
+     
     }
 }
 

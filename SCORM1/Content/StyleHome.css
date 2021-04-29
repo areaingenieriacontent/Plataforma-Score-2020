@@ -770,7 +770,7 @@ html {
 }
 
 .admin-link button, .advanced-search-field--text, .advanced-search-field input[type=search], .advanced-search-field input[type=text], .button, .button-action, .button-cancel, .button-checkbox-radio--label, .button.search-form__submit, .chosen-container-multi .chosen-choices li.search-choice, .comment__author, .comment__content h3, .content-filters--dropdown--item.is-active, .content-filters--group--label, .content-filters-tabs--tag[type=button], .content-filters .form-item a:not(.search-choice-close), .content-filters .form-radios .form-item label, .content-filters a, .content-filters label, .cross-news--title strong, .data-table table caption, .data-table table tbody tr td:first-child, .data-table table tbody tr th:first-child, .data-table table thead td, .data-table table thead th, .extra-logo .highlight, .extra-logo strong, .generic-title, .gradient-push--title, .greybox--sub-title, .greybox--title, .h1, .h2, .h3, .h4, .h5, .h6, .heading-a, .heading-b, .heading-c, .heading-d, .heading-e, .heading-f, .js-data-table .dataTable thead, .latest-articles--title, .layer-accordion-info--trigger, .layer-contact-long--name, .layer-contact-long--title, .layer-contact-offer--title strong, .layer-cover--date, .layer-cover--link, .layer-cover--title, .layer-history--title, .layer-images-group--title strong, .layer-insight--title .highlight, .layer-long-verbatim--author, .layer-major-markets--title .highlight, .layer-major-markets--title strong, .layer-markets.alternate .layer-markets--title, .layer-media--title, .layer-tabs-switcher .expanded .layer-tabs-switcher--trigger, .link-back, .link-std, .list-contacts table caption, .list-contacts table thead td, .list-contacts table thead th, .list-content--title, .list-info--title, .list-notifications table caption, .list-notifications table thead td, .list-notifications table thead th, .magazine-wall--loader, .main-menu > ul > .menu-item.alternate .main-menu--content > .sub-menu > .menu .menu-item .menu .menu-item > a, .main-menu > ul > .menu-item.alternate .main-menu--content > .sub-menu > .menu .menu-item .menu .menu-item > span, .main-menu > ul > .menu-item.alternate .main-menu--content > .sub-menu > .menu .menu-item ul .menu-item > a, .main-menu > ul > .menu-item.alternate .main-menu--content > .sub-menu > .menu .menu-item ul .menu-item > span, .main-menu > ul > .menu-item.alternate .main-menu--content > .sub-menu > ul .menu-item .menu .menu-item > a, .main-menu > ul > .menu-item.alternate .main-menu--content > .sub-menu > ul .menu-item .menu .menu-item > span, .main-menu > ul > .menu-item.alternate .main-menu--content > .sub-menu > ul .menu-item ul .menu-item > a, .main-menu > ul > .menu-item.alternate .main-menu--content > .sub-menu > ul .menu-item ul .menu-item > span, .main-menu > ul > li.alternate .main-menu--content > .sub-menu > .menu .menu-item .menu .menu-item > a, .main-menu > ul > li.alternate .main-menu--content > .sub-menu > .menu .menu-item .menu .menu-item > span, .main-menu > ul > li.alternate .main-menu--content > .sub-menu > .menu .menu-item ul .menu-item > a, .main-menu > ul > li.alternate .main-menu--content > .sub-menu > .menu .menu-item ul .menu-item > span, .main-menu > ul > li.alternate .main-menu--content > .sub-menu > ul .menu-item .menu .menu-item > a, .main-menu > ul > li.alternate .main-menu--content > .sub-menu > ul .menu-item .menu .menu-item > span, .main-menu > ul > li.alternate .main-menu--content > .sub-menu > ul .menu-item ul .menu-item > a, .main-menu > ul > li.alternate .main-menu--content > .sub-menu > ul .menu-item ul .menu-item > span, .needs-filters--title, .needs-form--dropdown--item.is-active, .needs-form--fieldset, .needs-form--submit, .needs-form--title, .optin-block--link, .page-hat--title strong, .page-hat.simple .page-hat--title .highlight, .page-hat.simple .page-hat--title strong, .page-hat.small .page-hat--title .highlight, .page-hat.small .page-hat--title strong, .page-heading--dropdown--item.is-active, .page-heading--section, .page-heading--title strong, .page-history-list--title, .page-landing-heading--title strong, .popin-std--title .highlight, .popin-std--title strong, .popin-upload-file--content .right:before, .quick-access--title strong, .request-form-title, .review-steps--informations, .review-steps--list .review-steps--step:before, .review-steps--list li:before, .review-steps ol .review-steps--step:before, .review-steps ol li:before, .search-form__submit, .search-result__title, .search-results-page .view-filters .advanced-search-field--content input[type=text], .section-gallery--title strong, .simple-sentence-form, .table-of-content, .tabs ul.primary, .tag-std, .tags-list .tag-highlighted, .teaser-event--link, .teaser-event--period, .teaser-event--place, .teaser-highlight-news--category, .teaser-highlight-news--title, .teaser-img--title, .teaser-links--link, .teaser-links--title .highlight, .teaser-offer--infos .highlight, .teaser-offer--store, .teaser-offer--subtitle, .teaser-offer--title, .teaser-request-certificate--certificate, .teaser-request-certificate--reference, .teaser-request-certificate--request, .teaser-verbatim--author strong, .teaser-video--title strong, .type-link--text strong, .ui-datepicker-month, .ui-dialog .ui-dialog-titlebar, .value-chain--title strong, .vector-map--title, .vector-map fieldset .fieldset-legend, .veristar-login-menu--link, .veristar-login-menu a, .vertical-nav--list .vertical-nav--item .vertical-nav--link.current, .vertical-nav--list .vertical-nav--item .vertical-nav--link:hover, .vertical-nav--list .vertical-nav--item a.current, .vertical-nav--list .vertical-nav--item a:hover, .vertical-nav--list li .vertical-nav--link.current, .vertical-nav--list li .vertical-nav--link:hover, .vertical-nav--list li a.current, .vertical-nav--list li a:hover, .vertical-nav ul .vertical-nav--item .vertical-nav--link.current, .vertical-nav ul .vertical-nav--item .vertical-nav--link:hover, .vertical-nav ul .vertical-nav--item a.current, .vertical-nav ul .vertical-nav--item a:hover, .vertical-nav ul li .vertical-nav--link.current, .vertical-nav ul li .vertical-nav--link:hover, .vertical-nav ul li a.current, .vertical-nav ul li a:hover, .vertical-tabs__menu-item-title, .wysiwyg a.link-std, .wysiwyg h2, .wysiwyg h3, .wysiwyg h4, .wysiwyg h5, .wysiwyg h6, .wysiwyg p.text-highlight, .wysiwyg p.text-subtitle, .wysiwyg table caption, .wysiwyg table thead td, .wysiwyg table thead th, div#sliding-popup .cookie-popup--content button, dropdown-layer--dropdown--item.is-active, form .form-file, form .form-title strong, form button[type=button], form button[type=submit], form input[type=submit], form legend strong, summary {
-    font-family: BureauVeritas-ExtBdUltraCond,Arial,sans-serif;
+    font-family: 'Source Sans Pro';   
     font-weight: 400;
     -webkit-font-kerning: normal;
     font-kerning: normal;
@@ -778,6 +778,14 @@ html {
     line-height: 1.25;
     -webkit-font-smoothing: antialiased
 }
+#tituloprincipal {
+    letter-spacing: 2px;
+    text-shadow: 0px 0px 10px #000;
+}
+.tag-std {
+    font-family:SourceSansPro-Black;
+    letter-spacing: 2px;
+    text-shadow: 0px 0px 10px #000;}
 
 .layer-long-verbatim--quote:after, .layer-long-verbatim--quote:before, .page-hat.alternate .page-hat--title strong {
     font-size: calc(57.33089px + 14.33273 * (100vw - 320px) / 320)
@@ -827,7 +835,7 @@ html {
 }
 
 .advanced-search-field--content, .content-filters--dropdown--item, .content-filters select, .cross-news--title, .data-table--no-result, .display-per-page--title, .layer-banner--title, .layer-contact-offer--title, .layer-images-group--title, .layer-insight--title, .layer-major-markets--title, .layer-markets--title, .layer-tabs-switcher--trigger, .list-info--sub-title, .list-results--no-result, .list-results--results, .magazine-wall--no-result, .main-menu > ul > .menu-item.alternate .main-menu--content > .sub-menu > .menu .menu-item > a, .main-menu > ul > .menu-item.alternate .main-menu--content > .sub-menu > .menu .menu-item > span, .main-menu > ul > .menu-item.alternate .main-menu--content > .sub-menu > ul .menu-item > a, .main-menu > ul > .menu-item.alternate .main-menu--content > .sub-menu > ul .menu-item > span, .main-menu > ul > li.alternate .main-menu--content > .sub-menu > .menu .menu-item > a, .main-menu > ul > li.alternate .main-menu--content > .sub-menu > .menu .menu-item > span, .main-menu > ul > li.alternate .main-menu--content > .sub-menu > ul .menu-item > a, .main-menu > ul > li.alternate .main-menu--content > .sub-menu > ul .menu-item > span, .needs-form--dropdown--item, .needs-select--label, .needs-wall--no-result, .needs-wall--results, .news-wall--no-result, .page-hat--title, .page-heading--dropdown--item, .page-heading--title, .page-landing-heading--title, .popin-std--title, .quick-access--title, .search-results-page .view-empty, .search-results-page .view-filters fieldset[data-drupal-selector=edit-items-per-page] legend .fieldset-legend, .section-gallery--title, .simple-sentence-form .simple-sentence-select--label, .simple-sentence-select--label, .teaser-event--period .highlight, .teaser-event--period strong, .teaser-event--title, .teaser-highlight--text, .teaser-links--title, .teaser-menu--title, .teaser-video--title, .ui-datepicker-year, .value-chain--title, .vector-map--title span, .vertical-nav--list .vertical-nav--item .vertical-nav--link, .vertical-nav--list .vertical-nav--item a, .vertical-nav--list li .vertical-nav--link, .vertical-nav--list li a, .vertical-nav ul .vertical-nav--item .vertical-nav--link, .vertical-nav ul .vertical-nav--item a, .vertical-nav ul li .vertical-nav--link, .vertical-nav ul li a, dropdown-layer--dropdown--item, form .form-title, form legend {
-    font-family: BureauVeritas-ThinUltraCondensed,Arial,sans-serif;
+    font-family: 'Source Sans Pro';
     font-weight: 400;
     -webkit-font-kerning: normal;
     font-kerning: normal;
@@ -909,7 +917,7 @@ html {
 }
 
 .advanced-search-field.alternate--text, .advanced-search-field.alternate input[type=search], .advanced-search-field.alternate input[type=text], .comment__content p, .content-filters-tabs--reset[type=reset], .data-table table, .description, .download-link, .field-description, .field-suffix, .filter-guidelines-item .tips, .form-item .description, .item-list ol, .item-list ul, .layer-boiler--contact--name, .layer-boiler--desc, .layer-boiler--desc ol, .layer-boiler--desc ul, .layer-boiler--title, .layer-contact-long, .layer-contact-offer--form-description, .layer-contact-offer form-description, .layer-cover--metadatas, .layer-long-verbatim, .layer-long-verbatim--quote, .link-download, .list-community--title, .list-contacts table, .list-info--tooltip-action, .list-notifications table, .list-results--header .form-switch, .list-simple--item, .list-simple li, .main-menu > ul > .menu-item.alternate .main-menu--content > .sub-menu > .menu .menu-item .menu .menu-item .menu .menu-item > a, .main-menu > ul > .menu-item.alternate .main-menu--content > .sub-menu > .menu .menu-item .menu .menu-item .menu .menu-item > span, .main-menu > ul > .menu-item.alternate .main-menu--content > .sub-menu > .menu .menu-item .menu .menu-item ul .menu-item > a, .main-menu > ul > .menu-item.alternate .main-menu--content > .sub-menu > .menu .menu-item .menu .menu-item ul .menu-item > span, .main-menu > ul > .menu-item.alternate .main-menu--content > .sub-menu > .menu .menu-item ul .menu-item .menu .menu-item > a, .main-menu > ul > .menu-item.alternate .main-menu--content > .sub-menu > .menu .menu-item ul .menu-item .menu .menu-item > span, .main-menu > ul > .menu-item.alternate .main-menu--content > .sub-menu > .menu .menu-item ul .menu-item ul .menu-item > a, .main-menu > ul > .menu-item.alternate .main-menu--content > .sub-menu > .menu .menu-item ul .menu-item ul .menu-item > span, .main-menu > ul > .menu-item.alternate .main-menu--content > .sub-menu > ul .menu-item .menu .menu-item .menu .menu-item > a, .main-menu > ul > .menu-item.alternate .main-menu--content > .sub-menu > ul .menu-item .menu .menu-item .menu .menu-item > span, .main-menu > ul > .menu-item.alternate .main-menu--content > .sub-menu > ul .menu-item .menu .menu-item ul .menu-item > a, .main-menu > ul > .menu-item.alternate .main-menu--content > .sub-menu > ul .menu-item .menu .menu-item ul .menu-item > span, .main-menu > ul > .menu-item.alternate .main-menu--content > .sub-menu > ul .menu-item ul .menu-item .menu .menu-item > a, .main-menu > ul > .menu-item.alternate .main-menu--content > .sub-menu > ul .menu-item ul .menu-item .menu .menu-item > span, .main-menu > ul > .menu-item.alternate .main-menu--content > .sub-menu > ul .menu-item ul .menu-item ul .menu-item > a, .main-menu > ul > .menu-item.alternate .main-menu--content > .sub-menu > ul .menu-item ul .menu-item ul .menu-item > span, .main-menu > ul > li.alternate .main-menu--content > .sub-menu > .menu .menu-item .menu .menu-item .menu .menu-item > a, .main-menu > ul > li.alternate .main-menu--content > .sub-menu > .menu .menu-item .menu .menu-item .menu .menu-item > span, .main-menu > ul > li.alternate .main-menu--content > .sub-menu > .menu .menu-item .menu .menu-item ul .menu-item > a, .main-menu > ul > li.alternate .main-menu--content > .sub-menu > .menu .menu-item .menu .menu-item ul .menu-item > span, .main-menu > ul > li.alternate .main-menu--content > .sub-menu > .menu .menu-item ul .menu-item .menu .menu-item > a, .main-menu > ul > li.alternate .main-menu--content > .sub-menu > .menu .menu-item ul .menu-item .menu .menu-item > span, .main-menu > ul > li.alternate .main-menu--content > .sub-menu > .menu .menu-item ul .menu-item ul .menu-item > a, .main-menu > ul > li.alternate .main-menu--content > .sub-menu > .menu .menu-item ul .menu-item ul .menu-item > span, .main-menu > ul > li.alternate .main-menu--content > .sub-menu > ul .menu-item .menu .menu-item .menu .menu-item > a, .main-menu > ul > li.alternate .main-menu--content > .sub-menu > ul .menu-item .menu .menu-item .menu .menu-item > span, .main-menu > ul > li.alternate .main-menu--content > .sub-menu > ul .menu-item .menu .menu-item ul .menu-item > a, .main-menu > ul > li.alternate .main-menu--content > .sub-menu > ul .menu-item .menu .menu-item ul .menu-item > span, .main-menu > ul > li.alternate .main-menu--content > .sub-menu > ul .menu-item ul .menu-item .menu .menu-item > a, .main-menu > ul > li.alternate .main-menu--content > .sub-menu > ul .menu-item ul .menu-item .menu .menu-item > span, .main-menu > ul > li.alternate .main-menu--content > .sub-menu > ul .menu-item ul .menu-item ul .menu-item > a, .main-menu > ul > li.alternate .main-menu--content > .sub-menu > ul .menu-item ul .menu-item ul .menu-item > span, .message-system, .message-system--item.read .message-system--cell, .messages, .messages-inline, .messages__list, .password-confirm, .password-strength, .password-suggestions, .request-form-title em, .search-tool form input[type=text], .site-header.sticky.is-login .heading-highlights--tools .button-action:before, .site-header.sticky.is-not-login .heading-highlights--tools .button-action:before, .sub-menu > .menu .accordions-enabled--col > .menu-item .menu .menu-item a, .sub-menu > .menu .accordions-enabled--col > .menu-item .menu li a, .sub-menu > .menu .accordions-enabled--col > .menu-item ul .menu-item a, .sub-menu > .menu .accordions-enabled--col > .menu-item ul li a, .sub-menu > .menu > .menu-item .menu .menu-item a, .sub-menu > .menu > .menu-item .menu li a, .sub-menu > .menu > .menu-item ul .menu-item a, .sub-menu > .menu > .menu-item ul li a, .sub-menu > .menu > li .menu .menu-item a, .sub-menu > .menu > li .menu li a, .sub-menu > .menu > li ul .menu-item a, .sub-menu > .menu > li ul li a, .sub-menu > ul .accordions-enabled--col > .menu-item .menu .menu-item a, .sub-menu > ul .accordions-enabled--col > .menu-item .menu li a, .sub-menu > ul .accordions-enabled--col > .menu-item ul .menu-item a, .sub-menu > ul .accordions-enabled--col > .menu-item ul li a, .sub-menu > ul > .menu-item .menu .menu-item a, .sub-menu > ul > .menu-item .menu li a, .sub-menu > ul > .menu-item ul .menu-item a, .sub-menu > ul > .menu-item ul li a, .sub-menu > ul > li .menu .menu-item a, .sub-menu > ul > li .menu li a, .sub-menu > ul > li ul .menu-item a, .sub-menu > ul > li ul li a, .table-of-content [class*=toc-h]:not(.toc-h2), .teaser-contact--name, .teaser-gallery--bio, .teaser-gallery--cellphone, .teaser-gallery--email, .teaser-gallery--phone, .teaser-highlight-news--metadatas, .teaser-menu--desc, .teaser-verbatim--author, .wysiwyg, .wysiwyg ol, .wysiwyg ol em, .wysiwyg p, .wysiwyg p em, .wysiwyg table, .wysiwyg ul, .wysiwyg ul em, body, div#sliding-popup .cookie-popup--text .cookie-popup--categories .cookie-popup--category input[type=checkbox] + label, form .form-file span, form input[type=checkbox] + .form-label, form input[type=checkbox] + label, form input[type=date], form input[type=datetime-local], form input[type=email], form input[type=number], form input[type=password], form input[type=radio] + .form-label, form input[type=radio] + label, form input[type=search], form input[type=tel], form input[type=text], form select, form textarea, input.hasDatepicker {
-    font-family: Source Sans Pro,Arial,sans-serif;
+    font-family: 'Source Sans Pro';
     font-weight: 400;
     -webkit-font-kerning: normal;
     font-kerning: normal;
@@ -13721,6 +13729,174 @@ input.hasDatepicker {
     src: url(fonts/SourceSansPro-LightItalic.ttf)
 }
 
+/* cyrillic-ext */
+@font-face {
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 300;
+    src: url(https://fonts.gstatic.com/s/sourcesanspro/v14/6xKydSBYKcSV-LCoeQqfX1RYOo3ik4zwmhduz8A.woff2) format('woff2');
+    unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 300;
+    src: url(https://fonts.gstatic.com/s/sourcesanspro/v14/6xKydSBYKcSV-LCoeQqfX1RYOo3ik4zwkxduz8A.woff2) format('woff2');
+    unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 300;
+    src: url(https://fonts.gstatic.com/s/sourcesanspro/v14/6xKydSBYKcSV-LCoeQqfX1RYOo3ik4zwmxduz8A.woff2) format('woff2');
+    unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 300;
+    src: url(https://fonts.gstatic.com/s/sourcesanspro/v14/6xKydSBYKcSV-LCoeQqfX1RYOo3ik4zwlBduz8A.woff2) format('woff2');
+    unicode-range: U+0370-03FF;
+}
+/* vietnamese */
+@font-face {
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 300;
+    src: url(https://fonts.gstatic.com/s/sourcesanspro/v14/6xKydSBYKcSV-LCoeQqfX1RYOo3ik4zwmBduz8A.woff2) format('woff2');
+    unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 300;
+    src: url(https://fonts.gstatic.com/s/sourcesanspro/v14/6xKydSBYKcSV-LCoeQqfX1RYOo3ik4zwmRduz8A.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 300;
+    src: url(https://fonts.gstatic.com/s/sourcesanspro/v14/6xKydSBYKcSV-LCoeQqfX1RYOo3ik4zwlxdu.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/sourcesanspro/v14/6xK3dSBYKcSV-LCoeQqfX1RYOo3qNa7lqDY.woff2) format('woff2');
+    unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/sourcesanspro/v14/6xK3dSBYKcSV-LCoeQqfX1RYOo3qPK7lqDY.woff2) format('woff2');
+    unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/sourcesanspro/v14/6xK3dSBYKcSV-LCoeQqfX1RYOo3qNK7lqDY.woff2) format('woff2');
+    unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/sourcesanspro/v14/6xK3dSBYKcSV-LCoeQqfX1RYOo3qO67lqDY.woff2) format('woff2');
+    unicode-range: U+0370-03FF;
+}
+/* vietnamese */
+@font-face {
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/sourcesanspro/v14/6xK3dSBYKcSV-LCoeQqfX1RYOo3qN67lqDY.woff2) format('woff2');
+    unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/sourcesanspro/v14/6xK3dSBYKcSV-LCoeQqfX1RYOo3qNq7lqDY.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/sourcesanspro/v14/6xK3dSBYKcSV-LCoeQqfX1RYOo3qOK7l.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 700;
+    src: url(https://fonts.gstatic.com/s/sourcesanspro/v14/6xKydSBYKcSV-LCoeQqfX1RYOo3ig4vwmhduz8A.woff2) format('woff2');
+    unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 700;
+    src: url(https://fonts.gstatic.com/s/sourcesanspro/v14/6xKydSBYKcSV-LCoeQqfX1RYOo3ig4vwkxduz8A.woff2) format('woff2');
+    unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 700;
+    src: url(https://fonts.gstatic.com/s/sourcesanspro/v14/6xKydSBYKcSV-LCoeQqfX1RYOo3ig4vwmxduz8A.woff2) format('woff2');
+    unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 700;
+    src: url(https://fonts.gstatic.com/s/sourcesanspro/v14/6xKydSBYKcSV-LCoeQqfX1RYOo3ig4vwlBduz8A.woff2) format('woff2');
+    unicode-range: U+0370-03FF;
+}
+/* vietnamese */
+@font-face {
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 700;
+    src: url(https://fonts.gstatic.com/s/sourcesanspro/v14/6xKydSBYKcSV-LCoeQqfX1RYOo3ig4vwmBduz8A.woff2) format('woff2');
+    unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 700;
+    src: url(https://fonts.gstatic.com/s/sourcesanspro/v14/6xKydSBYKcSV-LCoeQqfX1RYOo3ig4vwmRduz8A.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 700;
+    src: url(https://fonts.gstatic.com/s/sourcesanspro/v14/6xKydSBYKcSV-LCoeQqfX1RYOo3ig4vwlxdu.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
 @media (-ms-high-contrast:none),screen and (-ms-high-contrast:active) {
     .heading-highlights--news {
         flex-basis: calc(65% - 64px)
@@ -16361,7 +16537,7 @@ input.hasDatepicker {
         background-color: transparent;
         padding: 0;
         transform: scale(0.525) translateX(-70%);
-        top: 20px
+        top: 0px
     }
 
     .js-place-to-burger {
@@ -17121,18 +17297,17 @@ a.linkedin {
   
 
 }
-#btn-curso {    
+#btn-curso {
     border: #FFF solid;
     margin-top: 30%;
     left: 30%;
     position: absolute;
     color: white;
-
+    font-family: 'Roboto'
 }
 #picturecursos:hover {
     background-color: rgb(50,50,50,0.6);
     border: 2px solid #fc3650;
-    transform: scale(1.06);
  
 }
 
@@ -17549,20 +17724,30 @@ li.nav-item.active {
 .li-interna {
     margin-left: 40px;
     content: "\2022";
-    padding-right:8px;
-    border-color:#fc3650;    
-
+    padding-right: 8px;
+    border-color: #fc3650; 
+}
 
 .btn-cuestionario {
     background-color: #fff;
     color: black;
-    text-align: center;
     line-height: 2;
     max-width: none;
-    border:1px solid #333;
+    border: 1px solid #333;
+    border-radius: 0px;
     padding: 10px 30px 10px 30px;
+    margin: 0px 10px;
+    display: block;
+    text-align: left;
 }
-}
+
+    .btn-cuestionario:active, .btn-cuestionario:hover {
+        background-color: #e7e7e7;
+        color: black;
+        border:0px;
+        
+    }
+
 
 .list-group-item:first-child {
     border-top-left-radius: 0px;
@@ -17591,4 +17776,41 @@ li.nav-item.active {
 
 .list-group-item:last-child {
     border-bottom-right-radius: 0px;
+}
+
+
+.active, .falseortrue:hover {
+    background-color: #e7e7e7;
+    color: black;
+    border: 0px;
+}
+
+
+.btn:focus, .btn.focus {
+    outline: 0;
+    box-shadow: none;
+}
+
+.btn-group-vertical {
+    display:block;
+}
+
+.nav-tabs .nav-link.active {
+    color: #fff;
+    background-color: #fc3650;
+    transform: scale(1.10)
+}
+
+.form select:focus {
+    color: black;
+}
+
+.form input:not([type=checkbox]):not([type=radio]):focus, form select:focus, form textarea:focus {
+    color:black
+}
+
+.link-std {
+    font-weight: bolder;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px black
 }

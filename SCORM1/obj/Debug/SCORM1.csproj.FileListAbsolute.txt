@@ -3226,3 +3226,4 @@ C:\Users\Ruben-PC\Source\Repos\areaingenieriacontent\Plataforma-Score-2020\SCORM
 C:\Users\Ruben-PC\Source\Repos\areaingenieriacontent\Plataforma-Score-2020\SCORM1\obj\Debug\SCORM1.dll
 C:\Users\Ruben-PC\Source\Repos\areaingenieriacontent\Plataforma-Score-2020\SCORM1\obj\Debug\SCORM1.pdb
 C:\Users\Ruben-PC\Source\Repos\areaingenieriacontent\Plataforma-Score-2020\SCORM1\obj\Debug\SCORM1.csprojAssemblyReference.cache
+C:\Users\Ruben-PC\Source\Repos\areaingenieriacontent\Plataforma-Score-2020\SCORM1\obj\Debug\SCORM1.Migrations.abcdos.resources

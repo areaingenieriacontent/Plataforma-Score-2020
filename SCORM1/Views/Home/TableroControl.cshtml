@@ -7,6 +7,11 @@
 <div id="encabezadocursos">
     <img src="~/Content/Images/sistema de puntos/banner-sistema-de-puntos.jpg" style="height:200px;width:100%" />
 </div>
+<div id="hiperlink">
+    <img src="~/Content/Images/home.jpg" alt="" style="margin-left:5%;width:25px" />
+    <a href="@Url.Action("Index", "Home")" style="font-weight: bolder;">INICIO / </a>
+    <a href="@Url.Action("TableroControl", "Home")" style="font-weight: bolder;color:#FC3650">TABLERO DE CONTROL</a>
+</div>
 <br />
 <br />
 <div>
@@ -46,7 +51,7 @@
                                                 </li>
                                                 <li class="field__item" style="width: 6%;">
                                                     <div class="paragraph paragraph--type--image-slider-items paragraph--view-mode--default">
-                                                        <a href="#" style="background-color:#fff" class="field-group-link teaser-market">
+                                                        <a href="@Url.Action("Create","Contacto")" style="background-color:#fff" class="field-group-link teaser-market">
                                                             <div class="teaser-market--picture">
                                                                 <picture>
                                                                     <source srcset="~/Content/Images/tablerodecontrol/mesa-de-servicio.jpg" media="all and (min-width: 1280px)" type="image/jpg">

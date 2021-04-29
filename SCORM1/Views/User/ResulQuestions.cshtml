@@ -130,8 +130,8 @@ else
     <div class="container">
         <img src="~/Content/Images/evaluaciones/portada-resultados-test.jpg" style="width:100%" />
     </div>
-    <p style="text-align:center;color:#FC3650"><strong>No aprobaste el módulo, tu puntaje fue de 30</strong></p>
-    <p style="text-align:center;color:#FC3650"><strong>Aprobaste el módulo, tu puntaje fue de 80</strong></p>
+
+    <p style="text-align:center;font-size:20px"><b> @ViewData["Calificacion"] </b></p>
     <br />
     <p style="text-align:center;"><strong>ESTOS SON LOS RESULTADOS DEL TEST</strong></p>
     <br />
@@ -217,40 +217,96 @@ else
                             <p style="margin:10px"><b>@option.OpMu_Question</b></p>
                             <p style="margin:10px">@option.OpMu_Description</p>
                             <p><strong>@Html.Raw(option.OpMult_Content) </strong></p>
-                            @foreach (AnswerOptionMultipleStudent answeroptionmultiple in option.AnswerOptionMultipleStudent.OrderByDescending(X => X.AnOp_Id))
-                            {
+                            <div class="bs-example">
+                                <div class="btn-group btn-group-toggle btn-group-vertical">
+                                    @{var cont = 0; var letra = ""; var cont2 = 0; var letra2 = "";}
 
-                                if (answeroptionmultiple.User_Id == Model.userId)
-                                {
-                                    if (answeroptionmultiple.OptionMultiple.OpMu_Id == option.OpMu_Id)
+                                    @foreach (AnswerOptionMultipleStudent answeroptionmultiple in option.AnswerOptionMultipleStudent.OrderByDescending(X => X.AnOp_Id))
                                     {
+                                        cont2 = 1 + cont2;
 
-                                        <p><strong>@Html.Raw(answeroptionmultiple.AnOp_OptionAnswer)</strong></p>
-                                        @*< p><em>@answeroptionmultiple.AnOp_TrueAnswer</em></p>*@
-                                        <p><strong>@Html.Raw(answeroptionmultiple.Answer_OpMult_Content)</strong></p>
-                                        break;
-                                    }
-                                }
-                            }
-                            <div class="list-group">
-
-                                @foreach (AnswerOptionMultiple answeroptionmultiple2 in option.AnswerOptionMultiple)
-                                {
-                                    if (answeroptionmultiple2.OptionMultiple.OpMu_Id == option.OpMu_Id)
-                                    {
-                                        <a class="list-group-item list-group-item-action"><span><b> </b></span>@Html.Raw(answeroptionmultiple2.AnOp_OptionAnswer)</a>
+                                        if (cont2 == 1) { letra2 = "A) "; }
+                                        if (cont2 == 2) { letra2 = "B) "; }
+                                        if (cont2 == 3) { letra2 = "C) "; }
+                                        if (cont2 == 4) { letra2 = "D) "; }
+                                        if (cont2 == 5) { letra2 = "E) "; }
+                                        if (cont2 == 6) { letra2 = "F) "; }
+                                        if (cont2 == 7) { letra2 = "G) "; }
+                                        if (cont2 == 8) { letra2 = "H) "; }
+                                        if (cont2 > 8)
+                                        {
+                                            letra = "Ha superado el numero de respuestas permitidas";
+                                        }
+                                        <p style="margin:10px"><b>Respuesta del estudiante:</b></p>
                                         <br />
-                                       <p><strong>@Html.Raw(answeroptionmultiple2.AnOp_OptionAnswer)</strong></p>
-                                            <p><em>@answeroptionmultiple2.AnOp_TrueAnswer</em></p>
-                                        <p><strong>@Html.Raw(answeroptionmultiple2.Answer_OpMult_Content)</strong></p>
-
+                                        if (answeroptionmultiple.User_Id == Model.userId)
+                                        {
+                                            if (answeroptionmultiple.OptionMultiple.OpMu_Id == option.OpMu_Id)
+                                            {
+                                                <div>
+                                                    <label class="btn btn-cuestionario" style=" background-color: #e7e7e7; color: black; cursor: pointer; border: 0px">
+                                                        <b>@letra2</b>
+                                                        <input type="radio" name="options" autocomplete="off" disabled visibility: hidden> @answeroptionmultiple.AnOp_OptionAnswer
+                                                    </label>
+                                                </div>
+                                                <br />
+                                                @*< p><em>@answeroptionmultiple.AnOp_TrueAnswer</em></p>*@
+                                                break;
+                                            }
+                                        }
                                     }
-                                }
+                                    @{cont2 = 0; }
+                                    <p style="margin:10px"><b>Opciones y Respuestas Correcta:</b></p>
+                                    @foreach (AnswerOptionMultiple answeroptionmultiple2 in option.AnswerOptionMultiple)
+                                    {
+                                        cont = 1 + cont;
+
+                                        if (answeroptionmultiple2.OptionMultiple.OpMu_Id == option.OpMu_Id)
+                                        {
+                                            if (cont == 1) { letra = "A) "; }
+                                            if (cont == 2) { letra = "B) "; }
+                                            if (cont == 3) { letra = "C) "; }
+                                            if (cont == 4) { letra = "D) "; }
+                                            if (cont == 5) { letra = "E) "; }
+                                            if (cont == 6) { letra = "F) "; }
+                                            if (cont == 7) { letra = "G) "; }
+                                            if (cont == 8) { letra = "H) "; }
+                                            if (cont > 8)
+                                            {
+                                                letra = "Ha superado el numero de respuestas permitidas";
+                                            }
+                                            if (answeroptionmultiple2.AnOp_TrueAnswer == OPTIONANSWER.Verdadero)
+                                            {
+                                                <div>
+                                                    <label class="btn btn-cuestionario" style="background-color:#249e00">
+                                                        <b>@letra</b>
+                                                        <input type="radio" name="options" id="@Html.Raw(answeroptionmultiple2.Answer_OpMult_Content)" autocomplete="off" visibility: hidden> @Html.Raw(answeroptionmultiple2.AnOp_OptionAnswer)
+                                                    </label>
+                                                </div>
+                                            }
+                                            if (answeroptionmultiple2.AnOp_TrueAnswer == OPTIONANSWER.Falso)
+                                            {
+                                                <div>
+                                                    <label class="btn btn-cuestionario">
+                                                        <b>@letra</b>
+                                                        <input type="radio" name="options" id="@Html.Raw(answeroptionmultiple2.Answer_OpMult_Content)" autocomplete="off" visibility: hidden> @Html.Raw(answeroptionmultiple2.AnOp_OptionAnswer)
+                                                    </label>
+                                                </div>
+                                            }
+
+
+
+
+                                            <br />
+                                            <p><strong>@Html.Raw(answeroptionmultiple2.Answer_OpMult_Content)</strong></p>
+
+                                        }
+                                    }
+                                </div>
+                                @{cont = 0; }
                             </div>
                         </div>
                         <br />
-
-
                     }
 
                 }
@@ -258,6 +314,8 @@ else
             </div>
 
         </div>
+
+
         <div id="menu3" class="tab-pane fade">
             <div class="contenido-articulo">
                 <br /><br /><br />
@@ -278,13 +336,10 @@ else
                     foreach (Pairing option in Model.BankQuestion.Pairing.OrderByDescending(x => x.Pair_Id))
                     {
                         <br />
-                        <br /><br /><br />
-                        <div class="comentario">
-
-
-                            <p><strong>@option.Pair_Question</strong></p>
-                            <p><em>@option.Pair_Description</em></p>
-                            <br /><br /><br />
+                        <div class="container " style="border:2px solid #000000;width:95%">
+                            <p style="margin:10px;color:#333"><strong>@option.Pair_Question</strong></p>
+                            <p style="margin:10px;color:#333"><strong>@option.Pair_Description</strong></p>
+                            <br />
                             @foreach (AnserPairingStudent answeroptionmultiple in option.AnserPairingStudent)
                             {
                                 if (answeroptionmultiple.User_Id == Model.userId)
@@ -292,50 +347,36 @@ else
                                     if (answeroptionmultiple.Pairing.Pair_Id == option.Pair_Id)
                                     {
 
-                                        <p>
-                                            <center><h4>Respuesta Estudiante:</h4></center>
-                                        </p>
-                                        <div class="comentario">
-
-                                            <p>
-                                                <h4 class="fecha">Respuesta</h4>
-                                            </p>
-                                            <p><strong>@answeroptionmultiple.AnPa_OptionsQuestion</strong></p>
-                                            <p><em>@answeroptionmultiple.AnPa_OptionAnswer</em></p>
+                                        <div class="container" style="border:1px solid #000000">
+                                            <p style="margin:10px"><b>Respuesta del estudiante:</b></p>
+                                            <p style="margin:10px"><strong>@answeroptionmultiple.AnPa_OptionsQuestion</strong></p>
+                                            <p style="margin:10px"><em>@answeroptionmultiple.AnPa_OptionAnswer</em></p>
                                         </div>
                                         <br />
                                     }
                                 }
                             }
                             <br />
+                            <p style="margin:10px"><b>Respuestas Correctas:</b></p>
                             <br />
-                            <p><center><h4>Relación Correcta:</h4></center></p>
-
-                            <br /><br />
                             @foreach (AnswerPairing answeroptionmultiple in option.AnswerPairing)
                             {
                                 if (answeroptionmultiple.Pairing.Pair_Id == option.Pair_Id)
                                 {
-                                    <div class="comentario">
-
-                                        <p>
-                                            <h4 class="fecha">Relacion Correcta</h4>
-                                        </p>
-                                        <p><strong>@answeroptionmultiple.AnPa_OptionsQuestion</strong></p>
-                                        <p><em>@answeroptionmultiple.AnPa_OptionAnswer</em></p>
+                                    <div class="container" style="border:1px solid #000000 ">
+                                        <p style="margin:10px"><b>Relacion Correcta:</b></p>
+                                        <p style="margin:10px"><b>@answeroptionmultiple.AnPa_OptionsQuestion</b></p>
+                                        <p style="margin:10px"><b>@answeroptionmultiple.AnPa_OptionAnswer</b></p>
                                     </div>
                                     <br />
                                 }
                             }
                         </div>
                         <br />
-
-                        <br />
                         <div id="AddAnswerPairing">
-
                         </div>
                     }
-                    <br /><br /><br />
+                    <br />
                 }
             </div>
         </div>
@@ -355,52 +396,107 @@ else
                 }
                 else
                 {
-
                     <div id="AddTrueOrFalse">
-
                     </div>
 
-
-
-                    <center><p><h4>Respuesta Correcta </h4></p></center>
                     foreach (TrueOrFalse TrueOrFalseStudent in Model.BankQuestion.TrueOrFalse.OrderByDescending(x => x.TrFa_Id))
                     {
 
-                        <div class="comentario">
+                        <div class="container " style="width:95%;border:2px solid #000000">
+                            <br />
+                            <p style="margin:10px;color:black"><b>@TrueOrFalseStudent.TrFa_Question</b></p>
+                            <p style="margin:10px;color:black">@TrueOrFalseStudent.TrFa_Description</p>
+                            <p style="margin:10px"><b>Respuesta del estudiante:</b></p>
+                            <div class="bs-example row justify-content-between">
+                                <div class="btn-group btn-group-toggle" data-toggle="buttons" style="display: contents">
+                                    @foreach (TrueOrFalseStudent TrueOrFalseStudent1 in Model.BankQuestion.TrueOrFalseStudent.OrderByDescending(x => x.TrFa_Id))
+                                    {
+                                        if (TrueOrFalseStudent1.User_Id == Model.userId)
+                                        {
 
-                            <p>
-                                <h4 class="fecha">Pregunta</h4>
-                            </p>
-                            <p><strong>@TrueOrFalseStudent.TrFa_Question</strong></p>
-                            <p><em>@TrueOrFalseStudent.TrFa_Description</em></p>
-                            @*<p><em>Respuesta : @TrueOrFalseStudent.TrFa_State</em></p>*@
+                                            if (TrueOrFalseStudent1.TrFa_Question == TrueOrFalseStudent.TrFa_Question)
+                                            {
+                                                if (TrueOrFalseStudent1.TrFa_State == OPTIONANSWER.Falso)
+                                                {
+                                                    <div class="col">
+                                                        <label class="btn btn-cuestionario" style="text-align:center; background-color: #e7e7e7; color: black; cursor: pointer; border: 0px">
+                                                            <input class="form-control" type="radio" name="options" autocomplete="off" visibility: hidden disabled> Falso
+                                                        </label>
+                                                    </div>
+                                                }
+                                                else
+                                                {
+                                                    <div class="col">
+                                                        <label class="btn btn-cuestionario" style="text-align:center;">
+                                                            <input class="form-control" type="radio" name="options" autocomplete="off" visibility: hidden disabled> Falso
+                                                        </label>
+                                                    </div>
+                                                }
+                                                if (TrueOrFalseStudent1.TrFa_State == OPTIONANSWER.Verdadero)
+                                                {
+                                                    <div class="col">
+                                                        <label class="btn btn-cuestionario" style="text-align:center; background-color: #e7e7e7; color: black; cursor: pointer; border: 0px ">
+                                                            <input class="form-control" type="radio" name="options" autocomplete="off" visibility: hidden disabled> Verdadero
+                                                        </label>
+                                                    </div>
+                                                }
+                                                else
+                                                {
+                                                    <div class="col">
+                                                        <label class="btn btn-cuestionario" style="text-align:center; ">
+                                                            <input class="form-control" type="radio" name="options" autocomplete="off" visibility: hidden disabled> Verdadero
+                                                        </label>
+                                                    </div>
+                                                }
+                                            }
+                                        }
+                                    }
+                                </div>
+                            </div>
+                            <p style="margin:10px"><b>Opciones y Respuestas Correcta:</b></p>
+
+                            <div class="bs-example row justify-content-between">
+                                <div class="btn-group btn-group-toggle" data-toggle="buttons" style="display: contents">
+                                    @if (TrueOrFalseStudent.TrFa_State == OPTIONANSWER.Falso)
+                                    {
+                                        <div class="col">
+                                            <label class="btn btn-cuestionario" style="text-align:center;background-color:#249e00">
+                                                <input class="form-control" type="radio" name="options" autocomplete="off" visibility: hidden disabled> Falso
+                                            </label>
+                                        </div>
+                                    }
+                                    else
+                                    {
+                                        <div class="col">
+                                            <label class="btn btn-cuestionario" style="text-align:center;">
+                                                <input class="form-control" type="radio" name="options" autocomplete="off" visibility: hidden disabled> Falso
+                                            </label>
+                                        </div>
+                                    }
+                                    @if (TrueOrFalseStudent.TrFa_State == OPTIONANSWER.Verdadero)
+                                    {
+                                        <div class="col">
+                                            <label class="btn btn-cuestionario" style="text-align:center;background-color:#249e00">
+                                                <input class="form-control" type="radio" name="options" autocomplete="off" visibility: hidden disabled> Verdadero
+                                            </label>
+                                        </div>
+                                    }
+                                    else
+                                    {
+                                        <div class="col">
+                                            <label class="btn btn-cuestionario" style="text-align:center;">
+                                                <input class="form-control" type="radio" name="options" autocomplete="off" visibility: hidden disabled> Verdadero
+                                            </label>
+                                        </div>
+                                    }
+
+
+                                </div>
+                            </div>
+                            <br />
                         </div>
-
-
-                        foreach (TrueOrFalseStudent TrueOrFalseStudent1 in Model.BankQuestion.TrueOrFalseStudent.OrderByDescending(x => x.TrFa_Id))
-                        {
-                            if (TrueOrFalseStudent1.User_Id == Model.userId)
-                            {
-                                if (TrueOrFalseStudent1.TrFa_Question == TrueOrFalseStudent.TrFa_Question)
-                                {
-                                    <div class="comentario">
-
-                                        <p>
-                                            <h4 class="fecha">Respuesta Estudiante:</h4>
-                                        </p>
-                                        <p><strong>@TrueOrFalseStudent1.TrFa_Question</strong></p>
-                                        <p><em>@TrueOrFalseStudent1.TrFa_Description</em></p>
-                                        <p><em>Respuesta : @TrueOrFalseStudent1.TrFa_State</em></p>
-
-                                    </div>
-                                    break;
-                                }
-                            }
-                        }
-
+                        <br />
                     }
-
-
                 }
 
             </div>
@@ -536,16 +632,18 @@ else
         </div>
         <br />
     </div>
-    <br />
-    <br />
-    <hr style="border-width:10px;color: #dee2e6" />
 
+    <div class="container" style="width:95%">
+        <div class="row justify-content-end">
+            <a href="@Url.Action("Index", "Home")" id="btn-landing" class="col-md-4 button-action" style="position:relative;font-size:x-large;font-weight:bolder">VOLVER A LA PAGINA DE INICIO</a>
+        </div>
+    </div>
+    <br />
+    <h4 style="text-align:center">Tu opinión es muy importante para nosotros, por eso déjanos conocer tu experiencia<br /> con el curso de formación a través de la siguiente encuesta <a href="https://docs.google.com/forms/d/1OtWdfKLwaybyWfdSBfEGjuJz6Tj9945hxicKEQyciqI/viewform?edit_requested=true&gxids=7628" target="_blank"><b>Clic Aquí</b></a></h4>
 </div>
 
-<h4>
-    Nuestra mesa de servicio validará tu interacción y tu estado de cuenta con el área comercial.<br> De contar con los mínimos viables, se expedirá tu diploma en un tiempo máximo de 72 horas.
-</h4>
-<br><div> @ViewData["Calificacion"] </div>
+
+
 
 <br />
 <br />
@@ -568,7 +666,6 @@ else
             </div>
         </div>
     </div>
-    <div class="panel-heading panel-head"><center><h1 style="font-size:35px;">  Resultados del Test</h1></center></div>   
 
     <script>
 

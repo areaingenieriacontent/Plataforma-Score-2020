@@ -481,24 +481,20 @@
     <Content Include="App_Files\Upload\20200813172628-banner-3.jpg" />
     <Content Include="App_Files\Upload\20200813173245-banner-2.jpg" />
     <Content Include="App_Files\Upload\433100-1.jpg" />
-    <Content Include="Content\background-no-plan.jpg" />
-    <Content Include="Content\background-no-result.jpg" />
-    <Content Include="Content\background-no-test.jpg" />
     <Content Include="Content\bootstrap-flaty.css" />
-    <Content Include="Content\bootstrap-grid.css" />
-    <Content Include="Content\bootstrap-grid.min.css" />
-    <Content Include="Content\bootstrap-reboot.css" />
-    <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap1.min.css" />
+    <Content Include="Content\demo1.css" />
     <Content Include="Content\Images\calificaciones\banner-calificaciones.jpg" />
     <Content Include="Content\Images\carga-de-evidencias\banner-carga-de-evidencias.jpg" />
     <Content Include="Content\Images\carga-de-evidencias\portada-abe.jpg" />
     <Content Include="Content\Images\carga-de-evidencias\portada-biblioteca.jpg" />
     <Content Include="Content\Images\carga-de-evidencias\portada-videoteca.jpg" />
+    <Content Include="Content\Images\comunidad\zona-videoteca-hover.jpg" />
+    <Content Include="Content\Images\comunidad\zona-videoteca.jpg" />
     <Content Include="Content\Images\cursos\ejemplo-curso-1.jpg" />
     <Content Include="Content\Images\cursos\ejemplo-curso-2.jpg" />
     <Content Include="Content\Images\cursos\ejemplo-curso-3.jpg" />
@@ -518,9 +514,11 @@
     <Content Include="Content\Images\debate\banner-salon-de-debate.jpg" />
     <Content Include="Content\Images\debate\ejemplo-debate1.jpg" />
     <Content Include="Content\Images\evaluaciones\banner-evaluaciones.jpg" />
+    <Content Include="Content\Images\evaluaciones\icon-evaluaciones.png" />
     <Content Include="Content\Images\evaluaciones\portada-resultados-test.jpg" />
     <Content Include="Content\Images\home.jpg" />
     <Content Include="Content\Images\home.png" />
+    <Content Include="Content\Images\icon-home.png" />
     <Content Include="Content\Images\lecciones-aprendidas-hover.jpg" />
     <Content Include="Content\Images\lecciones-aprendidas.jpg" />
     <Content Include="Content\Images\comunidad\periodico-virtual-hover.jpg" />
@@ -536,7 +534,9 @@
     <Content Include="Content\Images\sistema de puntos\premio-plata.png" />
     <Content Include="Content\Images\slider-login\logo-bv-fondo-claro.png" />
     <Content Include="Content\Images\slider-login\logo-bv-fondo-oscuro.png" />
+    <Content Include="Content\Images\slider-zona-de-informacion\after-slide-icon.png" />
     <Content Include="Content\Images\slider-zona-de-informacion\afterslideicon.png" />
+    <Content Include="Content\Images\slider-zona-de-informacion\before-slide-icon.png" />
     <Content Include="Content\Images\slider-zona-de-informacion\beforeslideicon.png" />
     <Content Include="Content\Images\slider-zona-de-informacion\go down icon.png" />
     <Content Include="Content\Images\slider-zona-de-informacion\slide-1-guia-de-navegacion.jpg" />
@@ -560,20 +560,13 @@
     <Content Include="Content\elements\icon form login\google icon.png" />
     <Content Include="Content\elements\icon form login\id icon.png" />
     <Content Include="Content\elements\icon form login\mail icon.png" />
-    <Content Include="Content\Images\passwordicon.png" />
     <Content Include="Content\elements\icon form login\Recurso 5%402x-4.png" />
     <Content Include="Content\elements\icon form login\reset password icon.png" />
     <Content Include="Content\Images\usericon.png" />
     <Content Include="Content\elements\logo-general.png" />
-    <Content Include="Content\Images\slide-1.jpg" />
     <Content Include="Content\elements\sliderlogin\slide-2.jpg" />
     <Content Include="Content\elements\sliderlogin\slide-3.jpg" />
-    <Content Include="Content\Images\afterslideicon.png" />
-    <Content Include="Content\Images\beforeslideicon.png" />
     <Content Include="Content\elements\slider zona de informacion\go down icon.png" />
-    <Content Include="Content\Images\slide-1-guia-de-navegacion.jpg" />
-    <Content Include="Content\Images\slide-2-politica-de-puntos.jpg" />
-    <Content Include="Content\Images\slide-3-oferta-de-cursos.jpg" />
     <Content Include="Content\Images\tablerodecontrol\mesa-de-servicio.jpg" />
     <Content Include="Content\Images\tablerodecontrol\mis-calificaciones.jpg" />
     <Content Include="Content\Images\tablerodecontrol\sistema-de-puntos.jpg" />
@@ -643,7 +636,6 @@
     <Content Include="Content\Images\foro.png" />
     <Content Include="Content\Images\Ganaste-100.jpg" />
     <Content Include="Content\Images\guia de nav-01.png" />
-    <Content Include="Content\Images\icon%281%29.png" />
     <Content Include="Content\Images\icon%282%29.png" />
     <Content Include="Content\Images\icon%283%29.png" />
     <Content Include="Content\Images\icon.png" />
@@ -1100,10 +1092,6 @@
     <Content Include="Content\_bootstrap-datetimepicker.less" />
     <Content Include="Scripts\Chart.js" />
     <Content Include="Scripts\dropzone.js" />
-    <Content Include="Scripts\esm\popper-utils.js" />
-    <Content Include="Scripts\esm\popper-utils.min.js" />
-    <Content Include="Scripts\esm\popper.js" />
-    <Content Include="Scripts\esm\popper.min.js" />
     <Content Include="Scripts\filemanager\config\.htaccess" />
     <Content Include="Scripts\filemanager\js\jPlayer\actionscript\happyworm\jPlayer\ConnectManager.as" />
     <Content Include="Scripts\filemanager\js\jPlayer\actionscript\happyworm\jPlayer\JplayerEvent.as" />
@@ -1124,10 +1112,6 @@
     <Content Include="App_Browsers\qt.browser">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Content\bootstrap-reboot.min.css.map" />
-    <Content Include="Content\bootstrap-reboot.css.map" />
-    <Content Include="Content\bootstrap-grid.min.css.map" />
-    <Content Include="Content\bootstrap-grid.css.map" />
     <Content Include="Content\fonts\SourceSansPro-Black.ttf" />
     <Content Include="Content\fonts\SourceSansPro-BlackItalic.ttf" />
     <Content Include="Content\fonts\SourceSansPro-Bold.ttf" />
@@ -1143,11 +1127,6 @@
     <None Include="job_scheduling_data_2_0.xsd">
       <SubType>Designer</SubType>
     </None>
-    <Content Include="Scripts\index.js.flow" />
-    <Content Include="Scripts\esm\popper.min.js.map" />
-    <Content Include="Scripts\esm\popper.js.map" />
-    <Content Include="Scripts\esm\popper-utils.min.js.map" />
-    <Content Include="Scripts\esm\popper-utils.js.map" />
     <Content Include="Scripts\filemanager\ajax_calls.php" />
     <Content Include="Scripts\filemanager\config\config.php" />
     <Content Include="Scripts\filemanager\css\style.css" />
@@ -1416,13 +1395,6 @@
     <Content Include="Scripts\filemanager\uploader\success.jpg" />
     <Content Include="Scripts\filemanager\uploader\success.php" />
     <Content Include="Scripts\filemanager\uploader\wjhk.jupload.jar" />
-    <None Include="Scripts\jquery-3.0.0-vsdoc.js" />
-    <Content Include="Scripts\jquery-3.0.0.js" />
-    <Content Include="Scripts\jquery-3.0.0.min.js" />
-    <Content Include="Scripts\jquery-3.0.0.slim.js" />
-    <Content Include="Scripts\jquery-3.0.0.slim.min.js" />
-    <Content Include="Scripts\jquery-3.0.0.slim.min.map" />
-    <Content Include="Scripts\jquery-3.0.0.min.map" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery-ui-1.8.20.js" />
     <Content Include="Scripts\jquery-ui-1.8.20.min.js" />
@@ -1878,10 +1850,6 @@
     <Content Include="Scripts\MicrosoftMvcValidation.debug.js" />
     <Content Include="Scripts\MicrosoftMvcValidation.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
-    <Content Include="Scripts\popper-utils.js" />
-    <Content Include="Scripts\popper-utils.min.js" />
-    <Content Include="Scripts\popper.js" />
-    <Content Include="Scripts\popper.min.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\src\index.js" />
@@ -2201,10 +2169,6 @@
     <Content Include="Scripts\Tinymce\skins\lightgray\skin.min.css" />
     <Content Include="Scripts\Tinymce\themes\modern\theme.min.js" />
     <Content Include="Scripts\Tinymce\tinymce.min.js" />
-    <Content Include="Scripts\umd\popper-utils.js" />
-    <Content Include="Scripts\umd\popper-utils.min.js" />
-    <Content Include="Scripts\umd\popper.js" />
-    <Content Include="Scripts\umd\popper.min.js" />
     <Content Include="Scripts\uploadify\jquery.uploadify.js" />
     <Content Include="Scripts\uploadify\jquery.uploadify.min.js" />
     <Content Include="Scripts\uploadify\jquery.uploadify.v2.1.4.js" />
@@ -2507,16 +2471,6 @@
     <Content Include="Views\VSDR\VsdrUserList.cshtml" />
     <Content Include="Views\VSDR\VsdrContent.cshtml" />
     <Content Include="Views\Survey\Survey.cshtml" />
-    <Content Include="Scripts\umd\popper.min.js.map" />
-    <Content Include="Scripts\umd\popper.js.map" />
-    <Content Include="Scripts\umd\popper.js.flow" />
-    <Content Include="Scripts\umd\popper-utils.min.js.map" />
-    <Content Include="Scripts\umd\popper-utils.js.map" />
-    <Content Include="Scripts\README.md" />
-    <Content Include="Scripts\popper.min.js.map" />
-    <Content Include="Scripts\popper.js.map" />
-    <Content Include="Scripts\popper-utils.min.js.map" />
-    <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\Home\ComunidadSocial.cshtml" />
     <Content Include="Views\Home\TableroControl.cshtml" />
     <Content Include="Views\Ratings\CargarEvidencias.cshtml" />
@@ -2532,8 +2486,10 @@
     <Folder Include="ResourcesTopics\" />
     <Folder Include="Resources\SourceEdition\" />
     <Folder Include="ResourceTopic\" />
+    <Folder Include="Scripts\esm\" />
     <Folder Include="Scripts\Tinymce1\plugins\jbimages\Images\" />
     <Folder Include="Scripts\Tinymce1\plugins\toc\" />
+    <Folder Include="Scripts\umd\" />
     <Folder Include="uploads\images\" />
     <Folder Include="Views\File\" />
     <Folder Include="Views\ReportController\" />

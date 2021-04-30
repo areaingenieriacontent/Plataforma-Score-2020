@@ -1092,10 +1092,6 @@
     <Content Include="Content\_bootstrap-datetimepicker.less" />
     <Content Include="Scripts\Chart.js" />
     <Content Include="Scripts\dropzone.js" />
-    <Content Include="Scripts\esm\popper-utils.js" />
-    <Content Include="Scripts\esm\popper-utils.min.js" />
-    <Content Include="Scripts\esm\popper.js" />
-    <Content Include="Scripts\esm\popper.min.js" />
     <Content Include="Scripts\filemanager\config\.htaccess" />
     <Content Include="Scripts\filemanager\js\jPlayer\actionscript\happyworm\jPlayer\ConnectManager.as" />
     <Content Include="Scripts\filemanager\js\jPlayer\actionscript\happyworm\jPlayer\JplayerEvent.as" />
@@ -1131,11 +1127,6 @@
     <None Include="job_scheduling_data_2_0.xsd">
       <SubType>Designer</SubType>
     </None>
-    <Content Include="Scripts\index.js.flow" />
-    <Content Include="Scripts\esm\popper.min.js.map" />
-    <Content Include="Scripts\esm\popper.js.map" />
-    <Content Include="Scripts\esm\popper-utils.min.js.map" />
-    <Content Include="Scripts\esm\popper-utils.js.map" />
     <Content Include="Scripts\filemanager\ajax_calls.php" />
     <Content Include="Scripts\filemanager\config\config.php" />
     <Content Include="Scripts\filemanager\css\style.css" />
@@ -1404,13 +1395,6 @@
     <Content Include="Scripts\filemanager\uploader\success.jpg" />
     <Content Include="Scripts\filemanager\uploader\success.php" />
     <Content Include="Scripts\filemanager\uploader\wjhk.jupload.jar" />
-    <None Include="Scripts\jquery-3.0.0-vsdoc.js" />
-    <Content Include="Scripts\jquery-3.0.0.js" />
-    <Content Include="Scripts\jquery-3.0.0.min.js" />
-    <Content Include="Scripts\jquery-3.0.0.slim.js" />
-    <Content Include="Scripts\jquery-3.0.0.slim.min.js" />
-    <Content Include="Scripts\jquery-3.0.0.slim.min.map" />
-    <Content Include="Scripts\jquery-3.0.0.min.map" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery-ui-1.8.20.js" />
     <Content Include="Scripts\jquery-ui-1.8.20.min.js" />
@@ -1866,10 +1850,6 @@
     <Content Include="Scripts\MicrosoftMvcValidation.debug.js" />
     <Content Include="Scripts\MicrosoftMvcValidation.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
-    <Content Include="Scripts\popper-utils.js" />
-    <Content Include="Scripts\popper-utils.min.js" />
-    <Content Include="Scripts\popper.js" />
-    <Content Include="Scripts\popper.min.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\src\index.js" />
@@ -2189,10 +2169,6 @@
     <Content Include="Scripts\Tinymce\skins\lightgray\skin.min.css" />
     <Content Include="Scripts\Tinymce\themes\modern\theme.min.js" />
     <Content Include="Scripts\Tinymce\tinymce.min.js" />
-    <Content Include="Scripts\umd\popper-utils.js" />
-    <Content Include="Scripts\umd\popper-utils.min.js" />
-    <Content Include="Scripts\umd\popper.js" />
-    <Content Include="Scripts\umd\popper.min.js" />
     <Content Include="Scripts\uploadify\jquery.uploadify.js" />
     <Content Include="Scripts\uploadify\jquery.uploadify.min.js" />
     <Content Include="Scripts\uploadify\jquery.uploadify.v2.1.4.js" />
@@ -2495,16 +2471,6 @@
     <Content Include="Views\VSDR\VsdrUserList.cshtml" />
     <Content Include="Views\VSDR\VsdrContent.cshtml" />
     <Content Include="Views\Survey\Survey.cshtml" />
-    <Content Include="Scripts\umd\popper.min.js.map" />
-    <Content Include="Scripts\umd\popper.js.map" />
-    <Content Include="Scripts\umd\popper.js.flow" />
-    <Content Include="Scripts\umd\popper-utils.min.js.map" />
-    <Content Include="Scripts\umd\popper-utils.js.map" />
-    <Content Include="Scripts\README.md" />
-    <Content Include="Scripts\popper.min.js.map" />
-    <Content Include="Scripts\popper.js.map" />
-    <Content Include="Scripts\popper-utils.min.js.map" />
-    <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\Home\ComunidadSocial.cshtml" />
     <Content Include="Views\Home\TableroControl.cshtml" />
     <Content Include="Views\Ratings\CargarEvidencias.cshtml" />
@@ -2520,8 +2486,10 @@
     <Folder Include="ResourcesTopics\" />
     <Folder Include="Resources\SourceEdition\" />
     <Folder Include="ResourceTopic\" />
+    <Folder Include="Scripts\esm\" />
     <Folder Include="Scripts\Tinymce1\plugins\jbimages\Images\" />
     <Folder Include="Scripts\Tinymce1\plugins\toc\" />
+    <Folder Include="Scripts\umd\" />
     <Folder Include="uploads\images\" />
     <Folder Include="Views\File\" />
     <Folder Include="Views\ReportController\" />

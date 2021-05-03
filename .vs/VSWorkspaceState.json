@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\SCORM1"
+    "\\SCORM1\\Views",
+    "\\SCORM1\\Views\\User"
   ],
+  "SelectedNode": "\\SCORE2020.sln",
   "PreviewInSolutionExplorer": false
 }

@@ -52,26 +52,26 @@
 
                                 if (a.Modulo_Id == modules.Modu_Id)
                                 {
-                                    @{ var puntaje = a.Score.ToString(); puntaje.Replace(",", "."); }
+                                    var puntaje = a.Score.ToString();
 
                                     if (a.Score >= 0 && a.Score < 49)
                                     {
                                         <div class="progress" style="height: 30px;">
-                                            <div class="progress-bar bg-danger" role="progressbar" style="width:@puntaje%" aria-valuenow="@a.Score" aria-valuemin="0" aria-valuemax="100"><b>@a.Score%</b></div>
+                                            <div class="progress-bar bg-danger" role="progressbar" style="width:@puntaje.Replace(",", ".")%" aria-valuenow="@puntaje" aria-valuemin="0" aria-valuemax="100"><b>@a.Score%</b></div>
                                         </div>
                                         cont = 1;
                                     }
                                     if (a.Score >= 50 && a.Score < 79)
                                     {
                                         <div class="progress" style="height: 30px;">
-                                            <div class="progress-bar bg-warning" role="progressbar" style="width: @puntaje%" aria-valuenow="@a.Score" aria-valuemin="0" aria-valuemax="100"><b>@a.Score%</b></div>
+                                            <div class="progress-bar bg-warning" role="progressbar" style="width: @puntaje.Replace(",", ".")%" aria-valuenow="@puntaje" aria-valuemin="0" aria-valuemax="100"><b>@a.Score%</b></div>
                                         </div>
                                         cont = 1;
                                     }
                                     if (a.Score >= 80)
                                     {
                                         <div class="progress" style="height: 30px;">
-                                            <div class="progress-bar bg-success" role="progressbar" style="width: @puntaje%" aria-valuenow="@a.Score" aria-valuemin="0" aria-valuemax="100"><b>@a.Score%</b></div>
+                                            <div class="progress-bar bg-success" role="progressbar" style="width: @puntaje.Replace(",", ".")%" aria-valuenow="@puntaje" aria-valuemin="0" aria-valuemax="100"><b>@a.Score%</b></div>
                                         </div>
                                         cont = 1;
                                     }

@@ -313,13 +313,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202104212317559_unodos.cs" />
-    <Compile Include="Migrations\202104212317559_unodos.Designer.cs">
-      <DependentUpon>202104212317559_unodos.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202104241335372_abcdos.cs" />
-    <Compile Include="Migrations\202104241335372_abcdos.Designer.cs">
-      <DependentUpon>202104241335372_abcdos.cs</DependentUpon>
+    <Compile Include="Migrations\202104292037451_uno.cs" />
+    <Compile Include="Migrations\202104292037451_uno.Designer.cs">
+      <DependentUpon>202104292037451_uno.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BasicAuthenticationAttribute.cs" />
@@ -2512,11 +2508,8 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202104212317559_unodos.resx">
-      <DependentUpon>202104212317559_unodos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202104241335372_abcdos.resx">
-      <DependentUpon>202104241335372_abcdos.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202104292037451_uno.resx">
+      <DependentUpon>202104292037451_uno.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

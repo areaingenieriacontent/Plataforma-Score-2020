@@ -17253,27 +17253,27 @@ input.hasDatepicker {
 }
 
 a.facebook {
-    background-image:url(/Content/Images/footer/facebook-icon.png);
+    background-image:url(../Content/Images/footer/facebook-icon.png);
     background-repeat:no-repeat;
 }
 
 a.twitter {
-    background-image: url(/Content/Images/footer/twitter-icon.png);
+    background-image: url(../Content/Images/footer/twitter-icon.png);
     background-repeat: no-repeat;
 }
 
 a.instagram {
-    background-image: url(/Content/Images/footer/instagram-icon.png);
+    background-image: url(../Content/Images/footer/instagram-icon.png);
     background-repeat: no-repeat;
 }
 
 a.youtube {
-    background-image: url(/Content/Images/footer/youtube-icon.png);
+    background-image: url(../Content/Images/footer/youtube-icon.png);
     background-repeat: no-repeat;
 }
 
 a.linkedin {
-    background-image: url(/Content/Images/footer/linkedin-icon.png);
+    background-image: url(../Content/Images/footer/linkedin-icon.png);
     background-repeat: no-repeat;
 }
 

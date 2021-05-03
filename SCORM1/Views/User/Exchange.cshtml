@@ -67,7 +67,7 @@
         <div>
             <p style="text-align:center;color:#FC3650">Consulta más sobre como ganar puntos <a style="color:#FC3650" href="https://aprendeyavanza2.com.co/contentgroup/bureau/politica_puntos.pdf" target="_blank"><b>dando clic aquí</b></a></p>
         </div>
-        
+
         <div class="row" style="margin:5%">
             <div class="col-md-6 col-xs-12">
                 <p style="font-size:30px;text-align:center">TOTAL<b> DE PUNTOS</b><br /></p>
@@ -75,7 +75,7 @@
                 <p style="color:#FC3650;font-size:50px;text-align:center"><b>@Model.TotalPointUser</b><b style="font-size:20px">pt</b></p>
             </div>
             <div class="col-md-6 col-xs-12" style="margin-top: 25px">
-                <center>@Html.ActionLink("REPORTE DE PUNTOS", "Report", "User", new { @class = "button-action btn-responsive" })</center>                
+                <center>@Html.ActionLink("REPORTE DE PUNTOS", "Report", "User", new { @class = "button-action btn-responsive" })</center>
                 @*@foreach (var item in Model.ListPoint)
                 {
                     <div class="col-md-4">
@@ -99,57 +99,57 @@
     }
     else
     {
-        <br />
-        foreach (Prize detalles in Model.ListPrize)
-        {
+        @*
+                    <br />
+                    foreach (Prize detalles in Model.ListPrize)
+                    {
+                        <div class="thumbnail col-md-4">
+                            <div id="galeria">
+                            <div id="">
+                                <div class="">
 
-            <div class="thumbnail col-md-4">
-                @*<div id="galeria">*@
-                <div id="">
-                    <div class="">
+                                    @switch (@detalles.Prize_Icon)
 
-                        @switch (@detalles.Prize_Icon)
+                                    {
+                                        case ICONPRIZE.Deporte:
+                                            <img src="~/Content/Images/deportes.png" style="width:200px; height:200px" />
+                                            break;
+                                        case ICONPRIZE.Musica:
+                                            <img src="~/Content/Images/musica.png" style="width:200px; height:200px" />
+                                            break;
+                                        case ICONPRIZE.Tecnologia:
 
-                        {
-                            case ICONPRIZE.Deporte:
-                                <img src="~/Content/Images/deportes.png" style="width:200px; height:200px" />
-                                break;
-                            case ICONPRIZE.Musica:
-                                <img src="~/Content/Images/musica.png" style="width:200px; height:200px" />
-                                break;
-                            case ICONPRIZE.Tecnologia:
+                                            <img src="~/Content/Images/tecnologia.png" style="width:200px; height:200px" />
+                                            break;
 
-                                <img src="~/Content/Images/tecnologia.png" style="width:200px; height:200px" />
-                                break;
+                                        case ICONPRIZE.Cine:
+                                            <img src="~/Content/Images/cine.png" style="width:200px; height:200px" />
+                                            break;
+                                        case ICONPRIZE.Eventos:
+                                            <img src="~/Content/Images/icon(2).png" style="width:200px; height:200px" />
+                                            break;
+                                        case ICONPRIZE.Viajes:
+                                            <img src="~/Content/Images/viajes.png" style="width:200px; height:200px" />
+                                            break;
+                                        case ICONPRIZE.Juegos_Mesa:
+                                            <img src="~/Content/Images/juegos-mesa.png" style="width:200px; height:200px" />
+                                            break;
 
-                            case ICONPRIZE.Cine:
-                                <img src="~/Content/Images/cine.png" style="width:200px; height:200px" />
-                                break;
-                            case ICONPRIZE.Eventos:
-                                <img src="~/Content/Images/icon(2).png" style="width:200px; height:200px" />
-                                break;
-                            case ICONPRIZE.Viajes:
-                                <img src="~/Content/Images/viajes.png" style="width:200px; height:200px" />
-                                break;
-                            case ICONPRIZE.Juegos_Mesa:
-                                <img src="~/Content/Images/juegos-mesa.png" style="width:200px; height:200px" />
-                                break;
+                                        case ICONPRIZE.Arte:
+                                            <img src="~/Content/Images/arte.png" style="width:200px; height:200px" />
+                                            break;
 
-                            case ICONPRIZE.Arte:
-                                <img src="~/Content/Images/arte.png" style="width:200px; height:200px" />
-                                break;
-
-                                <div class="form-group">
-                                    @Html.Label("Portada", htmlAttributes: new { @class = "control-label col-sm-2" })
-                                    <div class="col-sm-3">
-                                        <input type="file" id="CoverpageModule" name="upload" />
-                                    </div>
+                                            <div class="form-group">
+                                                @Html.Label("Portada", htmlAttributes: new { @class = "control-label col-sm-2" })
+                                                <div class="col-sm-3">
+                                                    <input type="file" id="CoverpageModule" name="upload" />
+                                                </div>
+                                            </div>
+                                    }
                                 </div>
-                        }
-                    </div>
-                </div>
+                            </div>
 
-                @*Habilitar cuando se establescan los premios por parte de la empresa*@
+                            Habilitar cuando se establescan los premios por parte de la empresa
 
 
                 <div>
@@ -162,7 +162,7 @@
                 </div>
                 @if (@detalles.Priz_Stateprize == PRIZESTATE.Activo)
                 {
-                    @*<i><button onclick="SendRequest('@detalles.Priz_Id')" data-cname="@detalles.Priz_Id" class="btn btn-success">Postularme</button></i>*@
+                    <i><button onclick="SendRequest('@detalles.Priz_Id')" data-cname="@detalles.Priz_Id" class="btn btn-success">Postularme</button></i>
                 }
                 else
                 {
@@ -181,7 +181,9 @@
 
 
         }
+        *@
     }
+
 
     </div>
 </div>

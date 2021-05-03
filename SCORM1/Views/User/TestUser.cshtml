@@ -31,6 +31,7 @@
 }
 else
 {
+   
     <div id="encabezadocursos">
         <img src="~/Content/Images/evaluaciones/banner-evaluaciones.jpg" style="height:200px;width:100%" />
     </div>
@@ -38,7 +39,6 @@ else
         <img src="~/Content/Images/icon-home.png" alt="" style="margin-left:5%;width:25px" />
         <a href="@Url.Action("Index", "Home")" style="font-weight: bolder">INICIO / </a>
         <a href="@Url.Action("ListModuleVirtual", "User")" style="font-weight: bolder">CURSOS ACTIVOS / </a>
-        <a style="font-weight: bolder">NOMBRE DEL CURSO / </a>
         <a style="font-weight: bolder; color:#FC3650">EVALUACIÓN</a>
     </div>
     <div class="panel-body">
@@ -68,7 +68,7 @@ else
                 <li class="li-interna">Comprende una serie de situaciones en las que puede requerir llenar un reporte de no conforminadad(RNC).</li>
             </ul>
             <br />
-            <p style="color:white;background-color:#FC3650;height:40px;padding :10px;text-align:center"><b>RECUERDA QUE TIENES # INTENTOS PARA APROBAR LA EVALUACIÓN</b></p>
+            <p style="color:white;background-color:#FC3650;height:40px;padding :10px;text-align:center"><b>RECUERDA QUE TIENE UN TOTAL DE @Model.topic.ToCo_Attempt INTENTOS PARA APROBAR LA EVALUACIÓN</b></p>
         </div>
         <br />
         <br />
@@ -101,9 +101,9 @@ else
                 @Html.AntiForgeryToken()
                 @*<p><strong>Las preguntas que se encuentran a continuación están basadas en los cursos virtuales del Programa Eco, </strong></p>*@
                 @*
-        <p>@Html.Raw(Model.BankQuestion.BaQu_Description)</p>
-        <br />
-        <p><strong>Recuerda que tienes  @Model.topic.ToCo_Attempt intentos para aprobar la evaluación.</strong></p>
+                    <p>@Html.Raw(Model.BankQuestion.BaQu_Description)</p>
+                    <br />
+                    <p><strong>Recuerda que tienes  @Model.topic.ToCo_Attempt intentos para aprobar la evaluación.</strong></p>
                 *@
 
                 @if (Model.Listgeneralquestion.Count == 0)
@@ -163,15 +163,15 @@ else
 
 
                                                 @*
-                                        <a class="list-group-item list-group-item-action" value="@Model.Listgeneralquestion[i].AnOp_Id" id="@answeroptionmultiple.AnOp_Id">
-                                            <span>
-                                                <b>@letra</b>
-                                            </span>@answeroptionmultiple.AnOp_OptionAnswer
-                                        </a>
+                                                    <a class="list-group-item list-group-item-action" value="@Model.Listgeneralquestion[i].AnOp_Id" id="@answeroptionmultiple.AnOp_Id">
+                                                        <span>
+                                                            <b>@letra</b>
+                                                        </span>@answeroptionmultiple.AnOp_OptionAnswer
+                                                    </a>
                                                 *@
                                                 @* @Html.RadioButtonFor(model => Model.Listgeneralquestion[i].AnOp_Id, answeroptionmultiple.AnOp_Id, htmlAttributes: new { @class = "col-md-1" })
-                                        <strong>@Html.Raw(answeroptionmultiple.Answer_OpMult_Content)</strong>
-                                        <label class="col-md-11"> @answeroptionmultiple.AnOp_OptionAnswer</label>
+                                                    <strong>@Html.Raw(answeroptionmultiple.Answer_OpMult_Content)</strong>
+                                                    <label class="col-md-11"> @answeroptionmultiple.AnOp_OptionAnswer</label>
                                                 *@
                                                 <br />
                                             }
@@ -179,7 +179,7 @@ else
                                         }
                                     </div>
                                     @{cont = 0; }
-                                </div>                                
+                                </div>
                             </div>
                             <br />
 
@@ -262,60 +262,62 @@ else
                                         <div class="bs-example row justify-content-between">
                                             <div class="btn-group btn-group-toggle" data-toggle="buttons" style="display: contents">
                                                 <div class="col">
-                                                    <label class="btn btn-cuestionario">@OPTIONANSWER.Falso
-                                                        @Html.RadioButtonFor(model => Model.Listgeneralquestion[i].TrFa_Answer, @OPTIONANSWER.Falso, htmlAttributes: new { @type = "radio" })
-                                                        @*<input class="form-control" type="radio" name="options" autocomplete="off" id="@Model.Listgeneralquestion[i].TrFa_Answer"> Falso*@
-                                                    </label>
-                                                </div>
-                                                <div class="col">
-                                                    <label class="btn btn-cuestionario">@OPTIONANSWER.Verdadero
-                                                        @Html.RadioButtonFor(model => Model.Listgeneralquestion[i].TrFa_Answer, @OPTIONANSWER.Verdadero, htmlAttributes: new { @type = "radio" })
-                                                        @*<input class="form-control" type="radio" name="options" autocomplete="off" id="@Model.Listgeneralquestion[i].TrFa_Answer"> Verdadero*@
-                                                    </label>
-                                                </div>
+                                                    <label class="btn btn-cuestionario">
+                                                        @OPTIONANSWER.Falso
+                                                    @Html.RadioButtonFor(model => Model.Listgeneralquestion[i].TrFa_Answer, @OPTIONANSWER.Falso, htmlAttributes: new { @type = "radio" })
+                                                    @*<input class="form-control" type="radio" name="options" autocomplete="off" id="@Model.Listgeneralquestion[i].TrFa_Answer"> Falso*@
+                                                </label>
                                             </div>
+                                            <div class="col">
+                                                <label class="btn btn-cuestionario">
+                                                    @OPTIONANSWER.Verdadero
+                                                @Html.RadioButtonFor(model => Model.Listgeneralquestion[i].TrFa_Answer, @OPTIONANSWER.Verdadero, htmlAttributes: new { @type = "radio" })
+                                                @*<input class="form-control" type="radio" name="options" autocomplete="off" id="@Model.Listgeneralquestion[i].TrFa_Answer"> Verdadero*@
+                                            </label>
                                         </div>
-                                        <br />
                                     </div>
-                                    @*<div class="comentario" style="color:black">
-                                <div class="fecha">
-                                    @Html.RadioButtonFor(model => Model.Listgeneralquestion[i].TrFa_Answer, @OPTIONANSWER.Verdadero, htmlAttributes: new { @class = " control-label col-sm-1" })
-                                    <label>@OPTIONANSWER.Verdadero</label>
                                 </div>
                                 <br />
-                                <br />
-                                <div class="fecha">
-                                    @Html.RadioButtonFor(model => Model.Listgeneralquestion[i].TrFa_Answer, OPTIONANSWER.Falso, htmlAttributes: new { @class = " control-label col-sm-1" })
-                                    <label>@OPTIONANSWER.Falso</label>
-                                </div>
-                            </div>   *@
-                                </div>
                             </div>
-                            <br />
-
-                        }
-                        else
-                        {
-
-                        }
-                    }
-
-                        <div class="container" style="width:95%">
-                            <div class="row justify-content-end">
-                                <input id="btn-landing" class="col-md-4 button-action" style="position:relative;font-size:x-large" type="submit" value="FINALIZAR EVALUACIÓN" />
-                            </div>
+                            @*<div class="comentario" style="color:black">
+                                    <div class="fecha">
+                                        @Html.RadioButtonFor(model => Model.Listgeneralquestion[i].TrFa_Answer, @OPTIONANSWER.Verdadero, htmlAttributes: new { @class = " control-label col-sm-1" })
+                                        <label>@OPTIONANSWER.Verdadero</label>
+                                    </div>
+                                    <br />
+                                    <br />
+                                    <div class="fecha">
+                                        @Html.RadioButtonFor(model => Model.Listgeneralquestion[i].TrFa_Answer, OPTIONANSWER.Falso, htmlAttributes: new { @class = " control-label col-sm-1" })
+                                        <label>@OPTIONANSWER.Falso</label>
+                                    </div>
+                                </div>   *@
                         </div>
-                   
-                    @*
-            <div class="form-group">
-                <div class="col-md-12">
-                    <center><input type="submit" class="btn btn-default" value="Finalizar" /></center>
-                </div>
-            </div>
-                    *@
-
+                    </div>
+                    <br />
 
                 }
+                else
+                {
+
+                }
+            }
+
+            <div class="container" style="width:95%">
+                <div class="row justify-content-end">
+                    <input id="btn-landing" class="col-md-4 button-action" style="position:relative;font-size:x-large;font-weight:bolder" type="submit" value="FINALIZAR EVALUACIÓN" />
+                </div>
+            </div>
+
+            @*
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <center><input type="submit" class="btn btn-default" value="Finalizar" /></center>
+                    </div>
+                </div>
+            *@
+
+
+        }
             </div>
         </div>
     }

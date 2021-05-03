@@ -17330,7 +17330,7 @@ a.linkedin {
     border-color: #fc3650;
     color: #fc3650;
     font-family: 'Source Sans Pro';
-    font-size: xxx-large;
+    font-size: 4vw;
     text-align: center;
     z-index:999;    
 }
@@ -17587,19 +17587,16 @@ li.nav-item.active {
 
 @media (max-width:575.98px) {
     #btn-landing {
-        font-size: 25px;
-        margin-top: 5%
+            margin-top: 18%
     }
 
     #btn-curso {
         font-size: 25px;
     }
-
-    #pfooter {
-        font-size: 50px
-    }
+   
 }
 }
+/*
 @media (min-width: 576px) and (max-width: 767.98px) {
     #btn-landing {
         font-size: 35px;
@@ -17629,13 +17626,19 @@ li.nav-item.active {
     #pfooter {
         font-size: 100px;
     }
-        
+      */  
 }
 @media(max-width:1050px) {
     .menu-scroll {
         visibility: visible;
     }
 
+}
+#pfooter1 {
+    font-size:5vw;
+}
+#pfooter2 {
+    font-size:6vw;
 }
 
 .overlay {

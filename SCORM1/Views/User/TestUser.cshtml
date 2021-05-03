@@ -202,11 +202,13 @@ else
                                         <div class="row">
                                             <div class="col-md-6 col-xs-12">
                                                 <br />
-                                                <p style="font-size:25px;color:#FC3650;margin:10px"><b>TIPO DE PREGUNTA: APAREAMIENTO </b></p>
+                                                <p style="font-size:25px;color:#FC3650;margin:10px"><b>TIPO DE PREGUNTA: EMPAREJAMIENTO </b></p>
                                                 <p style="margin:10px;color:#333"><strong>@Model.Listgeneralquestion[i].Pair_Question</strong></p>
                                                 <p style="margin:10px;color:#333"><strong>Descripción: @Model.Listgeneralquestion[i].Pair_Description</strong></p>
                                             </div>
-                                            <div class="col-md-6 col-xs-12">
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12 col-xs-12" style="margin:10px">
                                                 @for (int a = 0; a < Model.Listrequestpairing.Count; a++)
                                                 {
                                                     @Html.HiddenFor(model => model.Listrequestpairing[a].Pair_Id)
@@ -214,11 +216,18 @@ else
                                                     @Html.HiddenFor(model => model.Listrequestpairing[a].AnPa_OptionsQuestion)
                                                     if (Model.Listrequestpairing[a].Pair_Id == Model.Listgeneralquestion[i].Pair_Id)
                                                     {
-                                                        <br />
-                                                        <p>
-                                                            @Html.DropDownListFor(model => Model.Listrequestpairing[a].AnPa_IdRequest, Model.Listgeneralquestion[i].AnswerPairing, new { htmlAttributes = new { @class = "dropdown ", @style = "color:black" } })
-                                                        </p>
-                                                        <br />
+                                                        <div class="row">
+                                                            <br />
+                                                            <p>
+                                                                <div class="col-md-6">
+                                                                    <strong style="color:black">Respuesta: @Model.Listrequestpairing[a].AnPa_OptionsQuestion</strong>
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    @Html.DropDownListFor(model => Model.Listrequestpairing[a].AnPa_IdRequest, Model.Listgeneralquestion[i].AnswerPairing, new { htmlAttributes = new { @class = "dropdown ", @style = "color:black" } })
+                                                                </div>
+                                                            </p>
+                                                            <br />
+                                                        </div>
                                                     }
                                                 }
                                             </div>

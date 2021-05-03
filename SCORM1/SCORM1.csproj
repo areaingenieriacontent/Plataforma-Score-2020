@@ -532,8 +532,12 @@
     <Content Include="Content\Images\sistema de puntos\premio-diamante.png" />
     <Content Include="Content\Images\sistema de puntos\premio-oro.png" />
     <Content Include="Content\Images\sistema de puntos\premio-plata.png" />
+    <Content Include="Content\Images\slider-login\fondo-login.png" />
     <Content Include="Content\Images\slider-login\logo-bv-fondo-claro.png" />
     <Content Include="Content\Images\slider-login\logo-bv-fondo-oscuro.png" />
+    <Content Include="Content\Images\slider-zona-de-informacion\1-slide-1-guia-de-navegacion.jpg" />
+    <Content Include="Content\Images\slider-zona-de-informacion\2-slide-2-politica-de-puntos.jpg" />
+    <Content Include="Content\Images\slider-zona-de-informacion\3-slide-3-oferta-de-cursos.jpg" />
     <Content Include="Content\Images\slider-zona-de-informacion\after-slide-icon.png" />
     <Content Include="Content\Images\slider-zona-de-informacion\afterslideicon.png" />
     <Content Include="Content\Images\slider-zona-de-informacion\before-slide-icon.png" />

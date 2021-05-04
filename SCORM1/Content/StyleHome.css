@@ -17302,8 +17302,8 @@ a.linkedin {
 }
 #btn-curso {
     border: #FFF solid;
-    margin-top: 30%;
-    left: 30%;
+    margin-top: 25%;
+    left: 35%;
     position: absolute;
     color: white;
     font-family: 'Roboto'
@@ -17595,45 +17595,16 @@ li.nav-item.active {
     }
    
 }
-}
-/*
-@media (min-width: 576px) and (max-width: 767.98px) {
-    #btn-landing {
-        font-size: 35px;
-        margin-top:5%;
-    }
-    #btn-curso {
-        font-size: 35px;
-    }
-    #pfooter {
-        font-size: 60px
-    } 
-}
-@media (min-width: 768px) and (max-width: 991.98px) {
-    #btn-landing {
-        font-size: 45px;
-    }
-    #pfooter {
-        font-size: 80px;
-    }
-    
-}
 
-@media (min-width: 992px)  {
-    #btn-landing {
-        font-size: xxx-large;       
-    }
-    #pfooter {
-        font-size: 100px;
-    }
-      */  
-}
 @media(max-width:1050px) {
     .menu-scroll {
         visibility: visible;
+        z-index:100001;
     }
-
 }
+
+
+
 #pfooter1 {
     font-size:5vw;
 }
@@ -17819,4 +17790,9 @@ li.nav-item.active {
     font-weight: bolder;
     letter-spacing: 2px;
     text-shadow: 0 0 10px black
+}
+@media(max-width:639px) {
+    #textfooter {
+        margin-left: 1vw;
+    }
 }

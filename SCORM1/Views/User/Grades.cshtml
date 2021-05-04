@@ -787,27 +787,26 @@ else
                                                 if (Model.Enrollment.Enro_FinishDateModule <= DateTime.Now)
                                                 {
 
-                                                    <h2 style="color:#888888"><strong>Curso vencido</strong></h2>
-                                                    <br />
+                                                    <h2 style="color:#888888"><strong>Curso vencido</strong></h2>                                                  
                                                 }
                                                 else
                                                 {
                                                     @* se comenta la seccion donde aparece el link de la evaluacion para efectos de este despliegue*@
                                                     <div class="fecha">
-                                                        <a href="@Url.Action("TestUser", "User", new { id = @topic1.ToCo_Id })">Ir a Evaluación</a>
+                                                       <img src="~/Content/Images/evaluaciones/icon-evaluaciones.png"/><a href="@Url.Action("TestUser", "User", new { id = @topic1.ToCo_Id })">Ir a Evaluación</a>
                                                     </div>
                                                 }
                                             }
                                             else
                                             {
-                                                <h4 class="fecha"> <strong> Ya no tiene intentos disponibles</strong></h4>
+                                                <center><h4><strong> Ya no tiene intentos disponibles</strong></h4></center>
                                                 @*<p class="fecha">
-                        @Html.ActionLink("Contactar al Administrador", "EmailAttempts", "User", new { BaQu_Id = item1.BaQu_Id }, new { @class = "btn btn-primary" })
-                    </p>*@
-
-                                                <p class="fecha">
-                                                    @Html.ActionLink("Resultado test", "ResulQuestions", "User", new { BaQu_Id = item1.BaQu_Id }, new { @class = "btn btn-primary" })
-                                                </p>
+                                                @Html.ActionLink("Contactar al Administrador", "EmailAttempts", "User", new { BaQu_Id = item1.BaQu_Id }, new { @class = "btn btn-primary" })                                                 </p>*@
+                                                <div class="container">
+                                                    <div class="row justify-content-end">
+                                                        @Html.ActionLink("Resultado test", "ResulQuestions", "User", new { id = item1.BaQu_Id }, new { @class = "button-action", @id="btn-landing", @style= "position: relative;font-size: 3vw" })
+                                                    </div>
+                                                </div>
                                             }
                                         }
                                     }
